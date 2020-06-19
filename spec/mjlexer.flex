@@ -40,12 +40,30 @@ import java_cup.runtime.Symbol;
 "print" 	{ return new_symbol(sym.PRINT, yytext()); }
 "return" 	{ return new_symbol(sym.RETURN, yytext()); }
 "void" 		{ return new_symbol(sym.VOID, yytext()); }
-<YYINITIAL> "+" 		{ return new_symbol(sym.PLUS, yytext()); }
+"read"      { return new_symbol(sym.READ, yytext()); }
+"print"     { return new_symbol(sym.PRINT, yytext()); }
+"new"       { return new_symbol(sym.NEW, yytext()); }
+"const"		{ return new_symbol(sym.CONST, yytext()); }
+
+"+" 		{ return new_symbol(sym.PLUS, yytext()); }
+"-" 		{ return new_symbol(sym.MINUS, yytext()); }
 "=" 		{ return new_symbol(sym.EQUAL, yytext()); }
+"*"         { return new_symbol(sym.MUL, yytext()); }
+"/"         { return new_symbol(sym.DIV, yytext()); }
+"%"         { return new_symbol(sym.MOD, yytext()); }
+"++" 		{ return new_symbol(sym.PLUS_PLUS, yytext()); }
+"--" 		{ return new_symbol(sym.MINUS_MINUS, yytext()); }
+"+=" 		{ return new_symbol(sym.PLUS_EQUAL, yytext()); }
+"-=" 		{ return new_symbol(sym.MINUS_EQUAL, yytext()); }
+"*=" 		{ return new_symbol(sym.MUL_EQUAL, yytext()); }
+"/=" 		{ return new_symbol(sym.DIV_EQUAL, yytext()); }
+"%=" 		{ return new_symbol(sym.MOD_EQUAL, yytext()); }
 ";" 		{ return new_symbol(sym.SEMI, yytext()); }
 "," 		{ return new_symbol(sym.COMMA, yytext()); }
 "(" 		{ return new_symbol(sym.LPAREN, yytext()); }
 ")" 		{ return new_symbol(sym.RPAREN, yytext()); }
+"["         { return new_symbol(sym.LBRACK, yytext()); }
+"]"         { return new_symbol(sym.RBRACK, yytext()); }
 "{" 		{ return new_symbol(sym.LBRACE, yytext()); }
 "}"			{ return new_symbol(sym.RBRACE, yytext()); }
 
@@ -55,7 +73,8 @@ import java_cup.runtime.Symbol;
 
 [0-9]+  { return new_symbol(sym.NUMBER, new Integer (yytext())); }
 ([a-z]|[A-Z])[a-z|A-Z|0-9|_]* 	{return new_symbol (sym.IDENT, yytext()); }
-
+"'"[ -~]"'"						{ return new_symbol(sym.CHAR, yytext().charAt(1)); }
+("true"|"false")                { return new_symbol(sym.BOOL, new Boolean (yytext())); }
 . { System.err.println("Leksicka greska ("+yytext()+") u liniji "+(yyline+1)); }
 
 
