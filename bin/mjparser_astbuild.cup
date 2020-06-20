@@ -236,7 +236,7 @@ Factor ::= (ConstTypeVal) ConstType:C1 {: RESULT=new ConstTypeVal(C1); RESULT.se
 		    |
 		    (NewType) NEW Type:T1 {: RESULT=new NewType(T1); RESULT.setLine(T1left); :}
 		    |
-		    (NewTypeExtended) NEW Type:T1 LBRACK Expr:E2 RBRACK {: RESULT=new NewTypeExtended(T1, E2); RESULT.setLine(T1left); :}
+		    (NewTypeExpr) NEW Type:T1 LBRACK Expr:E2 RBRACK {: RESULT=new NewTypeExpr(T1, E2); RESULT.setLine(T1left); :}
 		    |
 		    (DesignatorFactor) Designator:D1 {: RESULT=new DesignatorFactor(D1); RESULT.setLine(D1left); :}
 		    |
