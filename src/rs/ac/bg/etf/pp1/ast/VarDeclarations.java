@@ -1,28 +1,28 @@
 // generated with ast extension for cup
 // version 0.8
-// 20/5/2020 3:25:10
+// 20/5/2020 20:6:5
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class VarDeclarations extends VarDeclList {
+public class VarDeclarations extends ConstVarDeclList {
 
-    private VarDeclList VarDeclList;
+    private ConstVarDeclList ConstVarDeclList;
     private VarDecl VarDecl;
 
-    public VarDeclarations (VarDeclList VarDeclList, VarDecl VarDecl) {
-        this.VarDeclList=VarDeclList;
-        if(VarDeclList!=null) VarDeclList.setParent(this);
+    public VarDeclarations (ConstVarDeclList ConstVarDeclList, VarDecl VarDecl) {
+        this.ConstVarDeclList=ConstVarDeclList;
+        if(ConstVarDeclList!=null) ConstVarDeclList.setParent(this);
         this.VarDecl=VarDecl;
         if(VarDecl!=null) VarDecl.setParent(this);
     }
 
-    public VarDeclList getVarDeclList() {
-        return VarDeclList;
+    public ConstVarDeclList getConstVarDeclList() {
+        return ConstVarDeclList;
     }
 
-    public void setVarDeclList(VarDeclList VarDeclList) {
-        this.VarDeclList=VarDeclList;
+    public void setConstVarDeclList(ConstVarDeclList ConstVarDeclList) {
+        this.ConstVarDeclList=ConstVarDeclList;
     }
 
     public VarDecl getVarDecl() {
@@ -38,18 +38,18 @@ public class VarDeclarations extends VarDeclList {
     }
 
     public void childrenAccept(Visitor visitor) {
-        if(VarDeclList!=null) VarDeclList.accept(visitor);
+        if(ConstVarDeclList!=null) ConstVarDeclList.accept(visitor);
         if(VarDecl!=null) VarDecl.accept(visitor);
     }
 
     public void traverseTopDown(Visitor visitor) {
         accept(visitor);
-        if(VarDeclList!=null) VarDeclList.traverseTopDown(visitor);
+        if(ConstVarDeclList!=null) ConstVarDeclList.traverseTopDown(visitor);
         if(VarDecl!=null) VarDecl.traverseTopDown(visitor);
     }
 
     public void traverseBottomUp(Visitor visitor) {
-        if(VarDeclList!=null) VarDeclList.traverseBottomUp(visitor);
+        if(ConstVarDeclList!=null) ConstVarDeclList.traverseBottomUp(visitor);
         if(VarDecl!=null) VarDecl.traverseBottomUp(visitor);
         accept(visitor);
     }
@@ -59,8 +59,8 @@ public class VarDeclarations extends VarDeclList {
         buffer.append(tab);
         buffer.append("VarDeclarations(\n");
 
-        if(VarDeclList!=null)
-            buffer.append(VarDeclList.toString("  "+tab));
+        if(ConstVarDeclList!=null)
+            buffer.append(ConstVarDeclList.toString("  "+tab));
         else
             buffer.append(tab+"  null");
         buffer.append("\n");

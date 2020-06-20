@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 20/5/2020 3:25:10
+// 20/5/2020 20:6:5
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -10,13 +10,15 @@ public class MethodDecl implements SyntaxNode {
     private SyntaxNode parent;
     private int line;
     private MethodTypeName MethodTypeName;
+    private String methName;
     private FormPars FormPars;
     private VarDeclList VarDeclList;
     private StatementList StatementList;
 
-    public MethodDecl (MethodTypeName MethodTypeName, FormPars FormPars, VarDeclList VarDeclList, StatementList StatementList) {
+    public MethodDecl (MethodTypeName MethodTypeName, String methName, FormPars FormPars, VarDeclList VarDeclList, StatementList StatementList) {
         this.MethodTypeName=MethodTypeName;
         if(MethodTypeName!=null) MethodTypeName.setParent(this);
+        this.methName=methName;
         this.FormPars=FormPars;
         if(FormPars!=null) FormPars.setParent(this);
         this.VarDeclList=VarDeclList;
@@ -31,6 +33,14 @@ public class MethodDecl implements SyntaxNode {
 
     public void setMethodTypeName(MethodTypeName MethodTypeName) {
         this.MethodTypeName=MethodTypeName;
+    }
+
+    public String getMethName() {
+        return methName;
+    }
+
+    public void setMethName(String methName) {
+        this.methName=methName;
     }
 
     public FormPars getFormPars() {
@@ -109,6 +119,9 @@ public class MethodDecl implements SyntaxNode {
             buffer.append(MethodTypeName.toString("  "+tab));
         else
             buffer.append(tab+"  null");
+        buffer.append("\n");
+
+        buffer.append(" "+tab+methName);
         buffer.append("\n");
 
         if(FormPars!=null)

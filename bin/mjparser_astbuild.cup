@@ -55,14 +55,15 @@ scan with {:
 
 
 terminal PLUS , RPAREN , EQUAL , SEMI , RETURN , LPAREN , COMMA , PROG , PRINT
- , VOID , MINUS , MUL , DIV , MOD , LBRACK , RBRACK , READ , NEW , PLUS_PLUS ,
- MINUS_MINUS , LBRACE, CONST , RBRACE , PLUS_EQUAL , MINUS_EQUAL , MUL_EQUAL , DIV_EQUAL , MOD_EQUAL , CHAR;
+ , VOID , MINUS , MUL , DIV , MOD , LBRACK , RBRACK , READ , NEW , PLUS_PLUS , CONST ,
+ MINUS_MINUS , LBRACE , RBRACE , PLUS_EQUAL , MINUS_EQUAL , MUL_EQUAL , DIV_EQUAL , MOD_EQUAL , CHAR;
 terminal Integer NUMBER ;
 terminal Boolean BOOL ;
 terminal String IDENT ;
 
 nonterminal MethodDeclList MethodDeclList;
-nonterminal VarDecl VarDecl;
+nonterminal VarDecl VarDecl ;
+nonterminal ConstDecl ConstDecl ;
 nonterminal FormalParamList FormalParamList;
 nonterminal FormalParamDecl FormalParamDecl;
 nonterminal FormPars FormPars;
@@ -70,19 +71,24 @@ nonterminal ActualPars ActualPars;
 nonterminal ActualParamList ActualParamList;
 nonterminal StatementList StatementList;
 nonterminal Statement Statement;
-nonterminal Addop Addop;
+nonterminal Addop Addop ;
+nonterminal ArrayBracks ArrayBracks ;
+nonterminal FormalParamListExtended FormalParamListExtended;
 nonterminal Unmatched Unmatched;
 nonterminal Matched Matched ;
 nonterminal DesignatorStatement DesignatorStatement;
 nonterminal Expr Expr;
 nonterminal Minus Minus;
+nonterminal VarDeclListExtended VarDeclListExtended ;
 nonterminal
- AddopTermList AddopTermList;
+AddopTermList AddopTermList;
 nonterminal Term Term;
 nonterminal MulopFactorList MulopFactorList;
 nonterminal ConstSectDecl ConstSectDecl;
+nonterminal ConstType ConstType ;
+nonterminal ConstDeclListExtended ConstDeclListExtended ;
 nonterminal
-  Assignop Assignop;
+Assignop Assignop;
 nonterminal AddopLeft AddopLeft;
 nonterminal AddopRight AddopRight;
 nonterminal Mulop Mulop;
@@ -93,51 +99,90 @@ nonterminal Program Program;
 nonterminal ProgName ProgName;
 nonterminal Designator Designator;
 nonterminal MethodDecl MethodDecl;
-nonterminal MethodTypeName MethodTypeName;
+nonterminal MethodTypeName MethodTypeName ;
+nonterminal VarDeclList VarDeclList;
 nonterminal Type Type;
 nonterminal Factor Factor;
-nonterminal VarDeclList VarDeclList;
+nonterminal ConstVarDeclList ConstVarDeclList;
 
 
-Program ::= (Program) PROG ProgName:p VarDeclList:V1 LBRACE MethodDeclList:M2 RBRACE {: RESULT=new Program(p, V1, M2); RESULT.setLine(pleft); :}
+Program ::= (Program) PROG ProgName:p ConstVarDeclList:C1 LBRACE MethodDeclList:M2 RBRACE {: RESULT=new Program(p, C1, M2); RESULT.setLine(pleft); :}
             ;
 
 ProgName ::= (ProgName) IDENT:pName {: RESULT=new ProgName(pName); RESULT.setLine(pNameleft); :}
             ;
 
-VarDeclList ::= (VarDeclarations) VarDeclList:V1 VarDecl:V2 {: RESULT=new VarDeclarations(V1, V2); RESULT.setLine(V1left); :}
+ConstVarDeclList ::= (VarDeclarations) ConstVarDeclList:C1 VarDecl:V2 {: RESULT=new VarDeclarations(C1, V2); RESULT.setLine(C1left); :}
 				|
-				(NoVarDecl) {: RESULT=new NoVarDecl(); :}/* epsilon */
+				(ConstDeclarations) ConstVarDeclList:C1 ConstDecl:C2 {: RESULT=new ConstDeclarations(C1, C2); RESULT.setLine(C1left); :}
+				|
+				(NoConstVarDecl) {: RESULT=new NoConstVarDecl(); :}/* epsilon */
 				;
-
-VarDecl ::= (VarDecl) Type:varType IDENT:varName SEMI {: RESULT=new VarDecl(varType, varName); RESULT.setLine(varTypeleft); :}
+VarDecl ::= (VarDeclArray) Type:varType IDENT:varName ArrayBracks:A1 VarDeclListExtended:V2 SEMI {: RESULT=new VarDeclArray(varType, varName, A1, V2); RESULT.setLine(varTypeleft); :}
             ;
+
+ArrayBracks ::= (IsArray) LBRACK RBRACK {: RESULT=new IsArray(); :}
+                |
+                (NoArray) {: RESULT=new NoArray(); :} /* epsilon */
+                ;
+
+VarDeclListExtended ::= (VarDecListExtendedYes) VarDeclListExtended:V1 COMMA IDENT:I2 ArrayBracks:A3 {: RESULT=new VarDecListExtendedYes(V1, I2, A3); RESULT.setLine(V1left); :}
+                        |
+                        (VarDecListExtendedNo) {: RESULT=new VarDecListExtendedNo(); :} /* epsilon */
+                        ;
+
 
 Type ::= (Type) IDENT:typeName {: RESULT=new Type(typeName); RESULT.setLine(typeNameleft); :}
          ;
+
+ConstDecl ::= (ConstDeclNode) CONST Type:T1 IDENT:I2 EQUAL ConstType:C3 ConstDeclListExtended:C4 SEMI {: RESULT=new ConstDeclNode(T1, I2, C3, C4); RESULT.setLine(T1left); :}
+              ;
+
+ConstType ::= (ConstNumber) NUMBER:N1 {: RESULT=new ConstNumber(N1); RESULT.setLine(N1left); :}
+              |
+              (ConstBool) BOOL:B1 {: RESULT=new ConstBool(B1); RESULT.setLine(B1left); :}
+              |
+              (ConstChar) CHAR {: RESULT=new ConstChar(); :}
+              ;
+
+ConstDeclListExtended ::= (ConstDeclListExtendedVal) ConstDeclListExtended:C1 COMMA IDENT:I2 EQUAL ConstType:C3 {: RESULT=new ConstDeclListExtendedVal(C1, I2, C3); RESULT.setLine(C1left); :}
+                           |
+                           (NoConstDeclListExtended) {: RESULT=new NoConstDeclListExtended(); :} /* epsilon */
+                           ;
 
 MethodDeclList ::= (MethodDeclarations) MethodDeclList:M1 MethodDecl:M2 {: RESULT=new MethodDeclarations(M1, M2); RESULT.setLine(M1left); :}
 					|
 					(NoMethodDecl) {: RESULT=new NoMethodDecl(); :}/* epsilon */
 					;
 
-MethodDecl ::= (MethodDecl) MethodTypeName:M1
-			   LPAREN FormPars:F2 RPAREN VarDeclList:V3 LBRACE StatementList:S4 RBRACE {: RESULT=new MethodDecl(M1, F2, V3, S4); RESULT.setLine(M1left); :}
+MethodDecl ::= (MethodDecl) MethodTypeName:M1 IDENT:methName
+			   LPAREN FormPars:F2 RPAREN VarDeclList:V3 LBRACE StatementList:S4 RBRACE {: RESULT=new MethodDecl(M1, methName, F2, V3, S4); RESULT.setLine(M1left); :}
 			   ;
 
-MethodTypeName ::= (MethodTypeName) Type:retType IDENT:methName {: RESULT=new MethodTypeName(retType, methName); RESULT.setLine(retTypeleft); :}
+VarDeclList ::= (VarDeclListYes) VarDeclList:V1 VarDecl:V2 {: RESULT=new VarDeclListYes(V1, V2); RESULT.setLine(V1left); :}
+                |
+                (VarDeclLIstNo) {: RESULT=new VarDeclLIstNo(); :} /* epsilon */
+                ;
+
+MethodTypeName ::= (MethodType) Type:retType {: RESULT=new MethodType(retType); RESULT.setLine(retTypeleft); :}
+                    |
+                    (MethodVoid) VOID {: RESULT=new MethodVoid(); :}
                     ;
 
 FormPars ::= (FormParams) FormalParamList:F1 {: RESULT=new FormParams(F1); RESULT.setLine(F1left); :}
-             | (NoFormParam) {: RESULT=new NoFormParam(); :} /* epsilon */
+             |
+             (NoFormParam) {: RESULT=new NoFormParam(); :} /* epsilon */
              ;
 
-FormalParamList ::= (FormalParamDecls) FormalParamList:F1 COMMA FormalParamDecl:F2 {: RESULT=new FormalParamDecls(F1, F2); RESULT.setLine(F1left); :}
-					|
-					(SingleFormalParamDecl) FormalParamDecl:F1 {: RESULT=new SingleFormalParamDecl(F1); RESULT.setLine(F1left); :}
+FormalParamList ::= (FormalParamDecls) FormalParamDecl:F1 FormalParamListExtended:F2 {: RESULT=new FormalParamDecls(F1, F2); RESULT.setLine(F1left); :}
 					;
 
-FormalParamDecl ::= (FormalParamDecl) Type:T1 IDENT:I2 {: RESULT=new FormalParamDecl(T1, I2); RESULT.setLine(T1left); :} ;
+FormalParamDecl ::= (FormalParamDecl) Type:T1 IDENT:I2 ArrayBracks:A3 {: RESULT=new FormalParamDecl(T1, I2, A3); RESULT.setLine(T1left); :};
+
+FormalParamListExtended ::= (FormalParamListExtendedYes) FormalParamListExtended:F1 COMMA FormalParamDecl:F2 {: RESULT=new FormalParamListExtendedYes(F1, F2); RESULT.setLine(F1left); :}
+                            |
+                            (FormalParamListExtendedNo) {: RESULT=new FormalParamListExtendedNo(); :} /* epsilon */
+                            ;
 
 StatementList ::= (Statements) StatementList:S1 Statement:S2 {: RESULT=new Statements(S1, S2); RESULT.setLine(S1left); :}
 				  |
@@ -145,6 +190,10 @@ StatementList ::= (Statements) StatementList:S1 Statement:S2 {: RESULT=new State
 				  ;
 
 Statement ::= (Assignment) DesignatorStatement:dest SEMI {: RESULT=new Assignment(dest); RESULT.setLine(destleft); :}
+              |
+              (ReturnStmtExpr) RETURN Expr:E1 SEMI {: RESULT=new ReturnStmtExpr(E1); RESULT.setLine(E1left); :}
+              |
+              (ReturnStmtNoExpr) RETURN SEMI {: RESULT=new ReturnStmtNoExpr(); :}
 			  |
 			  (ReadStmt) READ LPAREN Designator:D1 RPAREN SEMI {: RESULT=new ReadStmt(D1); RESULT.setLine(D1left); :}
 			  |
@@ -179,14 +228,10 @@ MulopFactorList ::= (YesMulopFactorList) MulopFactorList:M1 Mulop:m Factor:f {: 
                      (NoMulopFactorList) {: RESULT=new NoMulopFactorList(); :} /* epsilon */
                      ;
 
-ConstSectDecl ::= (ConstSectDeclNode) CONST Type:constType {: RESULT=new ConstSectDeclNode(constType); RESULT.setLine(constTypeleft); :};
+/* ConstSectDecl ::= (ConstSectDeclNode) CONST Type:constType; */
 
-Factor ::= (ConstNumber) NUMBER:N1 {: RESULT=new ConstNumber(N1); RESULT.setLine(N1left); :}
-			|
-			(ConstBool) BOOL:B1 {: RESULT=new ConstBool(B1); RESULT.setLine(B1left); :}
-			|
-			(ConstChar) CHAR {: RESULT=new ConstChar(); :}
-			|
+Factor ::= (ConstTypeVal) ConstType:C1 {: RESULT=new ConstTypeVal(C1); RESULT.setLine(C1left); :}
+            |
 		    (ExprLRPAREN) LPAREN Expr:E1 RPAREN {: RESULT=new ExprLRPAREN(E1); RESULT.setLine(E1left); :}
 		    |
 		    (NewType) NEW Type:T1 {: RESULT=new NewType(T1); RESULT.setLine(T1left); :}

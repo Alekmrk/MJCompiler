@@ -55,62 +55,100 @@ scan with {:
 
 
 terminal PLUS , RPAREN , EQUAL , SEMI , RETURN , LPAREN , COMMA , PROG , PRINT
- , VOID , MINUS , MUL , DIV , MOD , LBRACK , RBRACK , READ , NEW , PLUS_PLUS ,
- MINUS_MINUS , LBRACE, CONST , RBRACE , PLUS_EQUAL , MINUS_EQUAL , MUL_EQUAL , DIV_EQUAL , MOD_EQUAL , CHAR;
+ , VOID , MINUS , MUL , DIV , MOD , LBRACK , RBRACK , READ , NEW , PLUS_PLUS , CONST ,
+ MINUS_MINUS , LBRACE , RBRACE , PLUS_EQUAL , MINUS_EQUAL , MUL_EQUAL , DIV_EQUAL , MOD_EQUAL , CHAR;
 terminal Integer NUMBER ;
 terminal Boolean BOOL ;
 terminal String IDENT ;
 
-nonterminal MethodDeclList, VarDecl;
+nonterminal MethodDeclList, VarDecl , ConstDecl ;
 nonterminal FormalParamList, FormalParamDecl, FormPars, ActualPars, ActualParamList;
-nonterminal StatementList, Statement, Addop;
-nonterminal Unmatched, Matched , DesignatorStatement, Expr, Minus,
- AddopTermList, Term, MulopFactorList, ConstSectDecl,
-  Assignop, AddopLeft, AddopRight, Mulop, MulopLeft, MulopRight;
+nonterminal StatementList, Statement, Addop , ArrayBracks , FormalParamListExtended;
+nonterminal Unmatched, Matched , DesignatorStatement, Expr, Minus, VarDeclListExtended ,
+AddopTermList, Term, MulopFactorList, ConstSectDecl, ConstType , ConstDeclListExtended ,
+Assignop, AddopLeft, AddopRight, Mulop, MulopLeft, MulopRight;
 
-nonterminal Program, ProgName, Designator, MethodDecl, MethodTypeName;
-nonterminal Type, Factor, VarDeclList;
+nonterminal Program, ProgName, Designator, MethodDecl, MethodTypeName , VarDeclList;
+nonterminal Type, Factor, ConstVarDeclList;
 
 
-Program ::= (Program) PROG ProgName:p VarDeclList LBRACE MethodDeclList RBRACE
+Program ::= (Program) PROG ProgName:p ConstVarDeclList LBRACE MethodDeclList RBRACE
             ;
 
 ProgName ::= (ProgName) IDENT:pName
             ;
 
-VarDeclList ::= (VarDeclarations) VarDeclList VarDecl
+ConstVarDeclList ::= (VarDeclarations) ConstVarDeclList VarDecl
 				|
-				(NoVarDecl)/* epsilon */
+				(ConstDeclarations) ConstVarDeclList ConstDecl
+				|
+				(NoConstVarDecl)/* epsilon */
 				;
-
-VarDecl ::= (VarDecl) Type:varType IDENT:varName SEMI
+VarDecl ::= (VarDeclArray) Type:varType IDENT:varName ArrayBracks VarDeclListExtended SEMI
             ;
+
+ArrayBracks ::= (IsArray) LBRACK RBRACK
+                |
+                (NoArray) /* epsilon */
+                ;
+
+VarDeclListExtended ::= (VarDecListExtendedYes) VarDeclListExtended COMMA IDENT ArrayBracks
+                        |
+                        (VarDecListExtendedNo) /* epsilon */
+                        ;
+
 
 Type ::= (Type) IDENT:typeName
          ;
+
+ConstDecl ::= (ConstDeclNode) CONST Type IDENT EQUAL ConstType ConstDeclListExtended SEMI
+              ;
+
+ConstType ::= (ConstNumber) NUMBER
+              |
+              (ConstBool) BOOL
+              |
+              (ConstChar) CHAR
+              ;
+
+ConstDeclListExtended ::= (ConstDeclListExtendedVal) ConstDeclListExtended COMMA IDENT EQUAL ConstType
+                           |
+                           (NoConstDeclListExtended) /* epsilon */
+                           ;
 
 MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
 					|
 					(NoMethodDecl)/* epsilon */
 					;
 
-MethodDecl ::= (MethodDecl) MethodTypeName
+MethodDecl ::= (MethodDecl) MethodTypeName IDENT:methName
 			   LPAREN FormPars RPAREN VarDeclList LBRACE StatementList RBRACE
 			   ;
 
-MethodTypeName ::= (MethodTypeName) Type:retType IDENT:methName
+VarDeclList ::= (VarDeclListYes) VarDeclList VarDecl
+                |
+                (VarDeclLIstNo) /* epsilon */
+                ;
+
+MethodTypeName ::= (MethodType) Type:retType
+                    |
+                    (MethodVoid) VOID
                     ;
 
 FormPars ::= (FormParams) FormalParamList
-             | (NoFormParam) /* epsilon */
+             |
+             (NoFormParam) /* epsilon */
              ;
 
-FormalParamList ::= (FormalParamDecls) FormalParamList COMMA FormalParamDecl
-					|
-					(SingleFormalParamDecl) FormalParamDecl
+FormalParamList ::= (FormalParamDecls) FormalParamDecl FormalParamListExtended
 					;
 
-FormalParamDecl ::= (FormalParamDecl) Type IDENT ;
+FormalParamDecl ::= (FormalParamDecl) Type IDENT ArrayBracks;
+
+FormalParamListExtended ::= (FormalParamListExtendedYes) FormalParamListExtended COMMA FormalParamDecl
+                            |
+                            (FormalParamListExtendedNo) /* epsilon */
+                            ;
 
 StatementList ::= (Statements) StatementList Statement
 				  |
@@ -118,6 +156,10 @@ StatementList ::= (Statements) StatementList Statement
 				  ;
 
 Statement ::= (Assignment) DesignatorStatement:dest SEMI
+              |
+              (ReturnStmtExpr) RETURN Expr SEMI
+              |
+              (ReturnStmtNoExpr) RETURN SEMI
 			  |
 			  (ReadStmt) READ LPAREN Designator RPAREN SEMI
 			  |
@@ -152,19 +194,15 @@ MulopFactorList ::= (YesMulopFactorList) MulopFactorList Mulop:m Factor:f
                      (NoMulopFactorList) /* epsilon */
                      ;
 
-ConstSectDecl ::= (ConstSectDeclNode) CONST Type:constType;
+/* ConstSectDecl ::= (ConstSectDeclNode) CONST Type:constType; */
 
-Factor ::= (ConstNumber) NUMBER
-			|
-			(ConstBool) BOOL
-			|
-			(ConstChar) CHAR
-			|
+Factor ::= (ConstTypeVal) ConstType
+            |
 		    (ExprLRPAREN) LPAREN Expr RPAREN
 		    |
 		    (NewType) NEW Type
 		    |
-		    (NewTypeExtended) NEW Type LBRACK Expr RBRACK
+		    (NewTypeExpr) NEW Type LBRACK Expr RBRACK
 		    |
 		    (DesignatorFactor) Designator
 		    |

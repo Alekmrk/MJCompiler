@@ -1,13 +1,13 @@
 // generated with ast extension for cup
 // version 0.8
-// 20/5/2020 3:25:10
+// 20/5/2020 20:6:5
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class NoVarDecl extends VarDeclList {
+public class NoArray extends ArrayBracks {
 
-    public NoVarDecl () {
+    public NoArray () {
     }
 
     public void accept(Visitor visitor) {
@@ -28,10 +28,10 @@ public class NoVarDecl extends VarDeclList {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("NoVarDecl(\n");
+        buffer.append("NoArray(\n");
 
         buffer.append(tab);
-        buffer.append(") [NoVarDecl]");
+        buffer.append(") [NoArray]");
         return buffer.toString();
     }
 }

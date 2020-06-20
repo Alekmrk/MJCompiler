@@ -1,15 +1,15 @@
 // generated with ast extension for cup
 // version 0.8
-// 20/5/2020 3:25:10
+// 20/5/2020 20:6:5
 
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class ConstSectDeclNode extends ConstSectDecl {
+public class MethodType extends MethodTypeName {
 
     private Type Type;
 
-    public ConstSectDeclNode (Type Type) {
+    public MethodType (Type Type) {
         this.Type=Type;
         if(Type!=null) Type.setParent(this);
     }
@@ -43,7 +43,7 @@ public class ConstSectDeclNode extends ConstSectDecl {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("ConstSectDeclNode(\n");
+        buffer.append("MethodType(\n");
 
         if(Type!=null)
             buffer.append(Type.toString("  "+tab));
@@ -52,7 +52,7 @@ public class ConstSectDeclNode extends ConstSectDecl {
         buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [ConstSectDeclNode]");
+        buffer.append(") [MethodType]");
         return buffer.toString();
     }
 }
