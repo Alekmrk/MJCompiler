@@ -54,34 +54,40 @@ scan with {:
 :}
 
 
-terminal PLUS , RPAREN , EQUAL , SEMI , RETURN , LPAREN , COMMA , PROG , PRINT , error , VOID , MINUS , MUL , DIV , MOD , LBRACK , RBRACK , READ , NEW , PLUS_PLUS , MINUS_MINUS , LBRACE , RBRACE , PLUS_EQUAL , MINUS_EQUAL , MUL_EQUAL , DIV_EQUAL , MOD_EQUAL , CHAR
+terminal PLUS , RPAREN , EQUAL , SEMI , RETURN , LPAREN , COMMA , PROG , PRINT
+ , VOID , MINUS , MUL , DIV , MOD , LBRACK , RBRACK , READ , NEW , PLUS_PLUS ,
+ MINUS_MINUS , LBRACE, CONST , RBRACE , PLUS_EQUAL , MINUS_EQUAL , MUL_EQUAL , DIV_EQUAL , MOD_EQUAL , CHAR;
 terminal Integer NUMBER ;
+terminal Boolean BOOL ;
 terminal String IDENT ;
 
 nonterminal MethodDeclList, VarDecl;
-nonterminal FormalParamList, FormalParamDecl, FormPars, ActualPars, ActualParamList; 
+nonterminal FormalParamList, FormalParamDecl, FormPars, ActualPars, ActualParamList;
 nonterminal StatementList, Statement, Addop;
-nonterminal Unmatched, Matched ,DesignatorStatement,Expr,Minus,AddopTermList,Term,MullopFactorList,ConstSectDecl,Designator,Assignop,Addop,AddopLeft,AddopRight,Mulop,MulopLeft,MulopRight;
+nonterminal Unmatched, Matched , DesignatorStatement, Expr, Minus,
+ AddopTermList, Term, MulopFactorList, ConstSectDecl,
+  Assignop, AddopLeft, AddopRight, Mulop, MulopLeft, MulopRight;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName; 
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Expr, Factor, VarDeclList;
+nonterminal Program, ProgName, Designator, MethodDecl, MethodTypeName;
+nonterminal Type, Factor, VarDeclList;
 
-Program ::= (Program) PROG ProgName:p VarDeclList LBRACE MethodDeclList RBRACE 
-;
 
-ProgName ::= (ProgName) IDENT:pName 
-;
+Program ::= (Program) PROG ProgName:p VarDeclList LBRACE MethodDeclList RBRACE
+            ;
 
-VarDeclList ::= (VarDeclarations) VarDeclList VarDecl  
+ProgName ::= (ProgName) IDENT:pName
+            ;
+
+VarDeclList ::= (VarDeclarations) VarDeclList VarDecl
 				|
-				(NoVarDecl)/* epsilon */ 
+				(NoVarDecl)/* epsilon */
 				;
-				
-VarDecl ::= (VarDecl) Type:varType IDENT:varName SEMI 
-;
 
-Type ::= (Type) IDENT:typeName 
-;
+VarDecl ::= (VarDecl) Type:varType IDENT:varName SEMI
+            ;
+
+Type ::= (Type) IDENT:typeName
+         ;
 
 MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
 					|
@@ -89,23 +95,25 @@ MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
 					;
 
 MethodDecl ::= (MethodDecl) MethodTypeName
-			   LPAREN FormPars RPAREN VarDeclList LBRACE StatementList RBRACE 
+			   LPAREN FormPars RPAREN VarDeclList LBRACE StatementList RBRACE
 			   ;
 
 MethodTypeName ::= (MethodTypeName) Type:retType IDENT:methName
-;
+                    ;
 
-FormPars ::= (FormParams) FormalParamList | (NoFormParam) /* epsilon */ ;
+FormPars ::= (FormParams) FormalParamList
+             | (NoFormParam) /* epsilon */
+             ;
 
 FormalParamList ::= (FormalParamDecls) FormalParamList COMMA FormalParamDecl
 					|
 					(SingleFormalParamDecl) FormalParamDecl
 					;
-					
+
 FormalParamDecl ::= (FormalParamDecl) Type IDENT ;
 
-StatementList ::= (Statements) StatementList Statement 
-					|
+StatementList ::= (Statements) StatementList Statement
+				  |
 				  (NoStmt) /* epsilon */
 				  ;
 
@@ -113,36 +121,35 @@ Statement ::= (Assignment) DesignatorStatement:dest SEMI
 			  |
 			  (ReadStmt) READ LPAREN Designator RPAREN SEMI
 			  |
-			  (PrintStmt) PRINT LPAREN Expr:t  SEMI
+			  (PrintStmt) PRINT LPAREN Expr:t RPAREN SEMI
 			  ;
 
-DesignatorStatement ::= (EqualDesStatement) Destinator EQUAL Expr:e
+DesignatorStatement ::= (EqualDesStatement) Designator Assignop Expr:e
                         |
-                        (IncDesStatement) Destinator PLUS_PLUS
+                        (IncDesStatement) Designator PLUS_PLUS
                         |
-                        (DecDesStatement) Destinator MINUS_MINUS
+                        (DecDesStatement) Designator MINUS_MINUS
                         ;
 
 Expr ::= (AddExpr) Minus Term:t AddopTermList
-		 |
-		 (TermExpr) Term:t
 		 ;
 
-Minus ::= (YesMinus) MINUS:mi
+Minus ::= (YesMinus) MINUS
           |
           (NoMinus) /* epsilon */
+          ;
 
 AddopTermList ::= (YesAddopTermList) AddopTermList Addop:a Term:t
                   |
                   (NoAddopTermList) /* epsilon */
                    ;
 
-Term ::= (Term) Factor:t MullopFactorList
+Term ::= (TermFactor) Factor:t MulopFactorList
          ;
 
-MullopFactorList ::= (YesMullopFactorList) MullopFactorList Mullop:m Factor:f
+MulopFactorList ::= (YesMulopFactorList) MulopFactorList Mulop:m Factor:f
                      |
-                     (NoMullopFactorList) /* epsilon */
+                     (NoMulopFactorList) /* epsilon */
                      ;
 
 ConstSectDecl ::= (ConstSectDeclNode) CONST Type:constType;
@@ -153,7 +160,7 @@ Factor ::= (ConstNumber) NUMBER
 			|
 			(ConstChar) CHAR
 			|
-		    (Expr) LPAREN Expr RPAREN
+		    (ExprLRPAREN) LPAREN Expr RPAREN
 		    |
 		    (NewType) NEW Type
 		    |

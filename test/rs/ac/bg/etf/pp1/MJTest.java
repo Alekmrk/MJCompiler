@@ -1,17 +1,11 @@
 package rs.ac.bg.etf.pp1;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
-
 import java_cup.runtime.Symbol;
-
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
-
 import rs.ac.bg.etf.pp1.util.Log4JUtils;
+
+import java.io.*;
 
 public class MJTest {
 
@@ -32,7 +26,7 @@ public class MJTest {
 			
 			Yylex lexer = new Yylex(br);
 			Symbol currToken = null;
-			while ((currToken = lexer.next_token()).sym != sym.EOF) {
+			while ((currToken = lexer.next_token()).sym != sym_old.EOF) {
 				if (currToken != null && currToken.value != null)
 					log.info(currToken.toString() + " " + currToken.value.toString());
 			}

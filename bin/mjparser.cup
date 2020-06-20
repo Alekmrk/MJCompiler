@@ -54,35 +54,40 @@ scan with {:
 :}
 
 
-terminal PROG, LBRACE, RBRACE, SEMI, LPAREN, RPAREN, COMMA, PRINT, RETURN, PLUS, EQUAL, VOID;
+terminal PLUS , RPAREN , EQUAL , SEMI , RETURN , LPAREN , COMMA , PROG , PRINT
+ , VOID , MINUS , MUL , DIV , MOD , LBRACK , RBRACK , READ , NEW , PLUS_PLUS ,
+ MINUS_MINUS , LBRACE, CONST , RBRACE , PLUS_EQUAL , MINUS_EQUAL , MUL_EQUAL , DIV_EQUAL , MOD_EQUAL , CHAR;
 terminal Integer NUMBER ;
+terminal Boolean BOOL ;
 terminal String IDENT ;
-terminal IF, ELSE;
 
 nonterminal MethodDeclList, VarDecl;
-nonterminal FormalParamList, FormalParamDecl, FormPars, ActualPars, ActualParamList; 
+nonterminal FormalParamList, FormalParamDecl, FormPars, ActualPars, ActualParamList;
 nonterminal StatementList, Statement, Addop;
-nonterminal Unmatched, Matched;
+nonterminal Unmatched, Matched , DesignatorStatement, Expr, Minus,
+ AddopTermList, Term, MulopFactorList, ConstSectDecl,
+  Assignop, AddopLeft, AddopRight, Mulop, MulopLeft, MulopRight;
 
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName; 
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Expr, Factor, VarDeclList; 
+nonterminal Program, ProgName, Designator, MethodDecl, MethodTypeName;
+nonterminal Type, Factor, VarDeclList;
 
-Program ::= (Program) PROG ProgName:p VarDeclList LBRACE MethodDeclList RBRACE 
-;
 
-ProgName ::= (ProgName) IDENT:pName 
-;
+Program ::= (Program) PROG ProgName:p VarDeclList LBRACE MethodDeclList RBRACE
+            ;
 
-VarDeclList ::= (VarDeclarations) VarDeclList VarDecl  
+ProgName ::= (ProgName) IDENT:pName
+            ;
+
+VarDeclList ::= (VarDeclarations) VarDeclList VarDecl
 				|
-				(NoVarDecl)/* epsilon */ 
+				(NoVarDecl)/* epsilon */
 				;
-				
-VarDecl ::= (VarDecl) Type:varType IDENT:varName SEMI 
-;
 
-Type ::= (Type) IDENT:typeName 
-;
+VarDecl ::= (VarDecl) Type:varType IDENT:varName SEMI
+            ;
+
+Type ::= (Type) IDENT:typeName
+         ;
 
 MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
 					|
@@ -90,73 +95,124 @@ MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
 					;
 
 MethodDecl ::= (MethodDecl) MethodTypeName
-			   LPAREN FormPars RPAREN VarDeclList LBRACE StatementList RBRACE 
+			   LPAREN FormPars RPAREN VarDeclList LBRACE StatementList RBRACE
 			   ;
 
 MethodTypeName ::= (MethodTypeName) Type:retType IDENT:methName
-;
+                    ;
 
-FormPars ::= (FormParams) FormalParamList | (NoFormParam) /* epsilon */ ;
+FormPars ::= (FormParams) FormalParamList
+             | (NoFormParam) /* epsilon */
+             ;
 
 FormalParamList ::= (FormalParamDecls) FormalParamList COMMA FormalParamDecl
 					|
 					(SingleFormalParamDecl) FormalParamDecl
 					;
-					
+
 FormalParamDecl ::= (FormalParamDecl) Type IDENT ;
 
-StatementList ::= (Statements) StatementList Statement 
-					|
+StatementList ::= (Statements) StatementList Statement
+				  |
 				  (NoStmt) /* epsilon */
 				  ;
 
-Statement ::= (MatchedStmt) Matched | (UnmachedStmt) Unmatched ;
-
-Unmatched ::= (UnmatchedIf) IF Expr Statement | (UnmatchedIfElse) IF Expr Matched ELSE Unmatched;
-	
-				  
-Matched ::= (Assignment) Designator:dest EQUAL Expr:e SEMI 
+Statement ::= (Assignment) DesignatorStatement:dest SEMI
 			  |
-			  (ErrAssignment) Designator EQUAL error SEMI
-			  {: parser.log.debug("Uspesan oporavak od greske pri dodeli vrednosti."); :}
+			  (ReadStmt) READ LPAREN Designator RPAREN SEMI
 			  |
-			  (PrintStmt) PRINT LPAREN Expr RPAREN SEMI 
-			  |
-			  (ReturnExpr) RETURN Expr:t SEMI
-			  |
-			  (ReturnNoExpr) RETURN SEMI
-			  | 
-			  (MatchedIf) IF Expr Matched ELSE Matched
-			  |
-			  (ProcCall) Designator:func LPAREN ActualPars RPAREN SEMI
+			  (PrintStmt) PRINT LPAREN Expr:t RPAREN SEMI
 			  ;
-			  
-Expr ::= (AddExpr) Expr:te Addop Term:t
-		 |
-		 (TermExpr) Term:t
+
+DesignatorStatement ::= (EqualDesStatement) Designator Assignop Expr:e
+                        |
+                        (IncDesStatement) Designator PLUS_PLUS
+                        |
+                        (DecDesStatement) Designator MINUS_MINUS
+                        ;
+
+Expr ::= (AddExpr) Minus Term:t AddopTermList
 		 ;
 
-Term ::= (Term) Factor:t 
-;
+Minus ::= (YesMinus) MINUS
+          |
+          (NoMinus) /* epsilon */
+          ;
 
-Factor ::= (Const) NUMBER
+AddopTermList ::= (YesAddopTermList) AddopTermList Addop:a Term:t
+                  |
+                  (NoAddopTermList) /* epsilon */
+                   ;
+
+Term ::= (TermFactor) Factor:t MulopFactorList
+         ;
+
+MulopFactorList ::= (YesMulopFactorList) MulopFactorList Mulop:m Factor:f
+                     |
+                     (NoMulopFactorList) /* epsilon */
+                     ;
+
+ConstSectDecl ::= (ConstSectDeclNode) CONST Type:constType;
+
+Factor ::= (ConstNumber) NUMBER
 			|
-		   (Var) Designator:d
+			(ConstBool) BOOL
+			|
+			(ConstChar) CHAR
+			|
+		    (ExprLRPAREN) LPAREN Expr RPAREN
 		    |
-		   (FuncCall) Designator:func LPAREN ActualPars RPAREN
-		   ;
+		    (NewType) NEW Type
+		    |
+		    (NewTypeExtended) NEW Type LBRACK Expr RBRACK
+		    |
+		    (DesignatorFactor) Designator
+		    |
+		    (DesignatorFactorExtended) Designator LPAREN RPAREN
+		    ;
 
-ActualPars ::= (Actuals) ActualParamList 
-				| 
-			   (NoActuals) /* epsilon */ 
-			   ;
-			   
-ActualParamList ::= (ActualParams) ActualParamList COMMA Expr
-					|
-					(ActualParam) Expr
-					;
+Designator ::= (DesignatorIdent) IDENT:name
+               |
+               (DesignatorIdentExtended) IDENT:name LBRACK Expr RBRACK
+               ;
 
-Designator ::= (Designator) IDENT:name
-;
+Assignop ::= (AssignopEqual) EQUAL
+             |
+             (AssignopAddopRight) AddopRight
+             |
+             (AssignopMulopRight) MulopRight
+             ;
 
-Addop ::= (Addop) PLUS ;
+Addop ::= (AddopBasicLeft) AddopLeft
+          |
+          (AddopBasicRight) AddopRight
+          ;
+
+AddopLeft ::= (AddopLeftMinus) MINUS
+              |
+              (AddopLeftPlus) PLUS
+              ;
+
+AddopRight ::= (AddopRightPlusEqual) PLUS_EQUAL
+               |
+               (AddopRightMinusEqual) MINUS_EQUAL
+               ;
+
+Mulop ::= (MulopBasicLeft) MulopLeft
+          |
+          (MulopBasicRight) MulopRight
+          ;
+
+MulopLeft ::= (MulopLeftMul) MUL
+              |
+              (MulopLeftDiv) DIV
+              |
+              (MulopLeftMod) MOD
+              ;
+
+MulopRight ::= (MulopRightMulEqual) MUL_EQUAL
+               |
+               (MulopRightDivEqual) DIV_EQUAL
+               |
+               (MulopRightModEqual) MOD_EQUAL
+               ;
