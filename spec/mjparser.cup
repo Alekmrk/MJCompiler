@@ -68,7 +68,7 @@ nonterminal Unmatched, Matched , DesignatorStatement, Expr, Minus, VarDeclListEx
 AddopTermList, Term, MulopFactorList, ConstSectDecl, ConstType , ConstDeclListExtended ,
 Assignop, AddopLeft, AddopRight, Mulop, MulopLeft, MulopRight;
 
-nonterminal Program, ProgName, Designator, MethodDecl, MethodTypeName , VarDeclList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName , VarDeclList;
 nonterminal Type, Factor, ConstVarDeclList;
 
 

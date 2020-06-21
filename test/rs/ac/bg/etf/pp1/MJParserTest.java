@@ -19,6 +19,7 @@ public class MJParserTest {
 
         Logger log = Logger.getLogger(MJParserTest.class);
 
+
         Reader br = null;
         try {
             File sourceCode = new File("test/program.mj");
@@ -36,7 +37,7 @@ public class MJParserTest {
             log.info("===================================");
 
             // ispis prepoznatih programskih konstrukcija
-            RuleVisitor v = new RuleVisitor();
+            SemanticAnalyzer v = new SemanticAnalyzer();
             prog.traverseBottomUp(v);
 
             log.info(" Print count calls = " + v.printCallCount);

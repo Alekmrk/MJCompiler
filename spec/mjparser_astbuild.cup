@@ -95,12 +95,7 @@ nonterminal Mulop Mulop;
 nonterminal MulopLeft MulopLeft;
 nonterminal MulopRight MulopRight;
 
-nonterminal Program Program;
-nonterminal ProgName ProgName;
-nonterminal Designator Designator;
-nonterminal MethodDecl MethodDecl;
-nonterminal MethodTypeName MethodTypeName ;
-nonterminal VarDeclList VarDeclList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName , VarDeclList;
 nonterminal Type Type;
 nonterminal Factor Factor;
 nonterminal ConstVarDeclList ConstVarDeclList;
