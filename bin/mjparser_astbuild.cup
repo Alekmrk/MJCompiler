@@ -66,25 +66,18 @@ nonterminal VarDecl VarDecl ;
 nonterminal ConstDecl ConstDecl ;
 nonterminal FormalParamList FormalParamList;
 nonterminal FormalParamDecl FormalParamDecl;
-nonterminal FormPars FormPars;
-nonterminal ActualPars ActualPars;
-nonterminal ActualParamList ActualParamList;
+nonterminal FormPars FormPars ;
 nonterminal StatementList StatementList;
 nonterminal Statement Statement;
 nonterminal Addop Addop ;
 nonterminal ArrayBracks ArrayBracks ;
 nonterminal FormalParamListExtended FormalParamListExtended;
-nonterminal Unmatched Unmatched;
-nonterminal Matched Matched ;
 nonterminal DesignatorStatement DesignatorStatement;
-nonterminal Expr Expr;
 nonterminal Minus Minus;
 nonterminal VarDeclListExtended VarDeclListExtended ;
 nonterminal
 AddopTermList AddopTermList;
-nonterminal Term Term;
 nonterminal MulopFactorList MulopFactorList;
-nonterminal ConstSectDecl ConstSectDecl;
 nonterminal ConstType ConstType ;
 nonterminal ConstDeclListExtended ConstDeclListExtended ;
 nonterminal
@@ -95,15 +88,8 @@ nonterminal Mulop Mulop;
 nonterminal MulopLeft MulopLeft;
 nonterminal MulopRight MulopRight;
 
-nonterminal Program Program;
-nonterminal ProgName ProgName;
-nonterminal Designator Designator;
-nonterminal MethodDecl MethodDecl;
-nonterminal MethodTypeName MethodTypeName ;
-nonterminal VarDeclList VarDeclList;
-nonterminal Type Type;
-nonterminal Factor Factor;
-nonterminal ConstVarDeclList ConstVarDeclList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName ;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr , ConstVarDeclList , VarDeclList;
 
 
 Program ::= (Program) PROG ProgName:p ConstVarDeclList:C1 LBRACE MethodDeclList:M2 RBRACE {: RESULT=new Program(p, C1, M2); RESULT.setLine(pleft); :}

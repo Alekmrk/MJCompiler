@@ -62,14 +62,14 @@ terminal Boolean BOOL ;
 terminal String IDENT ;
 
 nonterminal MethodDeclList, VarDecl , ConstDecl ;
-nonterminal FormalParamList, FormalParamDecl, FormPars, ActualPars, ActualParamList;
+nonterminal FormalParamList, FormalParamDecl, FormPars ;
 nonterminal StatementList, Statement, Addop , ArrayBracks , FormalParamListExtended;
-nonterminal Unmatched, Matched , DesignatorStatement, Expr, Minus, VarDeclListExtended ,
-AddopTermList, Term, MulopFactorList, ConstSectDecl, ConstType , ConstDeclListExtended ,
+nonterminal DesignatorStatement, Minus, VarDeclListExtended ,
+AddopTermList, MulopFactorList, ConstType , ConstDeclListExtended ,
 Assignop, AddopLeft, AddopRight, Mulop, MulopLeft, MulopRight;
 
-nonterminal Program, ProgName, Designator, MethodDecl, MethodTypeName , VarDeclList;
-nonterminal Type, Factor, ConstVarDeclList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName ;
+nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr , ConstVarDeclList , VarDeclList;
 
 
 Program ::= (Program) PROG ProgName:p ConstVarDeclList LBRACE MethodDeclList RBRACE
