@@ -5,9 +5,9 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class YesMinus extends Minus {
+public class WithNumberNo extends WithNumber {
 
-    public YesMinus () {
+    public WithNumberNo () {
     }
 
     public void accept(Visitor visitor) {
@@ -28,10 +28,10 @@ public class YesMinus extends Minus {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("YesMinus(\n");
+        buffer.append("WithNumberNo(\n");
 
         buffer.append(tab);
-        buffer.append(") [YesMinus]");
+        buffer.append(") [WithNumberNo]");
         return buffer.toString();
     }
 }

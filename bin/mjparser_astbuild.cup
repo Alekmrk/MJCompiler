@@ -68,7 +68,7 @@ FormalParamList, FormalParamDecl, FormPars ,
 StatementList, Statement, ArrayBracks , FormalParamListExtended ,
 DesignatorStatement, Minus, VarDeclListExtended ,
 AddopTermList, MulopFactorList , ConstDeclListExtended ,
-Assignop, AddopLeft, AddopRight, Mulop, MulopLeft, MulopRight , Addop ,
+Assignop, AddopLeft, AddopRight, Mulop, MulopLeft, MulopRight , Addop , WithNumber ,
 Program, ProgName, Designator,
 MethodDecl, MethodTypeName , ConstType , Type, Term, Factor, Expr , ConstVarDeclList , VarDeclList;
 
@@ -165,8 +165,13 @@ Statement ::= (Assignment) DesignatorStatement:dest SEMI {: RESULT=new Assignmen
 			  |
 			  (ReadStmt) READ LPAREN Designator:D1 RPAREN SEMI {: RESULT=new ReadStmt(D1); RESULT.setLine(D1left); :}
 			  |
-			  (PrintStmt) PRINT LPAREN Expr:t RPAREN SEMI {: RESULT=new PrintStmt(t); RESULT.setLine(tleft); :}
+			  (PrintStmt) PRINT LPAREN Expr:t WithNumber:wNumber RPAREN SEMI {: RESULT=new PrintStmt(t, wNumber); RESULT.setLine(tleft); :}
 			  ;
+
+WithNumber ::= (WithNumberYes) COMMA NUMBER:N1 {: RESULT=new WithNumberYes(N1); RESULT.setLine(N1left); :}
+               |
+               (WithNumberNo) {: RESULT=new WithNumberNo(); :} /* epsilon */
+               ;
 
 DesignatorStatement ::= (EqualDesStatement) Designator:D1 Assignop:A2 Expr:e {: RESULT=new EqualDesStatement(D1, A2, e); RESULT.setLine(D1left); :}
                         |

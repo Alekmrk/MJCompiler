@@ -5,9 +5,20 @@
 
 package rs.ac.bg.etf.pp1.ast;
 
-public class YesMinus extends Minus {
+public class WithNumberYes extends WithNumber {
 
-    public YesMinus () {
+    private Integer N1;
+
+    public WithNumberYes (Integer N1) {
+        this.N1=N1;
+    }
+
+    public Integer getN1() {
+        return N1;
+    }
+
+    public void setN1(Integer N1) {
+        this.N1=N1;
     }
 
     public void accept(Visitor visitor) {
@@ -28,10 +39,13 @@ public class YesMinus extends Minus {
     public String toString(String tab) {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
-        buffer.append("YesMinus(\n");
+        buffer.append("WithNumberYes(\n");
+
+        buffer.append(" "+tab+N1);
+        buffer.append("\n");
 
         buffer.append(tab);
-        buffer.append(") [YesMinus]");
+        buffer.append(") [WithNumberYes]");
         return buffer.toString();
     }
 }

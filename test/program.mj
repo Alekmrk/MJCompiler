@@ -46,6 +46,7 @@ program test301
 		bodovi+=bodovi;
 		print(bodovi);
 		//print(nema);
+		//print(bol,5);
 		read(dniz[1]);
         a=5+2;
         bulijan=false;

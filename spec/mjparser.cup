@@ -68,7 +68,7 @@ FormalParamList, FormalParamDecl, FormPars ,
 StatementList, Statement, ArrayBracks , FormalParamListExtended ,
 DesignatorStatement, Minus, VarDeclListExtended ,
 AddopTermList, MulopFactorList , ConstDeclListExtended ,
-Assignop, AddopLeft, AddopRight, Mulop, MulopLeft, MulopRight , Addop ,
+Assignop, AddopLeft, AddopRight, Mulop, MulopLeft, MulopRight , Addop , WithNumber ,
 Program, ProgName, Designator,
 MethodDecl, MethodTypeName , ConstType , Type, Term, Factor, Expr , ConstVarDeclList , VarDeclList;
 
@@ -165,8 +165,13 @@ Statement ::= (Assignment) DesignatorStatement:dest SEMI
 			  |
 			  (ReadStmt) READ LPAREN Designator RPAREN SEMI
 			  |
-			  (PrintStmt) PRINT LPAREN Expr:t RPAREN SEMI
+			  (PrintStmt) PRINT LPAREN Expr:t WithNumber:wNumber RPAREN SEMI
 			  ;
+
+WithNumber ::= (WithNumberYes) COMMA NUMBER
+               |
+               (WithNumberNo) /* epsilon */
+               ;
 
 DesignatorStatement ::= (EqualDesStatement) Designator Assignop Expr:e
                         |
