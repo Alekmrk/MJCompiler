@@ -86,6 +86,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
             if (Obj.Type == typeNode.getKind()) {
                 type.obj = typeNode;
                 currentType = typeNode.getType();
+                //currentType = typeNode.getType().getElemType();
             }
             else {
                 report_error("Greska: Ime " + type.getTypeName() + " ne predstavlja tip ", type);
@@ -151,7 +152,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         currentMethod = Tab.insert(Obj.Meth, methodVoid.getMethName(), Tab.noType);
         methodVoid.obj = currentMethod;
         Tab.openScope();
-        report_info("Obradjuje se funkcija " + methodVoid.obj.getName(), methodVoid);
+        report_info("Obradjuje se void funkcija " + methodVoid.obj.getName(), methodVoid);
     }
 
 
