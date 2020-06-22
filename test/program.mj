@@ -2,7 +2,8 @@
 
 program test301
 
-	const char nula = 'c';
+	const char nulaCh = 'c';
+	const int nula = 5;
 	const int jedan = 1, sest = 6, proba = 7 , opet = 8;
 	const int pet = 5;
 	int pniz[];
@@ -11,7 +12,7 @@ program test301
 	int ret, m;
 	char nizch[];
 	// int gr;
-
+	int a;
 {
 	char func2()
 	 char c;
@@ -22,13 +23,14 @@ program test301
 	 int a;
 	{
 	    bodovi = 2;
-	    ret = 3;
+	    ret[1]   = 3;
 	    // a=2;
         //return new int[6];
         return 1;
 	}
 	void main()
 		int bodovi;
+		int a;
 	{
 		bodovi = 0;
 		bodovi++;
@@ -37,9 +39,11 @@ program test301
 		bodovi--;
 		bodovi+=bodovi;
 		print(bodovi);
-        a=-5+2;
+        a=5+2;
         //return;
-		niz = new int[4];
+        a=pniz[1];
+        pniz[1]=a;
+		pniz = new int[4];
 		niz[nula] += jedan += 5;
 		niz[1] = 2;
 		niz[5] %=3;
@@ -53,18 +57,17 @@ program test301
 		niz[2]++;
 		print(niz[2]);
 
-
 		nizch = new char[3];
 		nizch[0] = 'a';
 		nizch[jedan] = 'b';
 		nizch[pet - 3] = 'c';
 		print(nizch[1]);
 		print(nizch[jedan * 2]);
-
+        a=-5 +-1;
         print( bodovi + (pet * jedan - 1) * bodovi - (3 % 2 + 3 * 2 - 3));
 		bodovi = bodovi + (pet * jedan - 1) * bodovi - (3 % 2 + 3 * 2 - 3);
 		print(bodovi);
 		//return bodovi;
+		return;
 	}
-
 }

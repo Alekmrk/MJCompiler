@@ -13,9 +13,10 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     Struct currentType=null;
     boolean isArray=false;
     int nVars;
-
+    boolean isMinus=false;
 
     Logger log = Logger.getLogger(getClass());
+
 
     public void report_error(String message, SyntaxNode info) {
         errorDetected = true;
@@ -50,11 +51,12 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         Struct type=varDecl.getType().obj.getType();
         if(isArray){
             report_info("Niz je promenljiva:"+ varDecl.getVarName(), varDecl);
-            type = new Struct(Struct.Array, type);
+            type = new Struct(Struct.Array, varDecl.getType().obj.getType());
+            Obj varNode = Tab.insert(Obj.Var, varDecl.getVarName(), type);
             isArray=false;
+        }else {
+            Obj varNode = Tab.insert(Obj.Var, varDecl.getVarName(), type);
         }
-        Obj varNode = Tab.insert(Obj.Var, varDecl.getVarName(), type);
-
         //currentType=varDecl.getType().obj.getType(); =null ako bi da vracam
         //varDecl.obj=varDecl.getVarDeclListExtended().obj;
 
@@ -66,10 +68,11 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         if(isArray){
             report_info("Niz je promenljiva:"+ varDecListExtendedYes.getVarName(), varDecListExtendedYes);
             type = new Struct(Struct.Array, type);
+            Obj varNode = Tab.insert(Obj.Var, varDecListExtendedYes.getVarName(), type);
             isArray=false;
+        }else {
+            Obj varNode = Tab.insert(Obj.Var, varDecListExtendedYes.getVarName(), type);
         }
-        Obj varNode = Tab.insert(Obj.Var, varDecListExtendedYes.getVarName(),type);
-
     }
 
     public void visit(IsArray isArr){
@@ -125,9 +128,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 
     public void visit(ConstBool cnstBool){
-        //   cnstChar.struct = Tab.charType; cnst.obj = new Obj(Obj.Con, "", Tab.charType, cnst.getVal() , Obj.NO_VALUE);
+       // cnstBool.obj = new Obj(Obj.Con, "", SymbolExtension.boolType, cnstBool.getVal() ? 1 : 0, Obj.NO_VALUE);
     }
-
 
     public void visit(MethodDecl methodDecl) {
         if (!returnFound && currentMethod.getType() != Tab.noType) {
@@ -174,6 +176,133 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 		}	*/
 
     }
+
+    public void visit(Assignment assignment){
+        assignment.obj=assignment.getDesignatorStatement().obj;
+    }
+
+    public void visit(ReadStmt readStmt){
+        Obj obj = Tab.find(readStmt.getDesignator().obj.getName());
+        if (obj == Tab.noObj) {
+            report_error("Greska na liniji " + readStmt.getDesignator().getLine()+ " : ime "+readStmt.getDesignator().obj.getName()+" nije deklarisano! ", null);
+        }
+    }
+    public void visit(PrintStmt printStmt){
+        Obj obj = Tab.find(printStmt.getExpr().obj.getName());
+        if (obj == Tab.noObj) {
+            report_error("Greska na liniji " + printStmt.getExpr().getLine()+ " : ime "+printStmt.getExpr().obj.getName()+" nije deklarisano! ", null);
+        }
+    }
+
+    public void visit(IncDesStatement incDesStatement){
+        if(incDesStatement.getDesignator().obj.getType()!=Tab.intType){
+            report_error("Greska na liniji " + incDesStatement.getLine() + " : " + " moguce je uraditi postinkrement samo INT tipu. ", null);
+        }
+        if(incDesStatement.getDesignator().obj.getKind() != Obj.Var && incDesStatement.getDesignator().obj.getKind() != Obj.Elem) {
+            report_error("Nije moguce inkrementirati konstante", incDesStatement);
+        }
+    }
+    public void visit(DecDesStatement decDesStatement){
+
+        if(decDesStatement.getDesignator().obj.getType()!=Tab.intType){
+            report_error("Greska na liniji " + decDesStatement.getLine() + " : " + " moguce je uraditi postdekrement samo INT tipu. ", null);
+        }
+        if(decDesStatement.getDesignator().obj.getKind() != Obj.Var && decDesStatement.getDesignator().obj.getKind() != Obj.Elem) {
+            report_error("Nije moguce dekrementirati konstante", decDesStatement);
+        }
+    }
+
+    public void visit(EqualDesStatement equalDesStatement){
+        Struct a=equalDesStatement.getExpr().obj.getType();
+        Struct b=equalDesStatement.getDesignator().obj.getType();
+        if(a==null || b==null){
+            report_error("nesto je null na liniji: "+equalDesStatement.getLine(),null);
+        }
+        if (!equalDesStatement.getExpr().obj.getType().equals(equalDesStatement.getDesignator().obj.getType())) {
+            report_error("Greska na liniji " + equalDesStatement.getLine() + " : " + " nekompatibilni tipovi u dodeli vrednosti ", null);
+        }
+    }
+
+    public void visit(AddExpr addExpr){
+
+        if(isMinus && addExpr.getTerm().obj.getType()!=Tab.intType){
+            isMinus=false;
+            report_error("Greska na liniji " + addExpr.getTerm().getLine() + " : " + " ne moze se pisati minus za tipove koji nisu INT ", null);
+        }
+        currentType=addExpr.getTerm().obj.getType();
+        //mora od faktora da se uzme i tako redom
+        addExpr.obj=addExpr.getTerm().obj;
+    }
+    public void visit(YesMinus yesMinus){
+        isMinus=true;
+    }
+
+    public void visit(YesAddopTermList yesAddopTermList){
+        if(yesAddopTermList.getTerm().obj.getType()!=Tab.intType){
+            report_error("Greska na liniji " + yesAddopTermList.getLine() + " : " + " ne moze se vrsiti operacija dodavanja za tipove koji nisu INT ", null);
+        }
+    }
+
+    public void visit(YesMulopFactorList yesMulopFactorList){
+        if(yesMulopFactorList.getFactor().obj.getType()!=Tab.intType){
+            report_error("Greska na liniji " + yesMulopFactorList.getLine() + " : " + " ne moze se vrsiti operacija mnozenja za tipove koji nisu INT ", null);
+        }
+    }
+
+    public void visit(TermFactor termFactor){
+        termFactor.obj=termFactor.getFactor().obj;
+    }
+
+    public void visit(ConstTypeVal constTypeVal){
+        constTypeVal.obj=constTypeVal.getConstType().obj;
+    }
+
+    public void visit(ExprLRPAREN exprLRPAREN) {
+        exprLRPAREN.obj = exprLRPAREN.getExpr().obj;
+    }
+    public void visit(NewType newType) {
+        newType.obj = newType.getType().obj;
+    }
+
+    public void visit(NewTypeExpr newTypeExpr) {
+        //newTypeExpr.obj = newTypeExpr.getType().obj;
+        if(newTypeExpr.getExpr().obj.getType()!=Tab.intType){
+            report_error("Greska na liniji " + newTypeExpr.getLine()+ " nepravilno definisan niz sa tipom razlicitim od INT! ", null);
+        }
+        newTypeExpr.obj = new Obj(Obj.Var,"", new Struct(Struct.Array, newTypeExpr.getType().obj.getType()));
+             //  newTypeExpr.getType().obj.getType().getElemType());
+        //Obj.Var, "", new Struct(Struct.Array, newTypeArrayFactor.getType().obj.getType())
+    }
+
+    public void visit(DesignatorFactor designatorFactor) {
+        designatorFactor.obj = designatorFactor.getDesignator().obj;
+    }
+
+    public void visit(DesignatorFactorExtended designatorFactorExtended) {
+        designatorFactorExtended.obj = designatorFactorExtended.getDesignator().obj;
+    }
+
+    public void visit(DesignatorIdent designatorIdent){
+        Obj obj = Tab.find(designatorIdent.getName());
+        if (obj == Tab.noObj) {
+            report_error("Greska na liniji " + designatorIdent.getLine()+ " : ime "+designatorIdent.getName()+" nije deklarisano! ", null);
+        }
+        designatorIdent.obj = new Obj(Obj.Var, designatorIdent.getName(), obj.getType());
+    }
+
+    public void visit(DesignatorIdentExtended designatorIdentExtended){
+        Obj obj = Tab.find(designatorIdentExtended.getName());
+
+        if (obj == Tab.noObj) {
+            report_error("Greska na liniji " + designatorIdentExtended.getLine()+ " : ime "+designatorIdentExtended.getName()+" nije deklarisano! ", null);
+        }
+        if(designatorIdentExtended.getExpr().obj.getType()!=Tab.intType){
+            report_error("Greska na liniji " + designatorIdentExtended.getLine()+ " nepravilno definisan niz sa tipom razlicitim od INT! ", null);
+        }
+        designatorIdentExtended.obj = new Obj(Obj.Elem,designatorIdentExtended.getName(), obj.getType().getElemType());
+
+    }
+
     public boolean passed() {
         return !errorDetected;
     }
