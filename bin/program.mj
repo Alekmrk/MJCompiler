@@ -8,7 +8,9 @@ program test301
 	const int pet = 5;
 	int pniz[];
 	char dniz[];
+	bool bulijan;
 	int niz[], niz2[], niz3[], niz4[];
+	const bool bol = true;
 	int ret, m;
 	char nizch[];
 	// int gr;
@@ -31,6 +33,7 @@ program test301
 	void main()
 		int bodovi;
 		int a;
+		bool b;
 	{
 		bodovi = 0;
 		bodovi++;
@@ -40,6 +43,8 @@ program test301
 		bodovi+=bodovi;
 		print(bodovi);
         a=5+2;
+        bulijan=false;
+        bulijan=true;
         //return;
         a=pniz[1];
         pniz[1]=a;

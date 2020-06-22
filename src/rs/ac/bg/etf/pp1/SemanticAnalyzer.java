@@ -128,7 +128,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 
     public void visit(ConstBool cnstBool){
-       // cnstBool.obj = new Obj(Obj.Con, "", SymbolExtension.boolType, cnstBool.getVal() ? 1 : 0, Obj.NO_VALUE);
+        cnstBool.obj = new Obj(Obj.Con, "", SymbolExtension.boolType, cnstBool.getVal() ? 1 : 0, Obj.NO_VALUE);
     }
 
     public void visit(MethodDecl methodDecl) {
