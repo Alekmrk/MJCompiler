@@ -1,0 +1,116 @@
+INFO  03:34:51,746 - Compiling source file: C:\Users\pa160422d\Desktop\pp1\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  03:34:51,776 - #9 program
+INFO  03:34:51,776 - #33 test301
+INFO  03:34:51,776 - #21 const
+INFO  03:34:51,776 - #33 char
+INFO  03:34:51,776 - #33 nula
+INFO  03:34:51,776 - #4 =
+INFO  03:34:51,776 - #32 c
+INFO  03:34:51,776 - #5 ;
+INFO  03:34:51,776 - #21 const
+INFO  03:34:51,776 - #33 char
+INFO  03:34:51,776 - #33 jedan
+INFO  03:34:51,776 - #4 =
+INFO  03:34:51,776 - #30 1
+INFO  03:34:51,781 - #8 ,
+INFO  03:34:51,781 - #33 sest
+INFO  03:34:51,781 - #4 =
+INFO  03:34:51,781 - #32 c
+INFO  03:34:51,781 - #8 ,
+INFO  03:34:51,781 - #33 proba
+INFO  03:34:51,781 - #4 =
+INFO  03:34:51,781 - #30 7
+INFO  03:34:51,781 - #8 ,
+INFO  03:34:51,781 - #33 opet
+INFO  03:34:51,781 - #4 =
+INFO  03:34:51,781 - #30 8
+INFO  03:34:51,781 - #5 ;
+INFO  03:34:51,781 - #21 const
+INFO  03:34:51,781 - #33 int
+INFO  03:34:51,781 - #33 pet
+INFO  03:34:51,781 - #4 =
+INFO  03:34:51,781 - #30 5
+INFO  03:34:51,781 - #5 ;
+INFO  03:34:51,781 - #33 int
+INFO  03:34:51,781 - #33 pniz
+INFO  03:34:51,781 - #16 [
+INFO  03:34:51,781 - #17 ]
+INFO  03:34:51,781 - #5 ;
+INFO  03:34:51,781 - #33 char
+INFO  03:34:51,781 - #33 dniz
+INFO  03:34:51,781 - #16 [
+INFO  03:34:51,781 - #17 ]
+INFO  03:34:51,781 - #5 ;
+INFO  03:34:51,781 - #33 int
+INFO  03:34:51,781 - #33 niz
+INFO  03:34:51,781 - #16 [
+INFO  03:34:51,781 - #17 ]
+INFO  03:34:51,781 - #8 ,
+INFO  03:34:51,781 - #33 niz2
+INFO  03:34:51,781 - #16 [
+INFO  03:34:51,786 - #17 ]
+INFO  03:34:51,786 - #8 ,
+INFO  03:34:51,786 - #33 niz3
+INFO  03:34:51,786 - #16 [
+INFO  03:34:51,791 - #17 ]
+INFO  03:34:51,791 - #8 ,
+INFO  03:34:51,791 - #33 niz4
+INFO  03:34:51,791 - #16 [
+INFO  03:34:51,791 - #17 ]
+INFO  03:34:51,791 - #5 ;
+INFO  03:34:51,791 - #33 int
+INFO  03:34:51,791 - #33 ret
+INFO  03:34:51,791 - #8 ,
+INFO  03:34:51,791 - #33 m
+INFO  03:34:51,791 - #5 ;
+INFO  03:34:51,791 - #33 char
+INFO  03:34:51,791 - #33 nizch
+INFO  03:34:51,791 - #16 [
+INFO  03:34:51,791 - #17 ]
+INFO  03:34:51,791 - #5 ;
+INFO  03:34:51,791 - #23 {
+INFO  03:34:51,791 - #33 int
+INFO  03:34:51,791 - #33 func2
+INFO  03:34:51,791 - #7 (
+INFO  03:34:51,791 - #3 )
+INFO  03:34:51,791 - #33 char
+INFO  03:34:51,791 - #33 c
+INFO  03:34:51,791 - #5 ;
+INFO  03:34:51,791 - #33 int
+INFO  03:34:51,791 - #33 bodovi
+INFO  03:34:51,791 - #5 ;
+INFO  03:34:51,791 - #33 int
+INFO  03:34:51,791 - #33 ret
+INFO  03:34:51,791 - #16 [
+INFO  03:34:51,791 - #17 ]
+INFO  03:34:51,791 - #5 ;
+INFO  03:34:51,791 - #33 int
+INFO  03:34:51,791 - #33 a
+INFO  03:34:51,791 - #5 ;
+INFO  03:34:51,791 - #23 {
+INFO  03:34:51,791 - #33 bodovi
+INFO  03:34:51,796 - #4 =
+INFO  03:34:51,796 - #30 2
+INFO  03:34:51,796 - #5 ;
+INFO  03:34:51,796 - #33 ret
+INFO  03:34:51,796 - #4 =
+INFO  03:34:51,796 - #30 3
+INFO  03:34:51,796 - #5 ;
+INFO  03:34:51,796 - #6 return
+INFO  03:34:51,796 - #30 1
+INFO  03:34:51,796 - #5 ;
+INFO  03:34:51,796 - #24 }
+INFO  03:34:51,796 - #11 void
+INFO  03:34:51,796 - #33 main
+ERROR 03:34:51,796 - 
+Sintaksna greska na liniji 30
+ERROR 03:34:51,796 - Fatalna greska, parsiranje se ne moze nastaviti na liniji 30
+INFO  03:34:51,816 - Obradjuje se funkcija func2 na liniji 16
+INFO  03:34:51,816 - Deklarisana promenljiva c na liniji 17
+INFO  03:34:51,816 - Deklarisana promenljiva bodovi na liniji 20
+INFO  03:34:51,816 - Deklarisana promenljiva ret na liniji 21
+INFO  03:34:51,816 - niz niz niz niz ret na liniji 21
+INFO  03:34:51,816 - Deklarisana promenljiva a na liniji 22
+ERROR 03:34:51,816 - Semanticka greska na liniji 16: funcija func2 nema return iskaz!
+INFO  03:34:51,816 - Print calls = 0
+ERROR 03:34:51,821 - Parsiranje NIJE uspesno zavrseno!

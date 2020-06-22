@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/5/2020 15:23:18
+// 22/5/2020 4:9:3
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,13 +8,13 @@ package rs.ac.bg.etf.pp1.ast;
 public class VarDecListExtendedYes extends VarDeclListExtended {
 
     private VarDeclListExtended VarDeclListExtended;
-    private String I2;
+    private String varName;
     private ArrayBracks ArrayBracks;
 
-    public VarDecListExtendedYes (VarDeclListExtended VarDeclListExtended, String I2, ArrayBracks ArrayBracks) {
+    public VarDecListExtendedYes (VarDeclListExtended VarDeclListExtended, String varName, ArrayBracks ArrayBracks) {
         this.VarDeclListExtended=VarDeclListExtended;
         if(VarDeclListExtended!=null) VarDeclListExtended.setParent(this);
-        this.I2=I2;
+        this.varName=varName;
         this.ArrayBracks=ArrayBracks;
         if(ArrayBracks!=null) ArrayBracks.setParent(this);
     }
@@ -27,12 +27,12 @@ public class VarDecListExtendedYes extends VarDeclListExtended {
         this.VarDeclListExtended=VarDeclListExtended;
     }
 
-    public String getI2() {
-        return I2;
+    public String getVarName() {
+        return varName;
     }
 
-    public void setI2(String I2) {
-        this.I2=I2;
+    public void setVarName(String varName) {
+        this.varName=varName;
     }
 
     public ArrayBracks getArrayBracks() {
@@ -75,7 +75,7 @@ public class VarDecListExtendedYes extends VarDeclListExtended {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        buffer.append(" "+tab+I2);
+        buffer.append(" "+tab+varName);
         buffer.append("\n");
 
         if(ArrayBracks!=null)

@@ -56,40 +56,21 @@ scan with {:
 
 terminal PLUS , RPAREN , EQUAL , SEMI , RETURN , LPAREN , COMMA , PROG , PRINT
  , VOID , MINUS , MUL , DIV , MOD , LBRACK , RBRACK , READ , NEW , PLUS_PLUS , CONST ,
- MINUS_MINUS , LBRACE , RBRACE , PLUS_EQUAL , MINUS_EQUAL , MUL_EQUAL , DIV_EQUAL , MOD_EQUAL , CHAR;
+ MINUS_MINUS , LBRACE , RBRACE , PLUS_EQUAL , MINUS_EQUAL , MUL_EQUAL , DIV_EQUAL , MOD_EQUAL ;
+
 terminal Integer NUMBER ;
 terminal Boolean BOOL ;
+terminal Character CHAR ;
 terminal String IDENT ;
 
-nonterminal MethodDeclList MethodDeclList;
-nonterminal VarDecl VarDecl ;
-nonterminal ConstDecl ConstDecl ;
-nonterminal FormalParamList FormalParamList;
-nonterminal FormalParamDecl FormalParamDecl;
-nonterminal FormPars FormPars ;
-nonterminal StatementList StatementList;
-nonterminal Statement Statement;
-nonterminal Addop Addop ;
-nonterminal ArrayBracks ArrayBracks ;
-nonterminal FormalParamListExtended FormalParamListExtended;
-nonterminal DesignatorStatement DesignatorStatement;
-nonterminal Minus Minus;
-nonterminal VarDeclListExtended VarDeclListExtended ;
-nonterminal
-AddopTermList AddopTermList;
-nonterminal MulopFactorList MulopFactorList;
-nonterminal ConstType ConstType ;
-nonterminal ConstDeclListExtended ConstDeclListExtended ;
-nonterminal
-Assignop Assignop;
-nonterminal AddopLeft AddopLeft;
-nonterminal AddopRight AddopRight;
-nonterminal Mulop Mulop;
-nonterminal MulopLeft MulopLeft;
-nonterminal MulopRight MulopRight;
-
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName ;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr , ConstVarDeclList , VarDeclList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj MethodDeclList, VarDecl , ConstDecl ,
+FormalParamList, FormalParamDecl, FormPars ,
+StatementList, Statement, ArrayBracks , FormalParamListExtended ,
+DesignatorStatement, Minus, VarDeclListExtended ,
+AddopTermList, MulopFactorList , ConstDeclListExtended ,
+Assignop, AddopLeft, AddopRight, Mulop, MulopLeft, MulopRight , Addop ,
+Program, ProgName, Designator,
+MethodDecl, MethodTypeName , ConstType , Type, Term, Factor, Expr , ConstVarDeclList , VarDeclList;
 
 
 Program ::= (Program) PROG ProgName:p ConstVarDeclList:C1 LBRACE MethodDeclList:M2 RBRACE {: RESULT=new Program(p, C1, M2); RESULT.setLine(pleft); :}
@@ -104,7 +85,7 @@ ConstVarDeclList ::= (VarDeclarations) ConstVarDeclList:C1 VarDecl:V2 {: RESULT=
 				|
 				(NoConstVarDecl) {: RESULT=new NoConstVarDecl(); :}/* epsilon */
 				;
-VarDecl ::= (VarDeclArray) Type:varType IDENT:varName ArrayBracks:A1 VarDeclListExtended:V2 SEMI {: RESULT=new VarDeclArray(varType, varName, A1, V2); RESULT.setLine(varTypeleft); :}
+VarDecl ::= (VarDecl) Type:varType VarDeclListExtended:V1 IDENT:varName ArrayBracks:A2 SEMI {: RESULT=new VarDecl(varType, V1, varName, A2); RESULT.setLine(varTypeleft); :}
             ;
 
 ArrayBracks ::= (IsArray) LBRACK RBRACK {: RESULT=new IsArray(); :}
@@ -112,7 +93,8 @@ ArrayBracks ::= (IsArray) LBRACK RBRACK {: RESULT=new IsArray(); :}
                 (NoArray) {: RESULT=new NoArray(); :} /* epsilon */
                 ;
 
-VarDeclListExtended ::= (VarDecListExtendedYes) VarDeclListExtended:V1 COMMA IDENT:I2 ArrayBracks:A3 {: RESULT=new VarDecListExtendedYes(V1, I2, A3); RESULT.setLine(V1left); :}
+
+VarDeclListExtended ::= (VarDecListExtendedYes) VarDeclListExtended:V1 IDENT:varName ArrayBracks:A2 COMMA {: RESULT=new VarDecListExtendedYes(V1, varName, A2); RESULT.setLine(V1left); :}
                         |
                         (VarDecListExtendedNo) {: RESULT=new VarDecListExtendedNo(); :} /* epsilon */
                         ;
@@ -121,17 +103,17 @@ VarDeclListExtended ::= (VarDecListExtendedYes) VarDeclListExtended:V1 COMMA IDE
 Type ::= (Type) IDENT:typeName {: RESULT=new Type(typeName); RESULT.setLine(typeNameleft); :}
          ;
 
-ConstDecl ::= (ConstDeclNode) CONST Type:T1 IDENT:I2 EQUAL ConstType:C3 ConstDeclListExtended:C4 SEMI {: RESULT=new ConstDeclNode(T1, I2, C3, C4); RESULT.setLine(T1left); :}
+ConstDecl ::= (ConstDecl) CONST Type:T1 IDENT:constName EQUAL ConstType:C2 ConstDeclListExtended:C3 SEMI {: RESULT=new ConstDecl(T1, constName, C2, C3); RESULT.setLine(T1left); :}
               ;
 
-ConstType ::= (ConstNumber) NUMBER:N1 {: RESULT=new ConstNumber(N1); RESULT.setLine(N1left); :}
+ConstType ::= (ConstNumber) NUMBER:val {: RESULT=new ConstNumber(val); RESULT.setLine(valleft); :}
               |
-              (ConstBool) BOOL:B1 {: RESULT=new ConstBool(B1); RESULT.setLine(B1left); :}
+              (ConstBool) BOOL:val {: RESULT=new ConstBool(val); RESULT.setLine(valleft); :}
               |
-              (ConstChar) CHAR {: RESULT=new ConstChar(); :}
+              (ConstChar) CHAR:val {: RESULT=new ConstChar(val); RESULT.setLine(valleft); :}
               ;
 
-ConstDeclListExtended ::= (ConstDeclListExtendedVal) ConstDeclListExtended:C1 COMMA IDENT:I2 EQUAL ConstType:C3 {: RESULT=new ConstDeclListExtendedVal(C1, I2, C3); RESULT.setLine(C1left); :}
+ConstDeclListExtended ::= (ConstDeclListExtendedVal) ConstDeclListExtended:C1 COMMA IDENT:constName EQUAL ConstType:C2 {: RESULT=new ConstDeclListExtendedVal(C1, constName, C2); RESULT.setLine(C1left); :}
                            |
                            (NoConstDeclListExtended) {: RESULT=new NoConstDeclListExtended(); :} /* epsilon */
                            ;
@@ -141,8 +123,8 @@ MethodDeclList ::= (MethodDeclarations) MethodDeclList:M1 MethodDecl:M2 {: RESUL
 					(NoMethodDecl) {: RESULT=new NoMethodDecl(); :}/* epsilon */
 					;
 
-MethodDecl ::= (MethodDecl) MethodTypeName:M1 IDENT:methName
-			   LPAREN FormPars:F2 RPAREN VarDeclList:V3 LBRACE StatementList:S4 RBRACE {: RESULT=new MethodDecl(M1, methName, F2, V3, S4); RESULT.setLine(M1left); :}
+MethodDecl ::= (MethodDecl) MethodTypeName:methType
+			   LPAREN FormPars:F1 RPAREN VarDeclList:V2 LBRACE StatementList:S3 RBRACE {: RESULT=new MethodDecl(methType, F1, V2, S3); RESULT.setLine(methTypeleft); :}
 			   ;
 
 VarDeclList ::= (VarDeclListYes) VarDeclList:V1 VarDecl:V2 {: RESULT=new VarDeclListYes(V1, V2); RESULT.setLine(V1left); :}
@@ -150,9 +132,9 @@ VarDeclList ::= (VarDeclListYes) VarDeclList:V1 VarDecl:V2 {: RESULT=new VarDecl
                 (VarDeclLIstNo) {: RESULT=new VarDeclLIstNo(); :} /* epsilon */
                 ;
 
-MethodTypeName ::= (MethodType) Type:retType {: RESULT=new MethodType(retType); RESULT.setLine(retTypeleft); :}
+MethodTypeName ::= (MethodType) Type:retType IDENT:methName {: RESULT=new MethodType(retType, methName); RESULT.setLine(retTypeleft); :}
                     |
-                    (MethodVoid) VOID {: RESULT=new MethodVoid(); :}
+                    (MethodVoid) VOID IDENT:methName {: RESULT=new MethodVoid(methName); RESULT.setLine(methNameleft); :}
                     ;
 
 FormPars ::= (FormParams) FormalParamList:F1 {: RESULT=new FormParams(F1); RESULT.setLine(F1left); :}
@@ -214,7 +196,6 @@ MulopFactorList ::= (YesMulopFactorList) MulopFactorList:M1 Mulop:m Factor:f {: 
                      (NoMulopFactorList) {: RESULT=new NoMulopFactorList(); :} /* epsilon */
                      ;
 
-/* ConstSectDecl ::= (ConstSectDeclNode) CONST Type:constType; */
 
 Factor ::= (ConstTypeVal) ConstType:C1 {: RESULT=new ConstTypeVal(C1); RESULT.setLine(C1left); :}
             |

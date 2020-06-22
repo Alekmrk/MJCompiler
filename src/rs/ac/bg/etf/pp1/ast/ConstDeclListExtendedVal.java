@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/5/2020 15:23:18
+// 22/5/2020 4:9:3
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -8,13 +8,13 @@ package rs.ac.bg.etf.pp1.ast;
 public class ConstDeclListExtendedVal extends ConstDeclListExtended {
 
     private ConstDeclListExtended ConstDeclListExtended;
-    private String I2;
+    private String constName;
     private ConstType ConstType;
 
-    public ConstDeclListExtendedVal (ConstDeclListExtended ConstDeclListExtended, String I2, ConstType ConstType) {
+    public ConstDeclListExtendedVal (ConstDeclListExtended ConstDeclListExtended, String constName, ConstType ConstType) {
         this.ConstDeclListExtended=ConstDeclListExtended;
         if(ConstDeclListExtended!=null) ConstDeclListExtended.setParent(this);
-        this.I2=I2;
+        this.constName=constName;
         this.ConstType=ConstType;
         if(ConstType!=null) ConstType.setParent(this);
     }
@@ -27,12 +27,12 @@ public class ConstDeclListExtendedVal extends ConstDeclListExtended {
         this.ConstDeclListExtended=ConstDeclListExtended;
     }
 
-    public String getI2() {
-        return I2;
+    public String getConstName() {
+        return constName;
     }
 
-    public void setI2(String I2) {
-        this.I2=I2;
+    public void setConstName(String constName) {
+        this.constName=constName;
     }
 
     public ConstType getConstType() {
@@ -75,7 +75,7 @@ public class ConstDeclListExtendedVal extends ConstDeclListExtended {
             buffer.append(tab+"  null");
         buffer.append("\n");
 
-        buffer.append(" "+tab+I2);
+        buffer.append(" "+tab+constName);
         buffer.append("\n");
 
         if(ConstType!=null)

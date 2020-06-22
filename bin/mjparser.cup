@@ -56,20 +56,21 @@ scan with {:
 
 terminal PLUS , RPAREN , EQUAL , SEMI , RETURN , LPAREN , COMMA , PROG , PRINT
  , VOID , MINUS , MUL , DIV , MOD , LBRACK , RBRACK , READ , NEW , PLUS_PLUS , CONST ,
- MINUS_MINUS , LBRACE , RBRACE , PLUS_EQUAL , MINUS_EQUAL , MUL_EQUAL , DIV_EQUAL , MOD_EQUAL , CHAR;
+ MINUS_MINUS , LBRACE , RBRACE , PLUS_EQUAL , MINUS_EQUAL , MUL_EQUAL , DIV_EQUAL , MOD_EQUAL ;
+
 terminal Integer NUMBER ;
 terminal Boolean BOOL ;
+terminal Character CHAR ;
 terminal String IDENT ;
 
-nonterminal MethodDeclList, VarDecl , ConstDecl ;
-nonterminal FormalParamList, FormalParamDecl, FormPars ;
-nonterminal StatementList, Statement, Addop , ArrayBracks , FormalParamListExtended;
-nonterminal DesignatorStatement, Minus, VarDeclListExtended ,
-AddopTermList, MulopFactorList, ConstType , ConstDeclListExtended ,
-Assignop, AddopLeft, AddopRight, Mulop, MulopLeft, MulopRight;
-
-nonterminal rs.etf.pp1.symboltable.concepts.Obj Program, ProgName, Designator, MethodDecl, MethodTypeName ;
-nonterminal rs.etf.pp1.symboltable.concepts.Struct Type, Term, Factor, Expr , ConstVarDeclList , VarDeclList;
+nonterminal rs.etf.pp1.symboltable.concepts.Obj MethodDeclList, VarDecl , ConstDecl ,
+FormalParamList, FormalParamDecl, FormPars ,
+StatementList, Statement, ArrayBracks , FormalParamListExtended ,
+DesignatorStatement, Minus, VarDeclListExtended ,
+AddopTermList, MulopFactorList , ConstDeclListExtended ,
+Assignop, AddopLeft, AddopRight, Mulop, MulopLeft, MulopRight , Addop ,
+Program, ProgName, Designator,
+MethodDecl, MethodTypeName , ConstType , Type, Term, Factor, Expr , ConstVarDeclList , VarDeclList;
 
 
 Program ::= (Program) PROG ProgName:p ConstVarDeclList LBRACE MethodDeclList RBRACE
@@ -84,7 +85,7 @@ ConstVarDeclList ::= (VarDeclarations) ConstVarDeclList VarDecl
 				|
 				(NoConstVarDecl)/* epsilon */
 				;
-VarDecl ::= (VarDeclArray) Type:varType IDENT:varName ArrayBracks VarDeclListExtended SEMI
+VarDecl ::= (VarDecl) Type:varType VarDeclListExtended IDENT:varName ArrayBracks SEMI
             ;
 
 ArrayBracks ::= (IsArray) LBRACK RBRACK
@@ -92,7 +93,8 @@ ArrayBracks ::= (IsArray) LBRACK RBRACK
                 (NoArray) /* epsilon */
                 ;
 
-VarDeclListExtended ::= (VarDecListExtendedYes) VarDeclListExtended COMMA IDENT ArrayBracks
+
+VarDeclListExtended ::= (VarDecListExtendedYes) VarDeclListExtended IDENT:varName ArrayBracks COMMA
                         |
                         (VarDecListExtendedNo) /* epsilon */
                         ;
@@ -101,17 +103,17 @@ VarDeclListExtended ::= (VarDecListExtendedYes) VarDeclListExtended COMMA IDENT 
 Type ::= (Type) IDENT:typeName
          ;
 
-ConstDecl ::= (ConstDeclNode) CONST Type IDENT EQUAL ConstType ConstDeclListExtended SEMI
+ConstDecl ::= (ConstDecl) CONST Type IDENT:constName EQUAL ConstType ConstDeclListExtended SEMI
               ;
 
-ConstType ::= (ConstNumber) NUMBER
+ConstType ::= (ConstNumber) NUMBER:val
               |
-              (ConstBool) BOOL
+              (ConstBool) BOOL:val
               |
-              (ConstChar) CHAR
+              (ConstChar) CHAR:val
               ;
 
-ConstDeclListExtended ::= (ConstDeclListExtendedVal) ConstDeclListExtended COMMA IDENT EQUAL ConstType
+ConstDeclListExtended ::= (ConstDeclListExtendedVal) ConstDeclListExtended COMMA IDENT:constName EQUAL ConstType
                            |
                            (NoConstDeclListExtended) /* epsilon */
                            ;
@@ -121,7 +123,7 @@ MethodDeclList ::= (MethodDeclarations) MethodDeclList MethodDecl
 					(NoMethodDecl)/* epsilon */
 					;
 
-MethodDecl ::= (MethodDecl) MethodTypeName IDENT:methName
+MethodDecl ::= (MethodDecl) MethodTypeName:methType
 			   LPAREN FormPars RPAREN VarDeclList LBRACE StatementList RBRACE
 			   ;
 
@@ -130,9 +132,9 @@ VarDeclList ::= (VarDeclListYes) VarDeclList VarDecl
                 (VarDeclLIstNo) /* epsilon */
                 ;
 
-MethodTypeName ::= (MethodType) Type:retType
+MethodTypeName ::= (MethodType) Type:retType IDENT:methName
                     |
-                    (MethodVoid) VOID
+                    (MethodVoid) VOID IDENT:methName
                     ;
 
 FormPars ::= (FormParams) FormalParamList
@@ -194,7 +196,6 @@ MulopFactorList ::= (YesMulopFactorList) MulopFactorList Mulop:m Factor:f
                      (NoMulopFactorList) /* epsilon */
                      ;
 
-/* ConstSectDecl ::= (ConstSectDeclNode) CONST Type:constType; */
 
 Factor ::= (ConstTypeVal) ConstType
             |

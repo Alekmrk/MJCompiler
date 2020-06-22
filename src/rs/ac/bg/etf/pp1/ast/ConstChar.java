@@ -1,13 +1,24 @@
 // generated with ast extension for cup
 // version 0.8
-// 21/5/2020 15:23:18
+// 22/5/2020 4:9:3
 
 
 package rs.ac.bg.etf.pp1.ast;
 
 public class ConstChar extends ConstType {
 
-    public ConstChar () {
+    private Character val;
+
+    public ConstChar (Character val) {
+        this.val=val;
+    }
+
+    public Character getVal() {
+        return val;
+    }
+
+    public void setVal(Character val) {
+        this.val=val;
     }
 
     public void accept(Visitor visitor) {
@@ -29,6 +40,9 @@ public class ConstChar extends ConstType {
         StringBuffer buffer=new StringBuffer();
         buffer.append(tab);
         buffer.append("ConstChar(\n");
+
+        buffer.append(" "+tab+val);
+        buffer.append("\n");
 
         buffer.append(tab);
         buffer.append(") [ConstChar]");
