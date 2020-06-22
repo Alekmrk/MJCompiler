@@ -35,13 +35,18 @@ program test301
 		int a;
 		bool b;
 	{
+
 		bodovi = 0;
+		pniz[bodovi+2]++;
+		//dniz[1]++;
 		bodovi++;
 		bodovi = bodovi + jedan;
 		bodovi = bodovi * pet;
 		bodovi--;
 		bodovi+=bodovi;
 		print(bodovi);
+		//print(nema);
+		read(dniz[1]);
         a=5+2;
         bulijan=false;
         bulijan=true;

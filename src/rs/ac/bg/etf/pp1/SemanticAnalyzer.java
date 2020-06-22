@@ -182,15 +182,29 @@ public class SemanticAnalyzer extends VisitorAdaptor {
     }
 
     public void visit(ReadStmt readStmt){
-        Obj obj = Tab.find(readStmt.getDesignator().obj.getName());
+        //mora biti promenjiva ili deo niza
+        // mora biti char, int ili bool
+        //ovo zapravo ne mora zato sto vec proveravamo u designatoru
+        /*Obj obj = Tab.find(readStmt.getDesignator().obj.getName());
         if (obj == Tab.noObj) {
             report_error("Greska na liniji " + readStmt.getDesignator().getLine()+ " : ime "+readStmt.getDesignator().obj.getName()+" nije deklarisano! ", null);
+        }*/
+        if(!readStmt.getDesignator().obj.getType().equals(Tab.intType)
+                && !readStmt.getDesignator().obj.getType().equals(Tab.charType)
+                && !readStmt.getDesignator().obj.getType().equals(SymbolExtension.boolType)){
+            report_error("Greska na liniji " + readStmt.getDesignator().getLine()+ " : Read radi samo sa INT, BOOL i sa CHAR", null);
         }
     }
     public void visit(PrintStmt printStmt){
-        Obj obj = Tab.find(printStmt.getExpr().obj.getName());
+        //ovo zapravo ne mora zato sto vec proveravamo u designatoru
+        /*Obj obj = Tab.find(printStmt.getExpr().obj.getName());
         if (obj == Tab.noObj) {
-            report_error("Greska na liniji " + printStmt.getExpr().getLine()+ " : ime "+printStmt.getExpr().obj.getName()+" nije deklarisano! ", null);
+            report_error("Greska na liniji " + printStmt.getLine()+ " : ime "+printStmt.getExpr().obj.getName()+" nije deklarisano! ", null);
+        }*/
+        if(!printStmt.getExpr().obj.getType().equals(Tab.intType)
+                && !printStmt.getExpr().obj.getType().equals(Tab.charType)
+                && !printStmt.getExpr().obj.getType().equals(SymbolExtension.boolType)){
+            report_error("Greska na liniji " + printStmt.getExpr().getLine()+ " : Print radi samo sa INT, BOOL i sa CHAR", null);
         }
     }
 
@@ -232,6 +246,8 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         currentType=addExpr.getTerm().obj.getType();
         //mora od faktora da se uzme i tako redom
         addExpr.obj=addExpr.getTerm().obj;
+        //zbog printa moram tacno da odredim liniju
+        addExpr.setLine(addExpr.getTerm().getLine());
     }
     public void visit(YesMinus yesMinus){
         isMinus=true;
