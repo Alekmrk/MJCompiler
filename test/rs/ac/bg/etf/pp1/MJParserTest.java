@@ -3,7 +3,7 @@ package rs.ac.bg.etf.pp1;
 import java_cup.runtime.Symbol;
 import org.apache.log4j.Logger;
 import org.apache.log4j.xml.DOMConfigurator;
-import rs.ac.bg.etf.pp1.ast.SyntaxNode;
+import rs.ac.bg.etf.pp1.ast.Program;
 import rs.ac.bg.etf.pp1.util.Log4JUtils;
 import rs.etf.pp1.mj.runtime.Code;
 import rs.etf.pp1.symboltable.Tab;
@@ -39,8 +39,8 @@ public class MJParserTest {
             Yylex lexer = new Yylex(br);
             MJParser p = new MJParser(lexer);
             Symbol s = p.parse();  //pocetak parsiranja
-            SyntaxNode prog = (SyntaxNode)(s.value);
-
+            Program prog = (Program)(s.value);
+            log.info(prog.toString(""));
             Tab.init(); // Universe scope
             SymbolExtension.init();
             SemanticAnalyzer semanticCheck = new SemanticAnalyzer();
@@ -56,7 +56,9 @@ public class MJParserTest {
                     objFile.delete();
 
                 // Code generation...
+                //Tab.dump();
                 CodeGenerator codeGenerator = new CodeGenerator();
+                //Tab.dump();
                 prog.traverseBottomUp(codeGenerator);
                 Code.dataSize = semanticCheck.nVars;
                 Code.mainPc = codeGenerator.getMainPc();

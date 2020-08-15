@@ -1,470 +1,257 @@
-INFO  21:50:09,096 - Compiling source file: C:\Users\pa160422d\Desktop\pp1\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
-INFO  21:50:09,126 - #9 program
-INFO  21:50:09,126 - #33 test301
-INFO  21:50:09,126 - #21 const
-INFO  21:50:09,126 - #33 char
-INFO  21:50:09,126 - #33 nulaCh
-INFO  21:50:09,126 - #4 =
-INFO  21:50:09,126 - #32 c
-INFO  21:50:09,126 - #5 ;
-INFO  21:50:09,126 - #21 const
-INFO  21:50:09,126 - #33 int
-INFO  21:50:09,126 - #33 nula
-INFO  21:50:09,126 - #4 =
-INFO  21:50:09,126 - #30 5
-INFO  21:50:09,126 - #5 ;
-INFO  21:50:09,126 - #21 const
-INFO  21:50:09,126 - #33 int
-INFO  21:50:09,126 - #33 jedan
-INFO  21:50:09,126 - #4 =
-INFO  21:50:09,126 - #30 1
-INFO  21:50:09,126 - #8 ,
-INFO  21:50:09,126 - #33 sest
-INFO  21:50:09,131 - #4 =
-INFO  21:50:09,131 - #30 6
-INFO  21:50:09,131 - #8 ,
-INFO  21:50:09,131 - #33 proba
-INFO  21:50:09,131 - #4 =
-INFO  21:50:09,131 - #30 7
-INFO  21:50:09,131 - #8 ,
-INFO  21:50:09,131 - #33 opet
-INFO  21:50:09,131 - #4 =
-INFO  21:50:09,131 - #30 8
-INFO  21:50:09,131 - #5 ;
-INFO  21:50:09,131 - #21 const
-INFO  21:50:09,131 - #33 int
-INFO  21:50:09,131 - #33 pet
-INFO  21:50:09,131 - #4 =
-INFO  21:50:09,131 - #30 5
-INFO  21:50:09,131 - #5 ;
-INFO  21:50:09,131 - #33 int
-INFO  21:50:09,131 - #33 pniz
-INFO  21:50:09,131 - #16 [
-INFO  21:50:09,131 - #17 ]
-INFO  21:50:09,131 - #5 ;
-INFO  21:50:09,131 - #33 char
-INFO  21:50:09,136 - #33 dniz
-INFO  21:50:09,136 - #16 [
-INFO  21:50:09,136 - #17 ]
-INFO  21:50:09,136 - #5 ;
-INFO  21:50:09,136 - #33 bool
-INFO  21:50:09,136 - #33 bulijan
-INFO  21:50:09,136 - #5 ;
-INFO  21:50:09,136 - #33 int
-INFO  21:50:09,136 - #33 niz
-INFO  21:50:09,141 - #16 [
-INFO  21:50:09,141 - #17 ]
-INFO  21:50:09,141 - #8 ,
-INFO  21:50:09,141 - #33 niz2
-INFO  21:50:09,141 - #16 [
-INFO  21:50:09,141 - #17 ]
-INFO  21:50:09,141 - #8 ,
-INFO  21:50:09,141 - #33 niz3
-INFO  21:50:09,141 - #16 [
-INFO  21:50:09,141 - #17 ]
-INFO  21:50:09,141 - #8 ,
-INFO  21:50:09,141 - #33 niz4
-INFO  21:50:09,141 - #16 [
-INFO  21:50:09,141 - #17 ]
-INFO  21:50:09,141 - #5 ;
-INFO  21:50:09,141 - #21 const
-INFO  21:50:09,141 - #33 bool
-INFO  21:50:09,141 - #33 bol
-INFO  21:50:09,141 - #4 =
-INFO  21:50:09,141 - #31 true
-INFO  21:50:09,141 - #5 ;
-INFO  21:50:09,141 - #33 int
-INFO  21:50:09,141 - #33 ret
-INFO  21:50:09,141 - #8 ,
-INFO  21:50:09,141 - #33 m
-INFO  21:50:09,141 - #5 ;
-INFO  21:50:09,141 - #33 char
-INFO  21:50:09,141 - #33 nizch
-INFO  21:50:09,141 - #16 [
-INFO  21:50:09,141 - #17 ]
-INFO  21:50:09,141 - #5 ;
-INFO  21:50:09,141 - #33 int
-INFO  21:50:09,141 - #33 a
-INFO  21:50:09,141 - #5 ;
-INFO  21:50:09,141 - #23 {
-INFO  21:50:09,141 - #33 char
-INFO  21:50:09,141 - #33 func2
-INFO  21:50:09,141 - #7 (
-INFO  21:50:09,141 - #3 )
-INFO  21:50:09,146 - #33 char
-INFO  21:50:09,146 - #33 c
-INFO  21:50:09,146 - #5 ;
-INFO  21:50:09,146 - #33 int
-INFO  21:50:09,146 - #33 bodovi
-INFO  21:50:09,146 - #5 ;
-INFO  21:50:09,146 - #33 int
-INFO  21:50:09,146 - #33 ret
-INFO  21:50:09,146 - #16 [
-INFO  21:50:09,146 - #17 ]
-INFO  21:50:09,146 - #5 ;
-INFO  21:50:09,146 - #33 int
-INFO  21:50:09,146 - #33 a
-INFO  21:50:09,146 - #5 ;
-INFO  21:50:09,146 - #23 {
-INFO  21:50:09,146 - #33 bodovi
-INFO  21:50:09,146 - #4 =
-INFO  21:50:09,146 - #30 2
-INFO  21:50:09,146 - #5 ;
-INFO  21:50:09,151 - #33 ret
-INFO  21:50:09,151 - #16 [
-INFO  21:50:09,151 - #30 1
-INFO  21:50:09,151 - #17 ]
-INFO  21:50:09,151 - #4 =
-INFO  21:50:09,151 - #30 3
-INFO  21:50:09,151 - #5 ;
-INFO  21:50:09,151 - #6 return
-INFO  21:50:09,151 - #30 1
-INFO  21:50:09,151 - #5 ;
-INFO  21:50:09,151 - #24 }
-INFO  21:50:09,151 - #11 void
-INFO  21:50:09,151 - #33 main
-INFO  21:50:09,151 - #7 (
-INFO  21:50:09,151 - #3 )
-INFO  21:50:09,151 - #33 int
-INFO  21:50:09,151 - #33 bodovi
-INFO  21:50:09,151 - #5 ;
-INFO  21:50:09,151 - #33 int
-INFO  21:50:09,151 - #33 a
-INFO  21:50:09,151 - #5 ;
-INFO  21:50:09,151 - #33 bool
-INFO  21:50:09,151 - #33 b
-INFO  21:50:09,151 - #5 ;
-INFO  21:50:09,151 - #23 {
-INFO  21:50:09,151 - #33 bodovi
-INFO  21:50:09,151 - #4 =
-INFO  21:50:09,151 - #30 0
-INFO  21:50:09,151 - #5 ;
-INFO  21:50:09,151 - #33 pniz
-INFO  21:50:09,151 - #16 [
-INFO  21:50:09,151 - #33 bodovi
-INFO  21:50:09,151 - #2 +
-INFO  21:50:09,151 - #30 2
-INFO  21:50:09,156 - #17 ]
-INFO  21:50:09,156 - #20 ++
-INFO  21:50:09,156 - #5 ;
-INFO  21:50:09,156 - #33 bodovi
-INFO  21:50:09,156 - #20 ++
-INFO  21:50:09,156 - #5 ;
-INFO  21:50:09,156 - #33 bodovi
-INFO  21:50:09,156 - #4 =
-INFO  21:50:09,156 - #33 bodovi
-INFO  21:50:09,156 - #2 +
-INFO  21:50:09,156 - #33 jedan
-INFO  21:50:09,156 - #5 ;
-INFO  21:50:09,156 - #33 bodovi
-INFO  21:50:09,156 - #4 =
-INFO  21:50:09,156 - #33 bodovi
-INFO  21:50:09,156 - #13 *
-INFO  21:50:09,156 - #33 pet
-INFO  21:50:09,156 - #5 ;
-INFO  21:50:09,156 - #33 bodovi
-INFO  21:50:09,156 - #22 --
-INFO  21:50:09,156 - #5 ;
-INFO  21:50:09,156 - #33 bodovi
-INFO  21:50:09,156 - #25 +=
-INFO  21:50:09,156 - #33 bodovi
-INFO  21:50:09,156 - #5 ;
-INFO  21:50:09,161 - #10 print
-INFO  21:50:09,161 - #7 (
-INFO  21:50:09,161 - #33 bodovi
-INFO  21:50:09,161 - #3 )
-INFO  21:50:09,161 - #5 ;
-INFO  21:50:09,161 - #18 read
-INFO  21:50:09,161 - #7 (
-INFO  21:50:09,161 - #33 dniz
-INFO  21:50:09,161 - #16 [
-INFO  21:50:09,161 - #30 1
-INFO  21:50:09,161 - #17 ]
-INFO  21:50:09,161 - #3 )
-INFO  21:50:09,161 - #5 ;
-INFO  21:50:09,161 - #33 a
-INFO  21:50:09,161 - #4 =
-INFO  21:50:09,161 - #30 5
-INFO  21:50:09,161 - #2 +
-INFO  21:50:09,161 - #30 2
-INFO  21:50:09,161 - #5 ;
-INFO  21:50:09,161 - #33 bulijan
-INFO  21:50:09,161 - #4 =
-INFO  21:50:09,161 - #31 false
-INFO  21:50:09,161 - #5 ;
-INFO  21:50:09,161 - #33 bulijan
-INFO  21:50:09,161 - #4 =
-INFO  21:50:09,161 - #31 true
-INFO  21:50:09,161 - #5 ;
-INFO  21:50:09,161 - #33 a
-INFO  21:50:09,161 - #4 =
-INFO  21:50:09,161 - #33 pniz
-INFO  21:50:09,161 - #16 [
-INFO  21:50:09,161 - #30 1
-INFO  21:50:09,161 - #17 ]
-INFO  21:50:09,161 - #5 ;
-INFO  21:50:09,161 - #33 pniz
-INFO  21:50:09,161 - #16 [
-INFO  21:50:09,161 - #30 1
-INFO  21:50:09,161 - #17 ]
-INFO  21:50:09,161 - #4 =
-INFO  21:50:09,161 - #33 a
-INFO  21:50:09,161 - #5 ;
-INFO  21:50:09,161 - #33 pniz
-INFO  21:50:09,161 - #4 =
-INFO  21:50:09,161 - #19 new
-INFO  21:50:09,161 - #33 int
-INFO  21:50:09,161 - #16 [
-INFO  21:50:09,161 - #30 4
-INFO  21:50:09,161 - #17 ]
-INFO  21:50:09,161 - #5 ;
-INFO  21:50:09,161 - #33 niz
-INFO  21:50:09,161 - #16 [
-INFO  21:50:09,161 - #33 nula
-INFO  21:50:09,161 - #17 ]
-INFO  21:50:09,161 - #25 +=
-INFO  21:50:09,166 - #33 jedan
-INFO  21:50:09,166 - #25 +=
-INFO  21:50:09,166 - #30 5
-INFO  21:50:09,166 - #5 ;
-INFO  21:50:09,166 - #33 niz
-INFO  21:50:09,166 - #16 [
-INFO  21:50:09,166 - #30 1
-INFO  21:50:09,166 - #17 ]
-INFO  21:50:09,166 - #4 =
-INFO  21:50:09,166 - #30 2
-INFO  21:50:09,166 - #5 ;
-INFO  21:50:09,166 - #33 niz
-INFO  21:50:09,166 - #16 [
-INFO  21:50:09,166 - #30 5
-INFO  21:50:09,166 - #17 ]
-INFO  21:50:09,166 - #29 %=
-INFO  21:50:09,166 - #30 3
-INFO  21:50:09,166 - #5 ;
-INFO  21:50:09,166 - #33 niz
-INFO  21:50:09,166 - #16 [
-INFO  21:50:09,166 - #33 niz
-INFO  21:50:09,166 - #16 [
-INFO  21:50:09,166 - #33 jedan
-INFO  21:50:09,166 - #17 ]
-INFO  21:50:09,166 - #17 ]
-INFO  21:50:09,166 - #25 +=
-INFO  21:50:09,166 - #33 niz
-INFO  21:50:09,166 - #16 [
-INFO  21:50:09,166 - #33 niz
-INFO  21:50:09,166 - #16 [
-INFO  21:50:09,166 - #30 0
-INFO  21:50:09,166 - #17 ]
-INFO  21:50:09,166 - #17 ]
-INFO  21:50:09,166 - #13 *
-INFO  21:50:09,166 - #30 3
-INFO  21:50:09,166 - #5 ;
-INFO  21:50:09,166 - #33 bodovi
-INFO  21:50:09,166 - #4 =
-INFO  21:50:09,166 - #33 niz
-INFO  21:50:09,166 - #16 [
-INFO  21:50:09,166 - #30 2
-INFO  21:50:09,166 - #17 ]
-INFO  21:50:09,166 - #14 /
-INFO  21:50:09,166 - #33 niz
-INFO  21:50:09,166 - #16 [
-INFO  21:50:09,166 - #30 0
-INFO  21:50:09,166 - #17 ]
-INFO  21:50:09,166 - #5 ;
-INFO  21:50:09,166 - #10 print
-INFO  21:50:09,166 - #7 (
-INFO  21:50:09,166 - #33 bodovi
-INFO  21:50:09,166 - #3 )
-INFO  21:50:09,171 - #5 ;
-INFO  21:50:09,171 - #10 print
-INFO  21:50:09,171 - #7 (
-INFO  21:50:09,171 - #33 niz
-INFO  21:50:09,171 - #16 [
-INFO  21:50:09,171 - #30 2
-INFO  21:50:09,171 - #17 ]
-INFO  21:50:09,171 - #3 )
-INFO  21:50:09,171 - #5 ;
-INFO  21:50:09,171 - #18 read
-INFO  21:50:09,171 - #7 (
-INFO  21:50:09,171 - #33 bodovi
-INFO  21:50:09,171 - #3 )
-INFO  21:50:09,171 - #5 ;
-INFO  21:50:09,171 - #33 niz
-INFO  21:50:09,171 - #16 [
-INFO  21:50:09,171 - #30 2
-INFO  21:50:09,171 - #17 ]
-INFO  21:50:09,171 - #25 +=
-INFO  21:50:09,171 - #33 bodovi
-INFO  21:50:09,171 - #27 *=
-INFO  21:50:09,171 - #30 2
-INFO  21:50:09,171 - #5 ;
-INFO  21:50:09,171 - #33 niz
-INFO  21:50:09,171 - #16 [
-INFO  21:50:09,171 - #30 2
-INFO  21:50:09,171 - #17 ]
-INFO  21:50:09,171 - #20 ++
-INFO  21:50:09,171 - #5 ;
-INFO  21:50:09,171 - #10 print
-INFO  21:50:09,171 - #7 (
-INFO  21:50:09,171 - #33 niz
-INFO  21:50:09,171 - #16 [
-INFO  21:50:09,171 - #30 2
-INFO  21:50:09,171 - #17 ]
-INFO  21:50:09,171 - #3 )
-INFO  21:50:09,171 - #5 ;
-INFO  21:50:09,171 - #33 nizch
-INFO  21:50:09,171 - #4 =
-INFO  21:50:09,171 - #19 new
-INFO  21:50:09,171 - #33 char
-INFO  21:50:09,171 - #16 [
-INFO  21:50:09,171 - #30 3
-INFO  21:50:09,171 - #17 ]
-INFO  21:50:09,171 - #5 ;
-INFO  21:50:09,171 - #33 nizch
-INFO  21:50:09,171 - #16 [
-INFO  21:50:09,171 - #30 0
-INFO  21:50:09,171 - #17 ]
-INFO  21:50:09,171 - #4 =
-INFO  21:50:09,171 - #32 a
-INFO  21:50:09,171 - #5 ;
-INFO  21:50:09,171 - #33 nizch
-INFO  21:50:09,171 - #16 [
-INFO  21:50:09,171 - #33 jedan
-INFO  21:50:09,171 - #17 ]
-INFO  21:50:09,171 - #4 =
-INFO  21:50:09,171 - #32 b
-INFO  21:50:09,171 - #5 ;
-INFO  21:50:09,171 - #33 nizch
-INFO  21:50:09,171 - #16 [
-INFO  21:50:09,171 - #33 pet
-INFO  21:50:09,171 - #12 -
-INFO  21:50:09,171 - #30 3
-INFO  21:50:09,176 - #17 ]
-INFO  21:50:09,176 - #4 =
-INFO  21:50:09,176 - #32 c
-INFO  21:50:09,176 - #5 ;
-INFO  21:50:09,176 - #10 print
-INFO  21:50:09,176 - #7 (
-INFO  21:50:09,176 - #33 nizch
-INFO  21:50:09,176 - #16 [
-INFO  21:50:09,176 - #30 1
-INFO  21:50:09,176 - #17 ]
-INFO  21:50:09,176 - #3 )
-INFO  21:50:09,176 - #5 ;
-INFO  21:50:09,176 - #10 print
-INFO  21:50:09,176 - #7 (
-INFO  21:50:09,176 - #33 nizch
-INFO  21:50:09,176 - #16 [
-INFO  21:50:09,176 - #33 jedan
-INFO  21:50:09,176 - #13 *
-INFO  21:50:09,176 - #30 2
-INFO  21:50:09,176 - #17 ]
-INFO  21:50:09,176 - #3 )
-INFO  21:50:09,176 - #5 ;
-INFO  21:50:09,176 - #33 a
-INFO  21:50:09,176 - #4 =
-INFO  21:50:09,176 - #30 -5
-INFO  21:50:09,176 - #2 +
-INFO  21:50:09,176 - #30 -1
-INFO  21:50:09,176 - #5 ;
-INFO  21:50:09,176 - #10 print
-INFO  21:50:09,176 - #7 (
-INFO  21:50:09,176 - #33 bodovi
-INFO  21:50:09,176 - #2 +
-INFO  21:50:09,176 - #7 (
-INFO  21:50:09,176 - #33 pet
-INFO  21:50:09,176 - #13 *
-INFO  21:50:09,176 - #33 jedan
-INFO  21:50:09,176 - #12 -
-INFO  21:50:09,176 - #30 1
-INFO  21:50:09,176 - #3 )
-INFO  21:50:09,176 - #13 *
-INFO  21:50:09,176 - #33 bodovi
-INFO  21:50:09,176 - #12 -
-INFO  21:50:09,176 - #7 (
-INFO  21:50:09,176 - #30 3
-INFO  21:50:09,176 - #15 %
-INFO  21:50:09,176 - #30 2
-INFO  21:50:09,176 - #2 +
-INFO  21:50:09,176 - #30 3
-INFO  21:50:09,176 - #13 *
-INFO  21:50:09,176 - #30 2
-INFO  21:50:09,176 - #12 -
-INFO  21:50:09,176 - #30 3
-INFO  21:50:09,176 - #3 )
-INFO  21:50:09,176 - #3 )
-INFO  21:50:09,176 - #5 ;
-INFO  21:50:09,176 - #33 bodovi
-INFO  21:50:09,176 - #4 =
-INFO  21:50:09,176 - #33 bodovi
-INFO  21:50:09,176 - #2 +
-INFO  21:50:09,176 - #7 (
-INFO  21:50:09,176 - #33 pet
-INFO  21:50:09,176 - #13 *
-INFO  21:50:09,176 - #33 jedan
-INFO  21:50:09,176 - #12 -
-INFO  21:50:09,176 - #30 1
-INFO  21:50:09,176 - #3 )
-INFO  21:50:09,176 - #13 *
-INFO  21:50:09,176 - #33 bodovi
-INFO  21:50:09,176 - #12 -
-INFO  21:50:09,176 - #7 (
-INFO  21:50:09,176 - #30 3
-INFO  21:50:09,176 - #15 %
-INFO  21:50:09,176 - #30 2
-INFO  21:50:09,176 - #2 +
-INFO  21:50:09,176 - #30 3
-INFO  21:50:09,176 - #13 *
-INFO  21:50:09,176 - #30 2
-INFO  21:50:09,176 - #12 -
-INFO  21:50:09,176 - #30 3
-INFO  21:50:09,176 - #3 )
-INFO  21:50:09,176 - #5 ;
-INFO  21:50:09,176 - #10 print
-INFO  21:50:09,176 - #7 (
-INFO  21:50:09,176 - #33 bodovi
-INFO  21:50:09,181 - #3 )
-INFO  21:50:09,181 - #5 ;
-INFO  21:50:09,181 - #6 return
-INFO  21:50:09,181 - #5 ;
-INFO  21:50:09,181 - #24 }
-INFO  21:50:09,181 - #24 }
-INFO  21:50:09,186 - Deklarisana konstanta nulaCh na liniji 5
-INFO  21:50:09,186 - Deklarisana konstanta nula na liniji 6
-INFO  21:50:09,186 - Deklarisana konstanta sest na liniji 19
-INFO  21:50:09,186 - Deklarisana konstanta proba na liniji 19
-INFO  21:50:09,186 - Deklarisana konstanta opet na liniji 19
-INFO  21:50:09,186 - Deklarisana konstanta jedan na liniji 7
-INFO  21:50:09,186 - Deklarisana konstanta pet na liniji 8
-INFO  21:50:09,186 - Deklarisana promenljiva pniz na liniji 9
-INFO  21:50:09,186 - Niz je promenljiva:pniz na liniji 9
-INFO  21:50:09,186 - Deklarisana promenljiva dniz na liniji 10
-INFO  21:50:09,186 - Niz je promenljiva:dniz na liniji 10
-INFO  21:50:09,186 - Deklarisana promenljiva bulijan na liniji 11
-INFO  21:50:09,186 - Deklarisana promenljiva niz na liniji 1
-INFO  21:50:09,191 - Niz je promenljiva:niz na liniji 1
-INFO  21:50:09,191 - Deklarisana promenljiva niz2 na liniji 1
-INFO  21:50:09,191 - Niz je promenljiva:niz2 na liniji 1
-INFO  21:50:09,191 - Deklarisana promenljiva niz3 na liniji 1
-INFO  21:50:09,191 - Niz je promenljiva:niz3 na liniji 1
-INFO  21:50:09,191 - Deklarisana promenljiva niz4 na liniji 12
-INFO  21:50:09,191 - Niz je promenljiva:niz4 na liniji 12
-INFO  21:50:09,191 - Deklarisana konstanta bol na liniji 13
-INFO  21:50:09,191 - Deklarisana promenljiva ret na liniji 1
-INFO  21:50:09,191 - Deklarisana promenljiva m na liniji 14
-INFO  21:50:09,191 - Deklarisana promenljiva nizch na liniji 15
-INFO  21:50:09,191 - Niz je promenljiva:nizch na liniji 15
-INFO  21:50:09,191 - Deklarisana promenljiva a na liniji 17
-INFO  21:50:09,191 - Obradjuje se funkcija func2 na liniji 19
-INFO  21:50:09,191 - Deklarisana promenljiva c na liniji 20
-INFO  21:50:09,191 - Deklarisana promenljiva bodovi na liniji 23
-INFO  21:50:09,191 - Deklarisana promenljiva ret na liniji 24
-INFO  21:50:09,191 - Niz je promenljiva:ret na liniji 24
-INFO  21:50:09,191 - Deklarisana promenljiva a na liniji 25
-INFO  21:50:09,191 - Obradjuje se void funkcija main na liniji 33
-INFO  21:50:09,191 - Deklarisana promenljiva bodovi na liniji 34
-INFO  21:50:09,191 - Deklarisana promenljiva a na liniji 35
-INFO  21:50:09,191 - Deklarisana promenljiva b na liniji 36
-INFO  21:50:09,191 - Print calls = 0
-INFO  21:50:09,191 - Generating bytecode file: C:\Users\pa160422d\Desktop\pp1\pp1lab.templateAST\workspace\MJCompiler\test\program
-INFO  21:50:09,216 - Parsiranje uspesno zavrseno!
+INFO  23:48:36,938 - Compiling source file: C:\Users\pa160422d\Desktop\pp1\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
+INFO  23:48:36,969 - #9 program
+INFO  23:48:36,969 - #33 test301
+INFO  23:48:36,969 - #33 int
+INFO  23:48:36,970 - #33 d
+INFO  23:48:36,971 - #5 ;
+INFO  23:48:36,972 - #21 const
+INFO  23:48:36,972 - #33 int
+INFO  23:48:36,973 - #33 z
+INFO  23:48:36,973 - #4 =
+INFO  23:48:36,973 - #30 67
+INFO  23:48:36,973 - #8 ,
+INFO  23:48:36,973 - #33 pp
+INFO  23:48:36,974 - #4 =
+INFO  23:48:36,974 - #30 97
+INFO  23:48:36,974 - #5 ;
+INFO  23:48:36,974 - #33 int
+INFO  23:48:36,975 - #33 m
+INFO  23:48:36,976 - #5 ;
+INFO  23:48:36,976 - #33 int
+INFO  23:48:36,976 - #33 niz
+INFO  23:48:36,976 - #16 [
+INFO  23:48:36,978 - #17 ]
+INFO  23:48:36,978 - #5 ;
+INFO  23:48:36,978 - #33 int
+INFO  23:48:36,978 - #33 j
+INFO  23:48:36,978 - #16 [
+INFO  23:48:36,978 - #17 ]
+INFO  23:48:36,978 - #5 ;
+INFO  23:48:36,978 - #23 {
+INFO  23:48:36,978 - #11 void
+INFO  23:48:36,978 - #33 main
+INFO  23:48:36,978 - #7 (
+INFO  23:48:36,979 - #3 )
+INFO  23:48:36,979 - #33 bool
+INFO  23:48:36,980 - #33 n1
+INFO  23:48:36,980 - #16 [
+INFO  23:48:36,980 - #17 ]
+INFO  23:48:36,980 - #5 ;
+INFO  23:48:36,980 - #33 int
+INFO  23:48:36,980 - #33 n2
+INFO  23:48:36,980 - #16 [
+INFO  23:48:36,980 - #17 ]
+INFO  23:48:36,980 - #5 ;
+INFO  23:48:36,980 - #23 {
+INFO  23:48:36,980 - #33 d
+INFO  23:48:36,981 - #25 +=
+INFO  23:48:36,981 - #33 m
+INFO  23:48:36,982 - #25 +=
+INFO  23:48:36,983 - #30 2
+INFO  23:48:36,983 - #5 ;
+INFO  23:48:36,984 - #10 print
+INFO  23:48:36,984 - #7 (
+INFO  23:48:36,984 - #33 m
+INFO  23:48:36,989 - #3 )
+INFO  23:48:36,989 - #5 ;
+INFO  23:48:36,990 - #6 return
+INFO  23:48:36,990 - #5 ;
+INFO  23:48:36,990 - #24 }
+INFO  23:48:36,990 - #24 }
+INFO  23:48:36,993 - Program(
+  ProgName(
+   test301
+  ) [ProgName]
+  VarDeclarations(
+    VarDeclarations(
+      VarDeclarations(
+        ConstDeclarations(
+          VarDeclarations(
+            NoConstVarDecl(
+            ) [NoConstVarDecl]
+            VarDecl(
+              Type(
+               int
+              ) [Type]
+              VarDecListExtendedNo(
+              ) [VarDecListExtendedNo]
+             d
+              NoArray(
+              ) [NoArray]
+            ) [VarDecl]
+          ) [VarDeclarations]
+          ConstDecl(
+            Type(
+             int
+            ) [Type]
+           z
+            ConstNumber(
+             67
+            ) [ConstNumber]
+            ConstDeclListExtendedVal(
+              NoConstDeclListExtended(
+              ) [NoConstDeclListExtended]
+             pp
+              ConstNumber(
+               97
+              ) [ConstNumber]
+            ) [ConstDeclListExtendedVal]
+          ) [ConstDecl]
+        ) [ConstDeclarations]
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+          VarDecListExtendedNo(
+          ) [VarDecListExtendedNo]
+         m
+          NoArray(
+          ) [NoArray]
+        ) [VarDecl]
+      ) [VarDeclarations]
+      VarDecl(
+        Type(
+         int
+        ) [Type]
+        VarDecListExtendedNo(
+        ) [VarDecListExtendedNo]
+       niz
+        IsArray(
+        ) [IsArray]
+      ) [VarDecl]
+    ) [VarDeclarations]
+    VarDecl(
+      Type(
+       int
+      ) [Type]
+      VarDecListExtendedNo(
+      ) [VarDecListExtendedNo]
+     j
+      IsArray(
+      ) [IsArray]
+    ) [VarDecl]
+  ) [VarDeclarations]
+  MethodDeclarations(
+    NoMethodDecl(
+    ) [NoMethodDecl]
+    MethodDecl(
+      MethodVoid(
+       main
+      ) [MethodVoid]
+      NoFormParam(
+      ) [NoFormParam]
+      VarDeclListYes(
+        VarDeclListYes(
+          VarDeclLIstNo(
+          ) [VarDeclLIstNo]
+          VarDecl(
+            Type(
+             bool
+            ) [Type]
+            VarDecListExtendedNo(
+            ) [VarDecListExtendedNo]
+           n1
+            IsArray(
+            ) [IsArray]
+          ) [VarDecl]
+        ) [VarDeclListYes]
+        VarDecl(
+          Type(
+           int
+          ) [Type]
+          VarDecListExtendedNo(
+          ) [VarDecListExtendedNo]
+         n2
+          IsArray(
+          ) [IsArray]
+        ) [VarDecl]
+      ) [VarDeclListYes]
+      Statements(
+        Statements(
+          Statements(
+            NoStmt(
+            ) [NoStmt]
+            Assignment(
+              EqualDesStatement(
+                DesignatorIdent(
+                 d
+                ) [DesignatorIdent]
+                AssignopAddopRight(
+                  AddopRightPlusEqual(
+                  ) [AddopRightPlusEqual]
+                ) [AssignopAddopRight]
+                AddExpr(
+                  NoMinus(
+                    TermFactor(
+                      DesignatorFactor(
+                        DesignatorIdent(
+                         m
+                        ) [DesignatorIdent]
+                      ) [DesignatorFactor]
+                      NoMulopFactorList(
+                      ) [NoMulopFactorList]
+                    ) [TermFactor]
+                  ) [NoMinus]
+                  YesAddopTermList(
+                    AddopBasicRight(
+                      AddopRightPlusEqual(
+                      ) [AddopRightPlusEqual]
+                    ) [AddopBasicRight]
+                    TermFactor(
+                      ConstTypeVal(
+                        ConstNumber(
+                         2
+                        ) [ConstNumber]
+                      ) [ConstTypeVal]
+                      NoMulopFactorList(
+                      ) [NoMulopFactorList]
+                    ) [TermFactor]
+                    NoAddopTermList(
+                    ) [NoAddopTermList]
+                  ) [YesAddopTermList]
+                ) [AddExpr]
+              ) [EqualDesStatement]
+            ) [Assignment]
+          ) [Statements]
+          PrintStmt(
+            AddExpr(
+              NoMinus(
+                TermFactor(
+                  DesignatorFactor(
+                    DesignatorIdent(
+                     m
+                    ) [DesignatorIdent]
+                  ) [DesignatorFactor]
+                  NoMulopFactorList(
+                  ) [NoMulopFactorList]
+                ) [TermFactor]
+              ) [NoMinus]
+              NoAddopTermList(
+              ) [NoAddopTermList]
+            ) [AddExpr]
+            WithNumberNo(
+            ) [WithNumberNo]
+          ) [PrintStmt]
+        ) [Statements]
+        ReturnStmtNoExpr(
+        ) [ReturnStmtNoExpr]
+      ) [Statements]
+    ) [MethodDecl]
+  ) [MethodDeclarations]
+) [Program]
+INFO  23:48:37,014 - Deklarisana promenljiva d na liniji 5
+INFO  23:48:37,014 - Deklarisana konstanta pp na liniji 14
+INFO  23:48:37,014 - Deklarisana konstanta z na liniji 7
+INFO  23:48:37,014 - Deklarisana promenljiva m na liniji 8
+INFO  23:48:37,014 - Deklarisana promenljiva niz na liniji 12
+INFO  23:48:37,014 - Niz je promenljiva:niz na liniji 12
+INFO  23:48:37,014 - Deklarisana promenljiva j na liniji 13
+INFO  23:48:37,014 - Niz je promenljiva:j na liniji 13
+INFO  23:48:37,015 - Obradjuje se void funkcija main na liniji 15
+INFO  23:48:37,015 - Deklarisana promenljiva n1 na liniji 18
+INFO  23:48:37,015 - Niz je promenljiva:n1 na liniji 18
+INFO  23:48:37,015 - Deklarisana promenljiva n2 na liniji 19
+INFO  23:48:37,015 - Niz je promenljiva:n2 na liniji 19
+INFO  23:48:37,015 - Print calls = 0
+INFO  23:48:37,016 - Generating bytecode file: C:\Users\pa160422d\Desktop\pp1\pp1lab.templateAST\workspace\MJCompiler\test\program
+INFO  23:48:37,032 - Parsiranje uspesno zavrseno!

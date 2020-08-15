@@ -105,6 +105,15 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         }
         report_info("Deklarisana konstanta "+ constDecl.getConstName(), constDecl);
         Obj constNode = Tab.insert(Obj.Con, constDecl.getConstName(), constDecl.getType().obj.getType());
+        ConstType constant=constDecl.getConstType();
+        if(currentType==Tab.intType){
+            constNode.setAdr(((ConstNumber)constant).getVal());
+        }else if(currentType==Tab.charType){
+            constNode.setAdr(((ConstChar)constant).getVal());
+        }else{
+            int val = ((ConstBool)constant).getVal() ? 1 : 0;
+            constNode.setAdr(val);
+        }
         //currentType=varDecl.getType().obj.getType(); =null ako bi da vracam
     }
 
@@ -116,7 +125,15 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         report_info("Deklarisana konstanta "+ constDeclListExtendedVal.getConstName(), constDeclListExtendedVal);
         //if(currentType==constDeclListExtendedVal)
         Obj constNode = Tab.insert(Obj.Con, constDeclListExtendedVal.getConstName(), currentType);
-
+        ConstType constant=constDeclListExtendedVal.getConstType();
+        if(currentType==Tab.intType){
+            constNode.setAdr(((ConstNumber)constant).getVal());
+        }else if(currentType==Tab.charType){
+            constNode.setAdr(((ConstChar)constant).getVal());
+        }else{
+            int val = ((ConstBool)constant).getVal() ? 1 : 0;
+            constNode.setAdr(val);
+        }
     }
 
     public void visit(ConstNumber cnst){
@@ -239,18 +256,22 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
     public void visit(AddExpr addExpr){
 
-        if(isMinus && addExpr.getTerm().obj.getType()!=Tab.intType){
+        if(isMinus && addExpr.getMinus().obj.getType()!=Tab.intType){
             isMinus=false;
-            report_error("Greska na liniji " + addExpr.getTerm().getLine() + " : " + " ne moze se pisati minus za tipove koji nisu INT ", null);
+            report_error("Greska na liniji " + addExpr.getMinus().getLine() + " : " + " ne moze se pisati minus za tipove koji nisu INT ", null);
         }
-        currentType=addExpr.getTerm().obj.getType();
+        currentType=addExpr.getMinus().obj.getType();
         //mora od faktora da se uzme i tako redom
-        addExpr.obj=addExpr.getTerm().obj;
+        addExpr.obj=addExpr.getMinus().obj;
         //zbog printa moram tacno da odredim liniju
-        addExpr.setLine(addExpr.getTerm().getLine());
+        addExpr.setLine(addExpr.getMinus().getLine());
     }
     public void visit(YesMinus yesMinus){
+        yesMinus.obj=yesMinus.getTerm().obj;
         isMinus=true;
+    }
+    public void visit(NoMinus noMinus){
+        noMinus.obj=noMinus.getTerm().obj;
     }
 
     public void visit(YesAddopTermList yesAddopTermList){
@@ -286,7 +307,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
             report_error("Greska na liniji " + newTypeExpr.getLine()+ " nepravilno definisan niz sa tipom razlicitim od INT! ", null);
         }
         newTypeExpr.obj = new Obj(Obj.Var,"", new Struct(Struct.Array, newTypeExpr.getType().obj.getType()));
-             //  newTypeExpr.getType().obj.getType().getElemType());
+        //  newTypeExpr.getType().obj.getType().getElemType());
         //Obj.Var, "", new Struct(Struct.Array, newTypeArrayFactor.getType().obj.getType())
     }
 
@@ -300,23 +321,39 @@ public class SemanticAnalyzer extends VisitorAdaptor {
 
     public void visit(DesignatorIdent designatorIdent){
         Obj obj = Tab.find(designatorIdent.getName());
-        if (obj == Tab.noObj) {
+        if (obj == Tab.noObj|| obj==null) {
             report_error("Greska na liniji " + designatorIdent.getLine()+ " : ime "+designatorIdent.getName()+" nije deklarisano! ", null);
         }
-        designatorIdent.obj = new Obj(Obj.Var, designatorIdent.getName(), obj.getType());
+        designatorIdent.obj = obj;
+    }
+    public void visit(DesignatorIdentArray designatorIdentArray){
+        Obj obj = Tab.find(designatorIdentArray.getName());
+        if (obj == Tab.noObj|| obj==null) {
+            report_error("Greska na liniji " + designatorIdentArray.getLine()+ " : ime "+designatorIdentArray.getName()+" nije deklarisano! ", null);
+        }
+        designatorIdentArray.obj = new Obj(Obj.Elem, "",  obj.getType().getElemType() /*!= null ? obj.getType().getElemType() : Tab.noType,obj.getAdr(), obj.getLevel()*/);
+        //Obj.
+        //designatorIdentArray.obj = obj;//new Obj(Obj.Elem, "",  obj.getType().getElemType() /*!= null ? obj.getType().getElemType() : Tab.noType,obj.getAdr(), obj.getLevel()*/);
     }
 
     public void visit(DesignatorIdentExtended designatorIdentExtended){
-        Obj obj = Tab.find(designatorIdentExtended.getName());
-
-        if (obj == Tab.noObj) {
-            report_error("Greska na liniji " + designatorIdentExtended.getLine()+ " : ime "+designatorIdentExtended.getName()+" nije deklarisano! ", null);
+        //Obj obj = Tab.find(designatorIdentExtended.getDesignatorArray().obj.getName());
+        Obj obj = designatorIdentExtended.getDesignator().obj;
+        if (obj == Tab.noObj|| obj==null) {
+            report_error("Greska na liniji " + designatorIdentExtended.getLine()+ " : ime "+designatorIdentExtended.getDesignator().obj.getName()+" nije deklarisano! ", null);
         }
         if(designatorIdentExtended.getExpr().obj.getType()!=Tab.intType){
             report_error("Greska na liniji " + designatorIdentExtended.getLine()+ " nepravilno definisan niz sa tipom razlicitim od INT! ", null);
         }
-        designatorIdentExtended.obj = new Obj(Obj.Elem,designatorIdentExtended.getName(), obj.getType().getElemType());
+        designatorIdentExtended.obj=obj;
+        designatorIdentExtended.obj=new Obj(Obj.Elem, "",  obj.getType().getElemType() /*!= null ? obj.getType().getElemType() : Tab.noType,obj.getAdr(), obj.getLevel()*/);
 
+
+        //arrayElemAcessDesignator.obj = new Obj(Obj.Elem, "",array.getType().getElemType() != null ? array.getType().getElemType() : MJTab.noType);
+        //ovo vrv ne treba ovako...
+        //designatorIdentExtended.setName(obj.getName());
+        //designatorIdentExtended.obj.setAdr(obj.getAdr());
+        //designatorIdentExtended.obj.setLevel(obj.getLevel());
     }
 
     public boolean passed() {

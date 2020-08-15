@@ -64,7 +64,7 @@ terminal Character CHAR ;
 terminal String IDENT ;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj MethodDeclList, VarDecl , ConstDecl ,
-FormalParamList, FormalParamDecl, FormPars ,
+FormalParamList, FormalParamDecl, FormPars , DesignatorArray ,
 StatementList, Statement, ArrayBracks , FormalParamListExtended ,
 DesignatorStatement, Minus, VarDeclListExtended ,
 AddopTermList, MulopFactorList , ConstDeclListExtended ,
@@ -180,15 +180,15 @@ DesignatorStatement ::= (EqualDesStatement) Designator Assignop Expr:e
                         (DecDesStatement) Designator MINUS_MINUS
                         ;
 
-Expr ::= (AddExpr) Minus Term:t AddopTermList
+Expr ::= (AddExpr) Minus AddopTermList
 		 ;
 
-Minus ::= (YesMinus) MINUS
+Minus ::= (YesMinus) MINUS Term:t
           |
-          (NoMinus) /* epsilon */
+          (NoMinus) Term:t
           ;
 
-AddopTermList ::= (YesAddopTermList) AddopTermList Addop:a Term:t
+AddopTermList ::= (YesAddopTermList)  Addop:a Term:t AddopTermList
                   |
                   (NoAddopTermList) /* epsilon */
                    ;
@@ -196,7 +196,7 @@ AddopTermList ::= (YesAddopTermList) AddopTermList Addop:a Term:t
 Term ::= (TermFactor) Factor:t MulopFactorList
          ;
 
-MulopFactorList ::= (YesMulopFactorList) MulopFactorList Mulop:m Factor:f
+MulopFactorList ::= (YesMulopFactorList)  Mulop:m Factor:f MulopFactorList
                      |
                      (NoMulopFactorList) /* epsilon */
                      ;
@@ -217,8 +217,11 @@ Factor ::= (ConstTypeVal) ConstType
 
 Designator ::= (DesignatorIdent) IDENT:name
                |
-               (DesignatorIdentExtended) IDENT:name LBRACK Expr RBRACK
+               (DesignatorIdentExtended) Designator LBRACK Expr RBRACK
                ;
+
+DesignatorArray ::= (DesignatorIdentArray) IDENT:name
+;
 
 Assignop ::= (AssignopEqual) EQUAL
              |

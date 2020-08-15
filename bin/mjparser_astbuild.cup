@@ -64,7 +64,7 @@ terminal Character CHAR ;
 terminal String IDENT ;
 
 nonterminal rs.etf.pp1.symboltable.concepts.Obj MethodDeclList, VarDecl , ConstDecl ,
-FormalParamList, FormalParamDecl, FormPars ,
+FormalParamList, FormalParamDecl, FormPars , DesignatorArray ,
 StatementList, Statement, ArrayBracks , FormalParamListExtended ,
 DesignatorStatement, Minus, VarDeclListExtended ,
 AddopTermList, MulopFactorList , ConstDeclListExtended ,
@@ -180,15 +180,15 @@ DesignatorStatement ::= (EqualDesStatement) Designator:D1 Assignop:A2 Expr:e {: 
                         (DecDesStatement) Designator:D1 MINUS_MINUS {: RESULT=new DecDesStatement(D1); RESULT.setLine(D1left); :}
                         ;
 
-Expr ::= (AddExpr) Minus:M1 Term:t AddopTermList:A2 {: RESULT=new AddExpr(M1, t, A2); RESULT.setLine(M1left); :}
+Expr ::= (AddExpr) Minus:M1 AddopTermList:A2 {: RESULT=new AddExpr(M1, A2); RESULT.setLine(M1left); :}
 		 ;
 
-Minus ::= (YesMinus) MINUS {: RESULT=new YesMinus(); :}
+Minus ::= (YesMinus) MINUS Term:t {: RESULT=new YesMinus(t); RESULT.setLine(tleft); :}
           |
-          (NoMinus) {: RESULT=new NoMinus(); :} /* epsilon */
+          (NoMinus) Term:t {: RESULT=new NoMinus(t); RESULT.setLine(tleft); :}
           ;
 
-AddopTermList ::= (YesAddopTermList) AddopTermList:A1 Addop:a Term:t {: RESULT=new YesAddopTermList(A1, a, t); RESULT.setLine(A1left); :}
+AddopTermList ::= (YesAddopTermList)  Addop:a Term:t AddopTermList:A1 {: RESULT=new YesAddopTermList(a, t, A1); RESULT.setLine(aleft); :}
                   |
                   (NoAddopTermList) {: RESULT=new NoAddopTermList(); :} /* epsilon */
                    ;
@@ -196,7 +196,7 @@ AddopTermList ::= (YesAddopTermList) AddopTermList:A1 Addop:a Term:t {: RESULT=n
 Term ::= (TermFactor) Factor:t MulopFactorList:M1 {: RESULT=new TermFactor(t, M1); RESULT.setLine(tleft); :}
          ;
 
-MulopFactorList ::= (YesMulopFactorList) MulopFactorList:M1 Mulop:m Factor:f {: RESULT=new YesMulopFactorList(M1, m, f); RESULT.setLine(M1left); :}
+MulopFactorList ::= (YesMulopFactorList)  Mulop:m Factor:f MulopFactorList:M1 {: RESULT=new YesMulopFactorList(m, f, M1); RESULT.setLine(mleft); :}
                      |
                      (NoMulopFactorList) {: RESULT=new NoMulopFactorList(); :} /* epsilon */
                      ;
@@ -217,8 +217,11 @@ Factor ::= (ConstTypeVal) ConstType:C1 {: RESULT=new ConstTypeVal(C1); RESULT.se
 
 Designator ::= (DesignatorIdent) IDENT:name {: RESULT=new DesignatorIdent(name); RESULT.setLine(nameleft); :}
                |
-               (DesignatorIdentExtended) IDENT:name LBRACK Expr:E1 RBRACK {: RESULT=new DesignatorIdentExtended(name, E1); RESULT.setLine(nameleft); :}
+               (DesignatorIdentExtended) Designator:D1 LBRACK Expr:E2 RBRACK {: RESULT=new DesignatorIdentExtended(D1, E2); RESULT.setLine(D1left); :}
                ;
+
+DesignatorArray ::= (DesignatorIdentArray) IDENT:name {: RESULT=new DesignatorIdentArray(name); RESULT.setLine(nameleft); :}
+;
 
 Assignop ::= (AssignopEqual) EQUAL {: RESULT=new AssignopEqual(); :}
              |
