@@ -46,7 +46,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         Tab.openScope();
     }
 
-    public void visit(VarDecl varDecl){
+    public void visit(VarDeclBase varDecl){
         report_info("Deklarisana promenljiva "+ varDecl.getVarName(), varDecl);
         Struct type=varDecl.getType().obj.getType();
         if(isArray){
@@ -212,6 +212,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
             report_error("Greska na liniji " + readStmt.getDesignator().getLine()+ " : Read radi samo sa INT, BOOL i sa CHAR", null);
         }
     }
+
     public void visit(PrintStmt printStmt){
         //ovo zapravo ne mora zato sto vec proveravamo u designatoru
         /*Obj obj = Tab.find(printStmt.getExpr().obj.getName());

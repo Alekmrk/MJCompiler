@@ -86,12 +86,38 @@ public class CodeGenerator extends VisitorAdaptor {
         paramCnt++;
     }
 
+    @Override
+    public void visit(ReadStmt readStmt) {
+
+        if (readStmt.getDesignator().obj.getType() == Tab.charType) {
+            Code.put(Code.bread);
+        } else {
+            Code.put(Code.read);
+        }
+
+        Code.store(readStmt.getDesignator().obj);
+
+        variables = new ArrayList<>();
+        operations = new ArrayList<>();
+        variables2 = new ArrayList<>();
+    }
+
     public void visit(PrintStmt printStatement) {
+
+        WithNumber number = printStatement.getWithNumber();
+        int num = 1;
+        boolean changed = false;
+        if (number instanceof WithNumberYes) {
+            num = ((WithNumberYes) number).getN1();
+            changed = true;
+        }
+
         if (printStatement.getExpr().obj.getType().equals(Tab.charType)) {
-            Code.loadConst(1);
+            Code.loadConst(num);
             Code.put(Code.bprint);
         } else {
-            Code.loadConst(5);
+            num = changed ? num : 5;
+            Code.loadConst(num);
             Code.put(Code.print);
         }
         variables = new ArrayList<>();
@@ -139,12 +165,6 @@ public class CodeGenerator extends VisitorAdaptor {
     }
 
     public void visit(ReturnStmtExpr assignment) {
-        variables = new ArrayList<>();
-        operations = new ArrayList<>();
-        variables2 = new ArrayList<>();
-    }
-
-    public void visit(ReadStmt assignment) {
         variables = new ArrayList<>();
         operations = new ArrayList<>();
         variables2 = new ArrayList<>();

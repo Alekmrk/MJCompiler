@@ -85,7 +85,9 @@ ConstVarDeclList ::= (VarDeclarations) ConstVarDeclList VarDecl
 				|
 				(NoConstVarDecl)/* epsilon */
 				;
-VarDecl ::= (VarDecl) Type:varType VarDeclListExtended IDENT:varName ArrayBracks SEMI
+VarDecl ::= (VarDeclBase) Type:varType VarDeclListExtended IDENT:varName ArrayBracks SEMI
+            |
+            (VarDeclError) Type:varType VarDeclListExtended error {: parser.log.debug("Uspesan oporavak od greske"); :} SEMI
             ;
 
 ArrayBracks ::= (IsArray) LBRACK RBRACK
@@ -95,6 +97,8 @@ ArrayBracks ::= (IsArray) LBRACK RBRACK
 
 
 VarDeclListExtended ::= (VarDecListExtendedYes) VarDeclListExtended IDENT:varName ArrayBracks COMMA
+                        |
+                        (VarDeclErrorList) VarDeclListExtended error {: parser.log.debug("Uspesan oporavak od greske"); :} COMMA
                         |
                         (VarDecListExtendedNo) /* epsilon */
                         ;
@@ -174,6 +178,8 @@ WithNumber ::= (WithNumberYes) COMMA NUMBER
                ;
 
 DesignatorStatement ::= (EqualDesStatement) Designator Assignop Expr:e
+                        |
+                        (EqualDesStatementError) error {: parser.log.debug("Uspesan oporavak od greske"); :}
                         |
                         (IncDesStatement) Designator PLUS_PLUS
                         |

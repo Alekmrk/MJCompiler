@@ -1,6 +1,6 @@
 // generated with ast extension for cup
 // version 0.8
-// 17/7/2020 19:24:34
+// 18/7/2020 17:2:13
 
 
 package rs.ac.bg.etf.pp1.ast;
@@ -30,6 +30,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(MethodTypeName MethodTypeName) { }
     public void visit(DesignatorStatement DesignatorStatement) { }
     public void visit(Statement Statement) { }
+    public void visit(VarDecl VarDecl) { }
     public void visit(MulopLeft MulopLeft) { }
     public void visit(Minus Minus) { }
     public void visit(MethodDeclList MethodDeclList) { }
@@ -73,6 +74,7 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(AddExpr AddExpr) { visit(); }
     public void visit(DecDesStatement DecDesStatement) { visit(); }
     public void visit(IncDesStatement IncDesStatement) { visit(); }
+    public void visit(EqualDesStatementError EqualDesStatementError) { visit(); }
     public void visit(EqualDesStatement EqualDesStatement) { visit(); }
     public void visit(WithNumberNo WithNumberNo) { visit(); }
     public void visit(WithNumberYes WithNumberYes) { visit(); }
@@ -104,10 +106,12 @@ public abstract class VisitorAdaptor implements Visitor {
     public void visit(ConstDecl ConstDecl) { visit(); }
     public void visit(Type Type) { visit(); }
     public void visit(VarDecListExtendedNo VarDecListExtendedNo) { visit(); }
+    public void visit(VarDeclErrorList VarDeclErrorList) { visit(); }
     public void visit(VarDecListExtendedYes VarDecListExtendedYes) { visit(); }
     public void visit(NoArray NoArray) { visit(); }
     public void visit(IsArray IsArray) { visit(); }
-    public void visit(VarDecl VarDecl) { visit(); }
+    public void visit(VarDeclError VarDeclError) { visit(); }
+    public void visit(VarDeclBase VarDeclBase) { visit(); }
     public void visit(NoConstVarDecl NoConstVarDecl) { visit(); }
     public void visit(ConstDeclarations ConstDeclarations) { visit(); }
     public void visit(VarDeclarations VarDeclarations) { visit(); }

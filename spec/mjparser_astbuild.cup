@@ -85,7 +85,9 @@ ConstVarDeclList ::= (VarDeclarations) ConstVarDeclList:C1 VarDecl:V2 {: RESULT=
 				|
 				(NoConstVarDecl) {: RESULT=new NoConstVarDecl(); :}/* epsilon */
 				;
-VarDecl ::= (VarDecl) Type:varType VarDeclListExtended:V1 IDENT:varName ArrayBracks:A2 SEMI {: RESULT=new VarDecl(varType, V1, varName, A2); RESULT.setLine(varTypeleft); :}
+VarDecl ::= (VarDeclBase) Type:varType VarDeclListExtended:V1 IDENT:varName ArrayBracks:A2 SEMI {: RESULT=new VarDeclBase(varType, V1, varName, A2); RESULT.setLine(varTypeleft); :}
+            |
+            (VarDeclError) Type:varType VarDeclListExtended:V1 error {: parser.log.debug("Uspesan oporavak od greske"); :} SEMI {: RESULT=new VarDeclError(varType, V1); RESULT.setLine(varTypeleft); :}
             ;
 
 ArrayBracks ::= (IsArray) LBRACK RBRACK {: RESULT=new IsArray(); :}
@@ -95,6 +97,8 @@ ArrayBracks ::= (IsArray) LBRACK RBRACK {: RESULT=new IsArray(); :}
 
 
 VarDeclListExtended ::= (VarDecListExtendedYes) VarDeclListExtended:V1 IDENT:varName ArrayBracks:A2 COMMA {: RESULT=new VarDecListExtendedYes(V1, varName, A2); RESULT.setLine(V1left); :}
+                        |
+                        (VarDeclErrorList) VarDeclListExtended:V1 error {: parser.log.debug("Uspesan oporavak od greske"); :} COMMA {: RESULT=new VarDeclErrorList(V1); RESULT.setLine(V1left); :}
                         |
                         (VarDecListExtendedNo) {: RESULT=new VarDecListExtendedNo(); :} /* epsilon */
                         ;
@@ -174,6 +178,8 @@ WithNumber ::= (WithNumberYes) COMMA NUMBER:N1 {: RESULT=new WithNumberYes(N1); 
                ;
 
 DesignatorStatement ::= (EqualDesStatement) Designator:D1 Assignop:A2 Expr:e {: RESULT=new EqualDesStatement(D1, A2, e); RESULT.setLine(D1left); :}
+                        |
+                        (EqualDesStatementError) error {: parser.log.debug("Uspesan oporavak od greske"); :} {: RESULT=new EqualDesStatementError(); :}
                         |
                         (IncDesStatement) Designator:D1 PLUS_PLUS {: RESULT=new IncDesStatement(D1); RESULT.setLine(D1left); :}
                         |
