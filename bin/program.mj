@@ -19,12 +19,39 @@ int j[];
 	int n2[];
 	{
 
-        //m=13+14*2*2+1*2;
+        //m=13+14*2*2+1*2+d+d+m;
         //
-        d+=m+=2;
+        //m=2;
+        //d+=niz[2]/=m;
+        //print(niz[1]);
+        niz=new int[3];
+        j=new int [3];
+
+        niz[niz[1]]=4;
+
+        d=2;
+        d+=d*=m+=1+1+1+d+niz[0]+d+niz[0]+2+3;
+        print(d);
         print(m);
+        d=2;
+        d=-niz[1];
+        d=-d;
+        m=-d+5;
+        m=d+1;
+        m=5;
+
+        j[1]=5;
+
+        m=d+1;
+        print(d);
+        print(j[1]);
+        print(m);
+        //d += d*= j[a+2+e[niz[1]]] += m;
         //m=0;
-	    //niz=new int [3];
+        //print(niz[1]);
+        print(d);
+        print(j[1]);
+        print(m);
 	    //j=new int [5];
 	    //niz[1]=5;
 	    //j[1]=5;

@@ -260,6 +260,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
             isMinus=false;
             report_error("Greska na liniji " + addExpr.getMinus().getLine() + " : " + " ne moze se pisati minus za tipove koji nisu INT ", null);
         }
+        if(isMinus){ isMinus=false;}
         currentType=addExpr.getMinus().obj.getType();
         //mora od faktora da se uzme i tako redom
         addExpr.obj=addExpr.getMinus().obj;
@@ -306,6 +307,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         if(newTypeExpr.getExpr().obj.getType()!=Tab.intType){
             report_error("Greska na liniji " + newTypeExpr.getLine()+ " nepravilno definisan niz sa tipom razlicitim od INT! ", null);
         }
+        //newTypeExpr.obj = new Obj(Obj.Var,"", new Struct(Struct.Array, newTypeExpr.getType().obj.getType()));
         newTypeExpr.obj = new Obj(Obj.Var,"", new Struct(Struct.Array, newTypeExpr.getType().obj.getType()));
         //  newTypeExpr.getType().obj.getType().getElemType());
         //Obj.Var, "", new Struct(Struct.Array, newTypeArrayFactor.getType().obj.getType())
@@ -326,15 +328,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         }
         designatorIdent.obj = obj;
     }
-    public void visit(DesignatorIdentArray designatorIdentArray){
-        Obj obj = Tab.find(designatorIdentArray.getName());
-        if (obj == Tab.noObj|| obj==null) {
-            report_error("Greska na liniji " + designatorIdentArray.getLine()+ " : ime "+designatorIdentArray.getName()+" nije deklarisano! ", null);
-        }
-        designatorIdentArray.obj = new Obj(Obj.Elem, "",  obj.getType().getElemType() /*!= null ? obj.getType().getElemType() : Tab.noType,obj.getAdr(), obj.getLevel()*/);
-        //Obj.
-        //designatorIdentArray.obj = obj;//new Obj(Obj.Elem, "",  obj.getType().getElemType() /*!= null ? obj.getType().getElemType() : Tab.noType,obj.getAdr(), obj.getLevel()*/);
-    }
+
 
     public void visit(DesignatorIdentExtended designatorIdentExtended){
         //Obj obj = Tab.find(designatorIdentExtended.getDesignatorArray().obj.getName());
@@ -345,7 +339,7 @@ public class SemanticAnalyzer extends VisitorAdaptor {
         if(designatorIdentExtended.getExpr().obj.getType()!=Tab.intType){
             report_error("Greska na liniji " + designatorIdentExtended.getLine()+ " nepravilno definisan niz sa tipom razlicitim od INT! ", null);
         }
-        designatorIdentExtended.obj=obj;
+        //designatorIdentExtended.obj=obj;
         designatorIdentExtended.obj=new Obj(Obj.Elem, "",  obj.getType().getElemType() /*!= null ? obj.getType().getElemType() : Tab.noType,obj.getAdr(), obj.getLevel()*/);
 
 

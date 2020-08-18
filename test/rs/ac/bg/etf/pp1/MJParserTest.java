@@ -27,7 +27,7 @@ public class MJParserTest {
             return;
         }
 
-        File sourceCode = new File(args[0]);
+        File sourceCode = new File("test/test301.mj"/*args[0]*/);
         if (!sourceCode.exists()) {
             log.error("Source file [" + sourceCode.getAbsolutePath() + "] not found!");
             return;

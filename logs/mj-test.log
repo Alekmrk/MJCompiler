@@ -1,114 +1,297 @@
-INFO  23:48:36,938 - Compiling source file: C:\Users\pa160422d\Desktop\pp1\pp1lab.templateAST\workspace\MJCompiler\test\program.mj
-INFO  23:48:36,969 - #9 program
-INFO  23:48:36,969 - #33 test301
-INFO  23:48:36,969 - #33 int
-INFO  23:48:36,970 - #33 d
-INFO  23:48:36,971 - #5 ;
-INFO  23:48:36,972 - #21 const
-INFO  23:48:36,972 - #33 int
-INFO  23:48:36,973 - #33 z
-INFO  23:48:36,973 - #4 =
-INFO  23:48:36,973 - #30 67
-INFO  23:48:36,973 - #8 ,
-INFO  23:48:36,973 - #33 pp
-INFO  23:48:36,974 - #4 =
-INFO  23:48:36,974 - #30 97
-INFO  23:48:36,974 - #5 ;
-INFO  23:48:36,974 - #33 int
-INFO  23:48:36,975 - #33 m
-INFO  23:48:36,976 - #5 ;
-INFO  23:48:36,976 - #33 int
-INFO  23:48:36,976 - #33 niz
-INFO  23:48:36,976 - #16 [
-INFO  23:48:36,978 - #17 ]
-INFO  23:48:36,978 - #5 ;
-INFO  23:48:36,978 - #33 int
-INFO  23:48:36,978 - #33 j
-INFO  23:48:36,978 - #16 [
-INFO  23:48:36,978 - #17 ]
-INFO  23:48:36,978 - #5 ;
-INFO  23:48:36,978 - #23 {
-INFO  23:48:36,978 - #11 void
-INFO  23:48:36,978 - #33 main
-INFO  23:48:36,978 - #7 (
-INFO  23:48:36,979 - #3 )
-INFO  23:48:36,979 - #33 bool
-INFO  23:48:36,980 - #33 n1
-INFO  23:48:36,980 - #16 [
-INFO  23:48:36,980 - #17 ]
-INFO  23:48:36,980 - #5 ;
-INFO  23:48:36,980 - #33 int
-INFO  23:48:36,980 - #33 n2
-INFO  23:48:36,980 - #16 [
-INFO  23:48:36,980 - #17 ]
-INFO  23:48:36,980 - #5 ;
-INFO  23:48:36,980 - #23 {
-INFO  23:48:36,980 - #33 d
-INFO  23:48:36,981 - #25 +=
-INFO  23:48:36,981 - #33 m
-INFO  23:48:36,982 - #25 +=
-INFO  23:48:36,983 - #30 2
-INFO  23:48:36,983 - #5 ;
-INFO  23:48:36,984 - #10 print
-INFO  23:48:36,984 - #7 (
-INFO  23:48:36,984 - #33 m
-INFO  23:48:36,989 - #3 )
-INFO  23:48:36,989 - #5 ;
-INFO  23:48:36,990 - #6 return
-INFO  23:48:36,990 - #5 ;
-INFO  23:48:36,990 - #24 }
-INFO  23:48:36,990 - #24 }
-INFO  23:48:36,993 - Program(
+INFO  02:34:16,077 - Compiling source file: C:\Users\pa160422d\Desktop\pp1\pp1lab.templateAST\workspace\MJCompiler\test\test301.mj
+INFO  02:34:16,124 - #9 program
+INFO  02:34:16,124 - #33 test301
+INFO  02:34:16,124 - #21 const
+INFO  02:34:16,124 - #33 int
+INFO  02:34:16,124 - #33 nula
+INFO  02:34:16,124 - #4 =
+INFO  02:34:16,124 - #30 0
+INFO  02:34:16,124 - #5 ;
+INFO  02:34:16,124 - #21 const
+INFO  02:34:16,124 - #33 int
+INFO  02:34:16,124 - #33 jedan
+INFO  02:34:16,124 - #4 =
+INFO  02:34:16,124 - #30 1
+INFO  02:34:16,124 - #5 ;
+INFO  02:34:16,124 - #21 const
+INFO  02:34:16,124 - #33 int
+INFO  02:34:16,124 - #33 pet
+INFO  02:34:16,124 - #4 =
+INFO  02:34:16,124 - #30 5
+INFO  02:34:16,124 - #5 ;
+INFO  02:34:16,124 - #33 int
+INFO  02:34:16,124 - #33 niz
+INFO  02:34:16,124 - #16 [
+INFO  02:34:16,124 - #17 ]
+INFO  02:34:16,124 - #5 ;
+INFO  02:34:16,124 - #33 char
+INFO  02:34:16,124 - #33 nizch
+INFO  02:34:16,124 - #16 [
+INFO  02:34:16,124 - #17 ]
+INFO  02:34:16,124 - #5 ;
+INFO  02:34:16,124 - #23 {
+INFO  02:34:16,124 - #11 void
+INFO  02:34:16,124 - #33 main
+INFO  02:34:16,124 - #7 (
+INFO  02:34:16,124 - #3 )
+INFO  02:34:16,124 - #33 int
+INFO  02:34:16,124 - #33 bodovi
+INFO  02:34:16,124 - #5 ;
+INFO  02:34:16,124 - #23 {
+INFO  02:34:16,124 - #33 bodovi
+INFO  02:34:16,124 - #4 =
+INFO  02:34:16,124 - #30 0
+INFO  02:34:16,124 - #5 ;
+INFO  02:34:16,124 - #33 bodovi
+INFO  02:34:16,124 - #20 ++
+INFO  02:34:16,124 - #5 ;
+INFO  02:34:16,124 - #33 bodovi
+INFO  02:34:16,124 - #4 =
+INFO  02:34:16,124 - #33 bodovi
+INFO  02:34:16,124 - #2 +
+INFO  02:34:16,124 - #33 jedan
+INFO  02:34:16,124 - #5 ;
+INFO  02:34:16,124 - #33 bodovi
+INFO  02:34:16,139 - #4 =
+INFO  02:34:16,139 - #33 bodovi
+INFO  02:34:16,139 - #13 *
+INFO  02:34:16,139 - #33 pet
+INFO  02:34:16,139 - #5 ;
+INFO  02:34:16,139 - #33 bodovi
+INFO  02:34:16,139 - #22 --
+INFO  02:34:16,139 - #5 ;
+INFO  02:34:16,139 - #10 print
+INFO  02:34:16,139 - #7 (
+INFO  02:34:16,139 - #33 bodovi
+INFO  02:34:16,139 - #3 )
+INFO  02:34:16,139 - #5 ;
+INFO  02:34:16,139 - #33 niz
+INFO  02:34:16,139 - #4 =
+INFO  02:34:16,139 - #19 new
+INFO  02:34:16,139 - #33 int
+INFO  02:34:16,139 - #16 [
+INFO  02:34:16,139 - #30 3
+INFO  02:34:16,139 - #17 ]
+INFO  02:34:16,139 - #5 ;
+INFO  02:34:16,139 - #33 niz
+INFO  02:34:16,139 - #16 [
+INFO  02:34:16,139 - #33 nula
+INFO  02:34:16,139 - #17 ]
+INFO  02:34:16,139 - #4 =
+INFO  02:34:16,139 - #33 jedan
+INFO  02:34:16,139 - #5 ;
+INFO  02:34:16,139 - #33 niz
+INFO  02:34:16,139 - #16 [
+INFO  02:34:16,139 - #30 1
+INFO  02:34:16,139 - #17 ]
+INFO  02:34:16,139 - #4 =
+INFO  02:34:16,139 - #30 2
+INFO  02:34:16,139 - #5 ;
+INFO  02:34:16,139 - #33 niz
+INFO  02:34:16,139 - #16 [
+INFO  02:34:16,139 - #33 niz
+INFO  02:34:16,139 - #16 [
+INFO  02:34:16,139 - #33 jedan
+INFO  02:34:16,139 - #17 ]
+INFO  02:34:16,139 - #17 ]
+INFO  02:34:16,139 - #4 =
+INFO  02:34:16,139 - #33 niz
+INFO  02:34:16,139 - #16 [
+INFO  02:34:16,139 - #33 niz
+INFO  02:34:16,139 - #16 [
+INFO  02:34:16,139 - #30 0
+INFO  02:34:16,139 - #17 ]
+INFO  02:34:16,139 - #17 ]
+INFO  02:34:16,139 - #13 *
+INFO  02:34:16,139 - #30 3
+INFO  02:34:16,139 - #5 ;
+INFO  02:34:16,139 - #33 bodovi
+INFO  02:34:16,139 - #4 =
+INFO  02:34:16,139 - #33 niz
+INFO  02:34:16,139 - #16 [
+INFO  02:34:16,139 - #30 2
+INFO  02:34:16,139 - #17 ]
+INFO  02:34:16,139 - #14 /
+INFO  02:34:16,139 - #33 niz
+INFO  02:34:16,139 - #16 [
+INFO  02:34:16,139 - #30 0
+INFO  02:34:16,139 - #17 ]
+INFO  02:34:16,139 - #5 ;
+INFO  02:34:16,139 - #10 print
+INFO  02:34:16,139 - #7 (
+INFO  02:34:16,139 - #33 bodovi
+INFO  02:34:16,139 - #3 )
+INFO  02:34:16,139 - #5 ;
+INFO  02:34:16,139 - #10 print
+INFO  02:34:16,139 - #7 (
+INFO  02:34:16,139 - #33 niz
+INFO  02:34:16,139 - #16 [
+INFO  02:34:16,139 - #30 2
+INFO  02:34:16,139 - #17 ]
+INFO  02:34:16,139 - #3 )
+INFO  02:34:16,139 - #5 ;
+INFO  02:34:16,139 - #18 read
+INFO  02:34:16,139 - #7 (
+INFO  02:34:16,139 - #33 bodovi
+INFO  02:34:16,139 - #3 )
+INFO  02:34:16,139 - #5 ;
+INFO  02:34:16,139 - #33 niz
+INFO  02:34:16,139 - #16 [
+INFO  02:34:16,139 - #30 2
+INFO  02:34:16,139 - #17 ]
+INFO  02:34:16,139 - #25 +=
+INFO  02:34:16,139 - #33 bodovi
+INFO  02:34:16,139 - #27 *=
+INFO  02:34:16,139 - #30 2
+INFO  02:34:16,139 - #5 ;
+INFO  02:34:16,139 - #33 niz
+INFO  02:34:16,139 - #16 [
+INFO  02:34:16,139 - #30 2
+INFO  02:34:16,139 - #17 ]
+INFO  02:34:16,155 - #20 ++
+INFO  02:34:16,155 - #5 ;
+INFO  02:34:16,155 - #10 print
+INFO  02:34:16,155 - #7 (
+INFO  02:34:16,155 - #33 niz
+INFO  02:34:16,155 - #16 [
+INFO  02:34:16,155 - #30 2
+INFO  02:34:16,155 - #17 ]
+INFO  02:34:16,155 - #3 )
+INFO  02:34:16,155 - #5 ;
+INFO  02:34:16,155 - #33 nizch
+INFO  02:34:16,155 - #4 =
+INFO  02:34:16,155 - #19 new
+INFO  02:34:16,155 - #33 char
+INFO  02:34:16,155 - #16 [
+INFO  02:34:16,155 - #30 3
+INFO  02:34:16,155 - #17 ]
+INFO  02:34:16,155 - #5 ;
+INFO  02:34:16,155 - #33 nizch
+INFO  02:34:16,155 - #16 [
+INFO  02:34:16,155 - #30 0
+INFO  02:34:16,155 - #17 ]
+INFO  02:34:16,155 - #4 =
+INFO  02:34:16,155 - #32 a
+INFO  02:34:16,155 - #5 ;
+INFO  02:34:16,155 - #33 nizch
+INFO  02:34:16,155 - #16 [
+INFO  02:34:16,155 - #33 jedan
+INFO  02:34:16,155 - #17 ]
+INFO  02:34:16,155 - #4 =
+INFO  02:34:16,155 - #32 b
+INFO  02:34:16,155 - #5 ;
+INFO  02:34:16,155 - #33 nizch
+INFO  02:34:16,155 - #16 [
+INFO  02:34:16,155 - #33 pet
+INFO  02:34:16,155 - #12 -
+INFO  02:34:16,155 - #30 3
+INFO  02:34:16,155 - #17 ]
+INFO  02:34:16,155 - #4 =
+INFO  02:34:16,155 - #32 c
+INFO  02:34:16,155 - #5 ;
+INFO  02:34:16,155 - #10 print
+INFO  02:34:16,155 - #7 (
+INFO  02:34:16,155 - #33 nizch
+INFO  02:34:16,155 - #16 [
+INFO  02:34:16,155 - #30 1
+INFO  02:34:16,155 - #17 ]
+INFO  02:34:16,155 - #3 )
+INFO  02:34:16,155 - #5 ;
+INFO  02:34:16,155 - #10 print
+INFO  02:34:16,155 - #7 (
+INFO  02:34:16,155 - #33 nizch
+INFO  02:34:16,155 - #16 [
+INFO  02:34:16,155 - #33 jedan
+INFO  02:34:16,155 - #13 *
+INFO  02:34:16,155 - #30 2
+INFO  02:34:16,155 - #17 ]
+INFO  02:34:16,155 - #3 )
+INFO  02:34:16,155 - #5 ;
+INFO  02:34:16,155 - #10 print
+INFO  02:34:16,155 - #7 (
+INFO  02:34:16,155 - #33 bodovi
+INFO  02:34:16,155 - #3 )
+INFO  02:34:16,155 - #5 ;
+INFO  02:34:16,155 - #33 bodovi
+INFO  02:34:16,155 - #4 =
+INFO  02:34:16,155 - #33 bodovi
+INFO  02:34:16,155 - #2 +
+INFO  02:34:16,155 - #7 (
+INFO  02:34:16,155 - #33 pet
+INFO  02:34:16,155 - #13 *
+INFO  02:34:16,155 - #33 jedan
+INFO  02:34:16,155 - #12 -
+INFO  02:34:16,155 - #30 1
+INFO  02:34:16,155 - #3 )
+INFO  02:34:16,155 - #13 *
+INFO  02:34:16,155 - #33 bodovi
+INFO  02:34:16,155 - #12 -
+INFO  02:34:16,155 - #7 (
+INFO  02:34:16,155 - #30 3
+INFO  02:34:16,155 - #15 %
+INFO  02:34:16,161 - #30 2
+INFO  02:34:16,161 - #2 +
+INFO  02:34:16,161 - #30 3
+INFO  02:34:16,161 - #13 *
+INFO  02:34:16,161 - #30 2
+INFO  02:34:16,161 - #12 -
+INFO  02:34:16,161 - #30 3
+INFO  02:34:16,161 - #3 )
+INFO  02:34:16,161 - #5 ;
+INFO  02:34:16,161 - #10 print
+INFO  02:34:16,161 - #7 (
+INFO  02:34:16,161 - #33 bodovi
+INFO  02:34:16,161 - #3 )
+INFO  02:34:16,161 - #5 ;
+INFO  02:34:16,161 - #24 }
+INFO  02:34:16,161 - #24 }
+INFO  02:34:16,161 - Program(
   ProgName(
    test301
   ) [ProgName]
   VarDeclarations(
     VarDeclarations(
-      VarDeclarations(
+      ConstDeclarations(
         ConstDeclarations(
-          VarDeclarations(
+          ConstDeclarations(
             NoConstVarDecl(
             ) [NoConstVarDecl]
-            VarDecl(
+            ConstDecl(
               Type(
                int
               ) [Type]
-              VarDecListExtendedNo(
-              ) [VarDecListExtendedNo]
-             d
-              NoArray(
-              ) [NoArray]
-            ) [VarDecl]
-          ) [VarDeclarations]
+             nula
+              ConstNumber(
+               0
+              ) [ConstNumber]
+              NoConstDeclListExtended(
+              ) [NoConstDeclListExtended]
+            ) [ConstDecl]
+          ) [ConstDeclarations]
           ConstDecl(
             Type(
              int
             ) [Type]
-           z
+           jedan
             ConstNumber(
-             67
+             1
             ) [ConstNumber]
-            ConstDeclListExtendedVal(
-              NoConstDeclListExtended(
-              ) [NoConstDeclListExtended]
-             pp
-              ConstNumber(
-               97
-              ) [ConstNumber]
-            ) [ConstDeclListExtendedVal]
+            NoConstDeclListExtended(
+            ) [NoConstDeclListExtended]
           ) [ConstDecl]
         ) [ConstDeclarations]
-        VarDecl(
+        ConstDecl(
           Type(
            int
           ) [Type]
-          VarDecListExtendedNo(
-          ) [VarDecListExtendedNo]
-         m
-          NoArray(
-          ) [NoArray]
-        ) [VarDecl]
-      ) [VarDeclarations]
+         pet
+          ConstNumber(
+           5
+          ) [ConstNumber]
+          NoConstDeclListExtended(
+          ) [NoConstDeclListExtended]
+        ) [ConstDecl]
+      ) [ConstDeclarations]
       VarDecl(
         Type(
          int
@@ -122,11 +305,11 @@ INFO  23:48:36,993 - Program(
     ) [VarDeclarations]
     VarDecl(
       Type(
-       int
+       char
       ) [Type]
       VarDecListExtendedNo(
       ) [VarDecListExtendedNo]
-     j
+     nizch
       IsArray(
       ) [IsArray]
     ) [VarDecl]
@@ -141,117 +324,1148 @@ INFO  23:48:36,993 - Program(
       NoFormParam(
       ) [NoFormParam]
       VarDeclListYes(
-        VarDeclListYes(
-          VarDeclLIstNo(
-          ) [VarDeclLIstNo]
-          VarDecl(
-            Type(
-             bool
-            ) [Type]
-            VarDecListExtendedNo(
-            ) [VarDecListExtendedNo]
-           n1
-            IsArray(
-            ) [IsArray]
-          ) [VarDecl]
-        ) [VarDeclListYes]
+        VarDeclLIstNo(
+        ) [VarDeclLIstNo]
         VarDecl(
           Type(
            int
           ) [Type]
           VarDecListExtendedNo(
           ) [VarDecListExtendedNo]
-         n2
-          IsArray(
-          ) [IsArray]
+         bodovi
+          NoArray(
+          ) [NoArray]
         ) [VarDecl]
       ) [VarDeclListYes]
       Statements(
         Statements(
           Statements(
-            NoStmt(
-            ) [NoStmt]
-            Assignment(
-              EqualDesStatement(
-                DesignatorIdent(
-                 d
-                ) [DesignatorIdent]
-                AssignopAddopRight(
-                  AddopRightPlusEqual(
-                  ) [AddopRightPlusEqual]
-                ) [AssignopAddopRight]
+            Statements(
+              Statements(
+                Statements(
+                  Statements(
+                    Statements(
+                      Statements(
+                        Statements(
+                          Statements(
+                            Statements(
+                              Statements(
+                                Statements(
+                                  Statements(
+                                    Statements(
+                                      Statements(
+                                        Statements(
+                                          Statements(
+                                            Statements(
+                                              Statements(
+                                                Statements(
+                                                  Statements(
+                                                    Statements(
+                                                      Statements(
+                                                        Statements(
+                                                          NoStmt(
+                                                          ) [NoStmt]
+                                                          Assignment(
+                                                            EqualDesStatement(
+                                                              DesignatorIdent(
+                                                               bodovi
+                                                              ) [DesignatorIdent]
+                                                              AssignopEqual(
+                                                              ) [AssignopEqual]
+                                                              AddExpr(
+                                                                NoMinus(
+                                                                  TermFactor(
+                                                                    ConstTypeVal(
+                                                                      ConstNumber(
+                                                                       0
+                                                                      ) [ConstNumber]
+                                                                    ) [ConstTypeVal]
+                                                                    NoMulopFactorList(
+                                                                    ) [NoMulopFactorList]
+                                                                  ) [TermFactor]
+                                                                ) [NoMinus]
+                                                                NoAddopTermList(
+                                                                ) [NoAddopTermList]
+                                                              ) [AddExpr]
+                                                            ) [EqualDesStatement]
+                                                          ) [Assignment]
+                                                        ) [Statements]
+                                                        Assignment(
+                                                          IncDesStatement(
+                                                            DesignatorIdent(
+                                                             bodovi
+                                                            ) [DesignatorIdent]
+                                                          ) [IncDesStatement]
+                                                        ) [Assignment]
+                                                      ) [Statements]
+                                                      Assignment(
+                                                        EqualDesStatement(
+                                                          DesignatorIdent(
+                                                           bodovi
+                                                          ) [DesignatorIdent]
+                                                          AssignopEqual(
+                                                          ) [AssignopEqual]
+                                                          AddExpr(
+                                                            NoMinus(
+                                                              TermFactor(
+                                                                DesignatorFactor(
+                                                                  DesignatorIdent(
+                                                                   bodovi
+                                                                  ) [DesignatorIdent]
+                                                                ) [DesignatorFactor]
+                                                                NoMulopFactorList(
+                                                                ) [NoMulopFactorList]
+                                                              ) [TermFactor]
+                                                            ) [NoMinus]
+                                                            YesAddopTermList(
+                                                              AddopBasicLeft(
+                                                                AddopLeftPlus(
+                                                                ) [AddopLeftPlus]
+                                                              ) [AddopBasicLeft]
+                                                              TermFactor(
+                                                                DesignatorFactor(
+                                                                  DesignatorIdent(
+                                                                   jedan
+                                                                  ) [DesignatorIdent]
+                                                                ) [DesignatorFactor]
+                                                                NoMulopFactorList(
+                                                                ) [NoMulopFactorList]
+                                                              ) [TermFactor]
+                                                              NoAddopTermList(
+                                                              ) [NoAddopTermList]
+                                                            ) [YesAddopTermList]
+                                                          ) [AddExpr]
+                                                        ) [EqualDesStatement]
+                                                      ) [Assignment]
+                                                    ) [Statements]
+                                                    Assignment(
+                                                      EqualDesStatement(
+                                                        DesignatorIdent(
+                                                         bodovi
+                                                        ) [DesignatorIdent]
+                                                        AssignopEqual(
+                                                        ) [AssignopEqual]
+                                                        AddExpr(
+                                                          NoMinus(
+                                                            TermFactor(
+                                                              DesignatorFactor(
+                                                                DesignatorIdent(
+                                                                 bodovi
+                                                                ) [DesignatorIdent]
+                                                              ) [DesignatorFactor]
+                                                              YesMulopFactorList(
+                                                                MulopBasicLeft(
+                                                                  MulopLeftMul(
+                                                                  ) [MulopLeftMul]
+                                                                ) [MulopBasicLeft]
+                                                                DesignatorFactor(
+                                                                  DesignatorIdent(
+                                                                   pet
+                                                                  ) [DesignatorIdent]
+                                                                ) [DesignatorFactor]
+                                                                NoMulopFactorList(
+                                                                ) [NoMulopFactorList]
+                                                              ) [YesMulopFactorList]
+                                                            ) [TermFactor]
+                                                          ) [NoMinus]
+                                                          NoAddopTermList(
+                                                          ) [NoAddopTermList]
+                                                        ) [AddExpr]
+                                                      ) [EqualDesStatement]
+                                                    ) [Assignment]
+                                                  ) [Statements]
+                                                  Assignment(
+                                                    DecDesStatement(
+                                                      DesignatorIdent(
+                                                       bodovi
+                                                      ) [DesignatorIdent]
+                                                    ) [DecDesStatement]
+                                                  ) [Assignment]
+                                                ) [Statements]
+                                                PrintStmt(
+                                                  AddExpr(
+                                                    NoMinus(
+                                                      TermFactor(
+                                                        DesignatorFactor(
+                                                          DesignatorIdent(
+                                                           bodovi
+                                                          ) [DesignatorIdent]
+                                                        ) [DesignatorFactor]
+                                                        NoMulopFactorList(
+                                                        ) [NoMulopFactorList]
+                                                      ) [TermFactor]
+                                                    ) [NoMinus]
+                                                    NoAddopTermList(
+                                                    ) [NoAddopTermList]
+                                                  ) [AddExpr]
+                                                  WithNumberNo(
+                                                  ) [WithNumberNo]
+                                                ) [PrintStmt]
+                                              ) [Statements]
+                                              Assignment(
+                                                EqualDesStatement(
+                                                  DesignatorIdent(
+                                                   niz
+                                                  ) [DesignatorIdent]
+                                                  AssignopEqual(
+                                                  ) [AssignopEqual]
+                                                  AddExpr(
+                                                    NoMinus(
+                                                      TermFactor(
+                                                        NewTypeExpr(
+                                                          Type(
+                                                           int
+                                                          ) [Type]
+                                                          AddExpr(
+                                                            NoMinus(
+                                                              TermFactor(
+                                                                ConstTypeVal(
+                                                                  ConstNumber(
+                                                                   3
+                                                                  ) [ConstNumber]
+                                                                ) [ConstTypeVal]
+                                                                NoMulopFactorList(
+                                                                ) [NoMulopFactorList]
+                                                              ) [TermFactor]
+                                                            ) [NoMinus]
+                                                            NoAddopTermList(
+                                                            ) [NoAddopTermList]
+                                                          ) [AddExpr]
+                                                        ) [NewTypeExpr]
+                                                        NoMulopFactorList(
+                                                        ) [NoMulopFactorList]
+                                                      ) [TermFactor]
+                                                    ) [NoMinus]
+                                                    NoAddopTermList(
+                                                    ) [NoAddopTermList]
+                                                  ) [AddExpr]
+                                                ) [EqualDesStatement]
+                                              ) [Assignment]
+                                            ) [Statements]
+                                            Assignment(
+                                              EqualDesStatement(
+                                                DesignatorIdentExtended(
+                                                  DesignatorIdent(
+                                                   niz
+                                                  ) [DesignatorIdent]
+                                                  AddExpr(
+                                                    NoMinus(
+                                                      TermFactor(
+                                                        DesignatorFactor(
+                                                          DesignatorIdent(
+                                                           nula
+                                                          ) [DesignatorIdent]
+                                                        ) [DesignatorFactor]
+                                                        NoMulopFactorList(
+                                                        ) [NoMulopFactorList]
+                                                      ) [TermFactor]
+                                                    ) [NoMinus]
+                                                    NoAddopTermList(
+                                                    ) [NoAddopTermList]
+                                                  ) [AddExpr]
+                                                ) [DesignatorIdentExtended]
+                                                AssignopEqual(
+                                                ) [AssignopEqual]
+                                                AddExpr(
+                                                  NoMinus(
+                                                    TermFactor(
+                                                      DesignatorFactor(
+                                                        DesignatorIdent(
+                                                         jedan
+                                                        ) [DesignatorIdent]
+                                                      ) [DesignatorFactor]
+                                                      NoMulopFactorList(
+                                                      ) [NoMulopFactorList]
+                                                    ) [TermFactor]
+                                                  ) [NoMinus]
+                                                  NoAddopTermList(
+                                                  ) [NoAddopTermList]
+                                                ) [AddExpr]
+                                              ) [EqualDesStatement]
+                                            ) [Assignment]
+                                          ) [Statements]
+                                          Assignment(
+                                            EqualDesStatement(
+                                              DesignatorIdentExtended(
+                                                DesignatorIdent(
+                                                 niz
+                                                ) [DesignatorIdent]
+                                                AddExpr(
+                                                  NoMinus(
+                                                    TermFactor(
+                                                      ConstTypeVal(
+                                                        ConstNumber(
+                                                         1
+                                                        ) [ConstNumber]
+                                                      ) [ConstTypeVal]
+                                                      NoMulopFactorList(
+                                                      ) [NoMulopFactorList]
+                                                    ) [TermFactor]
+                                                  ) [NoMinus]
+                                                  NoAddopTermList(
+                                                  ) [NoAddopTermList]
+                                                ) [AddExpr]
+                                              ) [DesignatorIdentExtended]
+                                              AssignopEqual(
+                                              ) [AssignopEqual]
+                                              AddExpr(
+                                                NoMinus(
+                                                  TermFactor(
+                                                    ConstTypeVal(
+                                                      ConstNumber(
+                                                       2
+                                                      ) [ConstNumber]
+                                                    ) [ConstTypeVal]
+                                                    NoMulopFactorList(
+                                                    ) [NoMulopFactorList]
+                                                  ) [TermFactor]
+                                                ) [NoMinus]
+                                                NoAddopTermList(
+                                                ) [NoAddopTermList]
+                                              ) [AddExpr]
+                                            ) [EqualDesStatement]
+                                          ) [Assignment]
+                                        ) [Statements]
+                                        Assignment(
+                                          EqualDesStatement(
+                                            DesignatorIdentExtended(
+                                              DesignatorIdent(
+                                               niz
+                                              ) [DesignatorIdent]
+                                              AddExpr(
+                                                NoMinus(
+                                                  TermFactor(
+                                                    DesignatorFactor(
+                                                      DesignatorIdentExtended(
+                                                        DesignatorIdent(
+                                                         niz
+                                                        ) [DesignatorIdent]
+                                                        AddExpr(
+                                                          NoMinus(
+                                                            TermFactor(
+                                                              DesignatorFactor(
+                                                                DesignatorIdent(
+                                                                 jedan
+                                                                ) [DesignatorIdent]
+                                                              ) [DesignatorFactor]
+                                                              NoMulopFactorList(
+                                                              ) [NoMulopFactorList]
+                                                            ) [TermFactor]
+                                                          ) [NoMinus]
+                                                          NoAddopTermList(
+                                                          ) [NoAddopTermList]
+                                                        ) [AddExpr]
+                                                      ) [DesignatorIdentExtended]
+                                                    ) [DesignatorFactor]
+                                                    NoMulopFactorList(
+                                                    ) [NoMulopFactorList]
+                                                  ) [TermFactor]
+                                                ) [NoMinus]
+                                                NoAddopTermList(
+                                                ) [NoAddopTermList]
+                                              ) [AddExpr]
+                                            ) [DesignatorIdentExtended]
+                                            AssignopEqual(
+                                            ) [AssignopEqual]
+                                            AddExpr(
+                                              NoMinus(
+                                                TermFactor(
+                                                  DesignatorFactor(
+                                                    DesignatorIdentExtended(
+                                                      DesignatorIdent(
+                                                       niz
+                                                      ) [DesignatorIdent]
+                                                      AddExpr(
+                                                        NoMinus(
+                                                          TermFactor(
+                                                            DesignatorFactor(
+                                                              DesignatorIdentExtended(
+                                                                DesignatorIdent(
+                                                                 niz
+                                                                ) [DesignatorIdent]
+                                                                AddExpr(
+                                                                  NoMinus(
+                                                                    TermFactor(
+                                                                      ConstTypeVal(
+                                                                        ConstNumber(
+                                                                         0
+                                                                        ) [ConstNumber]
+                                                                      ) [ConstTypeVal]
+                                                                      NoMulopFactorList(
+                                                                      ) [NoMulopFactorList]
+                                                                    ) [TermFactor]
+                                                                  ) [NoMinus]
+                                                                  NoAddopTermList(
+                                                                  ) [NoAddopTermList]
+                                                                ) [AddExpr]
+                                                              ) [DesignatorIdentExtended]
+                                                            ) [DesignatorFactor]
+                                                            NoMulopFactorList(
+                                                            ) [NoMulopFactorList]
+                                                          ) [TermFactor]
+                                                        ) [NoMinus]
+                                                        NoAddopTermList(
+                                                        ) [NoAddopTermList]
+                                                      ) [AddExpr]
+                                                    ) [DesignatorIdentExtended]
+                                                  ) [DesignatorFactor]
+                                                  YesMulopFactorList(
+                                                    MulopBasicLeft(
+                                                      MulopLeftMul(
+                                                      ) [MulopLeftMul]
+                                                    ) [MulopBasicLeft]
+                                                    ConstTypeVal(
+                                                      ConstNumber(
+                                                       3
+                                                      ) [ConstNumber]
+                                                    ) [ConstTypeVal]
+                                                    NoMulopFactorList(
+                                                    ) [NoMulopFactorList]
+                                                  ) [YesMulopFactorList]
+                                                ) [TermFactor]
+                                              ) [NoMinus]
+                                              NoAddopTermList(
+                                              ) [NoAddopTermList]
+                                            ) [AddExpr]
+                                          ) [EqualDesStatement]
+                                        ) [Assignment]
+                                      ) [Statements]
+                                      Assignment(
+                                        EqualDesStatement(
+                                          DesignatorIdent(
+                                           bodovi
+                                          ) [DesignatorIdent]
+                                          AssignopEqual(
+                                          ) [AssignopEqual]
+                                          AddExpr(
+                                            NoMinus(
+                                              TermFactor(
+                                                DesignatorFactor(
+                                                  DesignatorIdentExtended(
+                                                    DesignatorIdent(
+                                                     niz
+                                                    ) [DesignatorIdent]
+                                                    AddExpr(
+                                                      NoMinus(
+                                                        TermFactor(
+                                                          ConstTypeVal(
+                                                            ConstNumber(
+                                                             2
+                                                            ) [ConstNumber]
+                                                          ) [ConstTypeVal]
+                                                          NoMulopFactorList(
+                                                          ) [NoMulopFactorList]
+                                                        ) [TermFactor]
+                                                      ) [NoMinus]
+                                                      NoAddopTermList(
+                                                      ) [NoAddopTermList]
+                                                    ) [AddExpr]
+                                                  ) [DesignatorIdentExtended]
+                                                ) [DesignatorFactor]
+                                                YesMulopFactorList(
+                                                  MulopBasicLeft(
+                                                    MulopLeftDiv(
+                                                    ) [MulopLeftDiv]
+                                                  ) [MulopBasicLeft]
+                                                  DesignatorFactor(
+                                                    DesignatorIdentExtended(
+                                                      DesignatorIdent(
+                                                       niz
+                                                      ) [DesignatorIdent]
+                                                      AddExpr(
+                                                        NoMinus(
+                                                          TermFactor(
+                                                            ConstTypeVal(
+                                                              ConstNumber(
+                                                               0
+                                                              ) [ConstNumber]
+                                                            ) [ConstTypeVal]
+                                                            NoMulopFactorList(
+                                                            ) [NoMulopFactorList]
+                                                          ) [TermFactor]
+                                                        ) [NoMinus]
+                                                        NoAddopTermList(
+                                                        ) [NoAddopTermList]
+                                                      ) [AddExpr]
+                                                    ) [DesignatorIdentExtended]
+                                                  ) [DesignatorFactor]
+                                                  NoMulopFactorList(
+                                                  ) [NoMulopFactorList]
+                                                ) [YesMulopFactorList]
+                                              ) [TermFactor]
+                                            ) [NoMinus]
+                                            NoAddopTermList(
+                                            ) [NoAddopTermList]
+                                          ) [AddExpr]
+                                        ) [EqualDesStatement]
+                                      ) [Assignment]
+                                    ) [Statements]
+                                    PrintStmt(
+                                      AddExpr(
+                                        NoMinus(
+                                          TermFactor(
+                                            DesignatorFactor(
+                                              DesignatorIdent(
+                                               bodovi
+                                              ) [DesignatorIdent]
+                                            ) [DesignatorFactor]
+                                            NoMulopFactorList(
+                                            ) [NoMulopFactorList]
+                                          ) [TermFactor]
+                                        ) [NoMinus]
+                                        NoAddopTermList(
+                                        ) [NoAddopTermList]
+                                      ) [AddExpr]
+                                      WithNumberNo(
+                                      ) [WithNumberNo]
+                                    ) [PrintStmt]
+                                  ) [Statements]
+                                  PrintStmt(
+                                    AddExpr(
+                                      NoMinus(
+                                        TermFactor(
+                                          DesignatorFactor(
+                                            DesignatorIdentExtended(
+                                              DesignatorIdent(
+                                               niz
+                                              ) [DesignatorIdent]
+                                              AddExpr(
+                                                NoMinus(
+                                                  TermFactor(
+                                                    ConstTypeVal(
+                                                      ConstNumber(
+                                                       2
+                                                      ) [ConstNumber]
+                                                    ) [ConstTypeVal]
+                                                    NoMulopFactorList(
+                                                    ) [NoMulopFactorList]
+                                                  ) [TermFactor]
+                                                ) [NoMinus]
+                                                NoAddopTermList(
+                                                ) [NoAddopTermList]
+                                              ) [AddExpr]
+                                            ) [DesignatorIdentExtended]
+                                          ) [DesignatorFactor]
+                                          NoMulopFactorList(
+                                          ) [NoMulopFactorList]
+                                        ) [TermFactor]
+                                      ) [NoMinus]
+                                      NoAddopTermList(
+                                      ) [NoAddopTermList]
+                                    ) [AddExpr]
+                                    WithNumberNo(
+                                    ) [WithNumberNo]
+                                  ) [PrintStmt]
+                                ) [Statements]
+                                ReadStmt(
+                                  DesignatorIdent(
+                                   bodovi
+                                  ) [DesignatorIdent]
+                                ) [ReadStmt]
+                              ) [Statements]
+                              Assignment(
+                                EqualDesStatement(
+                                  DesignatorIdentExtended(
+                                    DesignatorIdent(
+                                     niz
+                                    ) [DesignatorIdent]
+                                    AddExpr(
+                                      NoMinus(
+                                        TermFactor(
+                                          ConstTypeVal(
+                                            ConstNumber(
+                                             2
+                                            ) [ConstNumber]
+                                          ) [ConstTypeVal]
+                                          NoMulopFactorList(
+                                          ) [NoMulopFactorList]
+                                        ) [TermFactor]
+                                      ) [NoMinus]
+                                      NoAddopTermList(
+                                      ) [NoAddopTermList]
+                                    ) [AddExpr]
+                                  ) [DesignatorIdentExtended]
+                                  AssignopAddopRight(
+                                    AddopRightPlusEqual(
+                                    ) [AddopRightPlusEqual]
+                                  ) [AssignopAddopRight]
+                                  AddExpr(
+                                    NoMinus(
+                                      TermFactor(
+                                        DesignatorFactor(
+                                          DesignatorIdent(
+                                           bodovi
+                                          ) [DesignatorIdent]
+                                        ) [DesignatorFactor]
+                                        YesMulopFactorList(
+                                          MulopBasicRight(
+                                            MulopRightMulEqual(
+                                            ) [MulopRightMulEqual]
+                                          ) [MulopBasicRight]
+                                          ConstTypeVal(
+                                            ConstNumber(
+                                             2
+                                            ) [ConstNumber]
+                                          ) [ConstTypeVal]
+                                          NoMulopFactorList(
+                                          ) [NoMulopFactorList]
+                                        ) [YesMulopFactorList]
+                                      ) [TermFactor]
+                                    ) [NoMinus]
+                                    NoAddopTermList(
+                                    ) [NoAddopTermList]
+                                  ) [AddExpr]
+                                ) [EqualDesStatement]
+                              ) [Assignment]
+                            ) [Statements]
+                            Assignment(
+                              IncDesStatement(
+                                DesignatorIdentExtended(
+                                  DesignatorIdent(
+                                   niz
+                                  ) [DesignatorIdent]
+                                  AddExpr(
+                                    NoMinus(
+                                      TermFactor(
+                                        ConstTypeVal(
+                                          ConstNumber(
+                                           2
+                                          ) [ConstNumber]
+                                        ) [ConstTypeVal]
+                                        NoMulopFactorList(
+                                        ) [NoMulopFactorList]
+                                      ) [TermFactor]
+                                    ) [NoMinus]
+                                    NoAddopTermList(
+                                    ) [NoAddopTermList]
+                                  ) [AddExpr]
+                                ) [DesignatorIdentExtended]
+                              ) [IncDesStatement]
+                            ) [Assignment]
+                          ) [Statements]
+                          PrintStmt(
+                            AddExpr(
+                              NoMinus(
+                                TermFactor(
+                                  DesignatorFactor(
+                                    DesignatorIdentExtended(
+                                      DesignatorIdent(
+                                       niz
+                                      ) [DesignatorIdent]
+                                      AddExpr(
+                                        NoMinus(
+                                          TermFactor(
+                                            ConstTypeVal(
+                                              ConstNumber(
+                                               2
+                                              ) [ConstNumber]
+                                            ) [ConstTypeVal]
+                                            NoMulopFactorList(
+                                            ) [NoMulopFactorList]
+                                          ) [TermFactor]
+                                        ) [NoMinus]
+                                        NoAddopTermList(
+                                        ) [NoAddopTermList]
+                                      ) [AddExpr]
+                                    ) [DesignatorIdentExtended]
+                                  ) [DesignatorFactor]
+                                  NoMulopFactorList(
+                                  ) [NoMulopFactorList]
+                                ) [TermFactor]
+                              ) [NoMinus]
+                              NoAddopTermList(
+                              ) [NoAddopTermList]
+                            ) [AddExpr]
+                            WithNumberNo(
+                            ) [WithNumberNo]
+                          ) [PrintStmt]
+                        ) [Statements]
+                        Assignment(
+                          EqualDesStatement(
+                            DesignatorIdent(
+                             nizch
+                            ) [DesignatorIdent]
+                            AssignopEqual(
+                            ) [AssignopEqual]
+                            AddExpr(
+                              NoMinus(
+                                TermFactor(
+                                  NewTypeExpr(
+                                    Type(
+                                     char
+                                    ) [Type]
+                                    AddExpr(
+                                      NoMinus(
+                                        TermFactor(
+                                          ConstTypeVal(
+                                            ConstNumber(
+                                             3
+                                            ) [ConstNumber]
+                                          ) [ConstTypeVal]
+                                          NoMulopFactorList(
+                                          ) [NoMulopFactorList]
+                                        ) [TermFactor]
+                                      ) [NoMinus]
+                                      NoAddopTermList(
+                                      ) [NoAddopTermList]
+                                    ) [AddExpr]
+                                  ) [NewTypeExpr]
+                                  NoMulopFactorList(
+                                  ) [NoMulopFactorList]
+                                ) [TermFactor]
+                              ) [NoMinus]
+                              NoAddopTermList(
+                              ) [NoAddopTermList]
+                            ) [AddExpr]
+                          ) [EqualDesStatement]
+                        ) [Assignment]
+                      ) [Statements]
+                      Assignment(
+                        EqualDesStatement(
+                          DesignatorIdentExtended(
+                            DesignatorIdent(
+                             nizch
+                            ) [DesignatorIdent]
+                            AddExpr(
+                              NoMinus(
+                                TermFactor(
+                                  ConstTypeVal(
+                                    ConstNumber(
+                                     0
+                                    ) [ConstNumber]
+                                  ) [ConstTypeVal]
+                                  NoMulopFactorList(
+                                  ) [NoMulopFactorList]
+                                ) [TermFactor]
+                              ) [NoMinus]
+                              NoAddopTermList(
+                              ) [NoAddopTermList]
+                            ) [AddExpr]
+                          ) [DesignatorIdentExtended]
+                          AssignopEqual(
+                          ) [AssignopEqual]
+                          AddExpr(
+                            NoMinus(
+                              TermFactor(
+                                ConstTypeVal(
+                                  ConstChar(
+                                   a
+                                  ) [ConstChar]
+                                ) [ConstTypeVal]
+                                NoMulopFactorList(
+                                ) [NoMulopFactorList]
+                              ) [TermFactor]
+                            ) [NoMinus]
+                            NoAddopTermList(
+                            ) [NoAddopTermList]
+                          ) [AddExpr]
+                        ) [EqualDesStatement]
+                      ) [Assignment]
+                    ) [Statements]
+                    Assignment(
+                      EqualDesStatement(
+                        DesignatorIdentExtended(
+                          DesignatorIdent(
+                           nizch
+                          ) [DesignatorIdent]
+                          AddExpr(
+                            NoMinus(
+                              TermFactor(
+                                DesignatorFactor(
+                                  DesignatorIdent(
+                                   jedan
+                                  ) [DesignatorIdent]
+                                ) [DesignatorFactor]
+                                NoMulopFactorList(
+                                ) [NoMulopFactorList]
+                              ) [TermFactor]
+                            ) [NoMinus]
+                            NoAddopTermList(
+                            ) [NoAddopTermList]
+                          ) [AddExpr]
+                        ) [DesignatorIdentExtended]
+                        AssignopEqual(
+                        ) [AssignopEqual]
+                        AddExpr(
+                          NoMinus(
+                            TermFactor(
+                              ConstTypeVal(
+                                ConstChar(
+                                 b
+                                ) [ConstChar]
+                              ) [ConstTypeVal]
+                              NoMulopFactorList(
+                              ) [NoMulopFactorList]
+                            ) [TermFactor]
+                          ) [NoMinus]
+                          NoAddopTermList(
+                          ) [NoAddopTermList]
+                        ) [AddExpr]
+                      ) [EqualDesStatement]
+                    ) [Assignment]
+                  ) [Statements]
+                  Assignment(
+                    EqualDesStatement(
+                      DesignatorIdentExtended(
+                        DesignatorIdent(
+                         nizch
+                        ) [DesignatorIdent]
+                        AddExpr(
+                          NoMinus(
+                            TermFactor(
+                              DesignatorFactor(
+                                DesignatorIdent(
+                                 pet
+                                ) [DesignatorIdent]
+                              ) [DesignatorFactor]
+                              NoMulopFactorList(
+                              ) [NoMulopFactorList]
+                            ) [TermFactor]
+                          ) [NoMinus]
+                          YesAddopTermList(
+                            AddopBasicLeft(
+                              AddopLeftMinus(
+                              ) [AddopLeftMinus]
+                            ) [AddopBasicLeft]
+                            TermFactor(
+                              ConstTypeVal(
+                                ConstNumber(
+                                 3
+                                ) [ConstNumber]
+                              ) [ConstTypeVal]
+                              NoMulopFactorList(
+                              ) [NoMulopFactorList]
+                            ) [TermFactor]
+                            NoAddopTermList(
+                            ) [NoAddopTermList]
+                          ) [YesAddopTermList]
+                        ) [AddExpr]
+                      ) [DesignatorIdentExtended]
+                      AssignopEqual(
+                      ) [AssignopEqual]
+                      AddExpr(
+                        NoMinus(
+                          TermFactor(
+                            ConstTypeVal(
+                              ConstChar(
+                               c
+                              ) [ConstChar]
+                            ) [ConstTypeVal]
+                            NoMulopFactorList(
+                            ) [NoMulopFactorList]
+                          ) [TermFactor]
+                        ) [NoMinus]
+                        NoAddopTermList(
+                        ) [NoAddopTermList]
+                      ) [AddExpr]
+                    ) [EqualDesStatement]
+                  ) [Assignment]
+                ) [Statements]
+                PrintStmt(
+                  AddExpr(
+                    NoMinus(
+                      TermFactor(
+                        DesignatorFactor(
+                          DesignatorIdentExtended(
+                            DesignatorIdent(
+                             nizch
+                            ) [DesignatorIdent]
+                            AddExpr(
+                              NoMinus(
+                                TermFactor(
+                                  ConstTypeVal(
+                                    ConstNumber(
+                                     1
+                                    ) [ConstNumber]
+                                  ) [ConstTypeVal]
+                                  NoMulopFactorList(
+                                  ) [NoMulopFactorList]
+                                ) [TermFactor]
+                              ) [NoMinus]
+                              NoAddopTermList(
+                              ) [NoAddopTermList]
+                            ) [AddExpr]
+                          ) [DesignatorIdentExtended]
+                        ) [DesignatorFactor]
+                        NoMulopFactorList(
+                        ) [NoMulopFactorList]
+                      ) [TermFactor]
+                    ) [NoMinus]
+                    NoAddopTermList(
+                    ) [NoAddopTermList]
+                  ) [AddExpr]
+                  WithNumberNo(
+                  ) [WithNumberNo]
+                ) [PrintStmt]
+              ) [Statements]
+              PrintStmt(
                 AddExpr(
                   NoMinus(
                     TermFactor(
                       DesignatorFactor(
-                        DesignatorIdent(
-                         m
-                        ) [DesignatorIdent]
+                        DesignatorIdentExtended(
+                          DesignatorIdent(
+                           nizch
+                          ) [DesignatorIdent]
+                          AddExpr(
+                            NoMinus(
+                              TermFactor(
+                                DesignatorFactor(
+                                  DesignatorIdent(
+                                   jedan
+                                  ) [DesignatorIdent]
+                                ) [DesignatorFactor]
+                                YesMulopFactorList(
+                                  MulopBasicLeft(
+                                    MulopLeftMul(
+                                    ) [MulopLeftMul]
+                                  ) [MulopBasicLeft]
+                                  ConstTypeVal(
+                                    ConstNumber(
+                                     2
+                                    ) [ConstNumber]
+                                  ) [ConstTypeVal]
+                                  NoMulopFactorList(
+                                  ) [NoMulopFactorList]
+                                ) [YesMulopFactorList]
+                              ) [TermFactor]
+                            ) [NoMinus]
+                            NoAddopTermList(
+                            ) [NoAddopTermList]
+                          ) [AddExpr]
+                        ) [DesignatorIdentExtended]
                       ) [DesignatorFactor]
                       NoMulopFactorList(
                       ) [NoMulopFactorList]
                     ) [TermFactor]
                   ) [NoMinus]
+                  NoAddopTermList(
+                  ) [NoAddopTermList]
+                ) [AddExpr]
+                WithNumberNo(
+                ) [WithNumberNo]
+              ) [PrintStmt]
+            ) [Statements]
+            PrintStmt(
+              AddExpr(
+                NoMinus(
+                  TermFactor(
+                    DesignatorFactor(
+                      DesignatorIdent(
+                       bodovi
+                      ) [DesignatorIdent]
+                    ) [DesignatorFactor]
+                    NoMulopFactorList(
+                    ) [NoMulopFactorList]
+                  ) [TermFactor]
+                ) [NoMinus]
+                NoAddopTermList(
+                ) [NoAddopTermList]
+              ) [AddExpr]
+              WithNumberNo(
+              ) [WithNumberNo]
+            ) [PrintStmt]
+          ) [Statements]
+          Assignment(
+            EqualDesStatement(
+              DesignatorIdent(
+               bodovi
+              ) [DesignatorIdent]
+              AssignopEqual(
+              ) [AssignopEqual]
+              AddExpr(
+                NoMinus(
+                  TermFactor(
+                    DesignatorFactor(
+                      DesignatorIdent(
+                       bodovi
+                      ) [DesignatorIdent]
+                    ) [DesignatorFactor]
+                    NoMulopFactorList(
+                    ) [NoMulopFactorList]
+                  ) [TermFactor]
+                ) [NoMinus]
+                YesAddopTermList(
+                  AddopBasicLeft(
+                    AddopLeftPlus(
+                    ) [AddopLeftPlus]
+                  ) [AddopBasicLeft]
+                  TermFactor(
+                    ExprLRPAREN(
+                      AddExpr(
+                        NoMinus(
+                          TermFactor(
+                            DesignatorFactor(
+                              DesignatorIdent(
+                               pet
+                              ) [DesignatorIdent]
+                            ) [DesignatorFactor]
+                            YesMulopFactorList(
+                              MulopBasicLeft(
+                                MulopLeftMul(
+                                ) [MulopLeftMul]
+                              ) [MulopBasicLeft]
+                              DesignatorFactor(
+                                DesignatorIdent(
+                                 jedan
+                                ) [DesignatorIdent]
+                              ) [DesignatorFactor]
+                              NoMulopFactorList(
+                              ) [NoMulopFactorList]
+                            ) [YesMulopFactorList]
+                          ) [TermFactor]
+                        ) [NoMinus]
+                        YesAddopTermList(
+                          AddopBasicLeft(
+                            AddopLeftMinus(
+                            ) [AddopLeftMinus]
+                          ) [AddopBasicLeft]
+                          TermFactor(
+                            ConstTypeVal(
+                              ConstNumber(
+                               1
+                              ) [ConstNumber]
+                            ) [ConstTypeVal]
+                            NoMulopFactorList(
+                            ) [NoMulopFactorList]
+                          ) [TermFactor]
+                          NoAddopTermList(
+                          ) [NoAddopTermList]
+                        ) [YesAddopTermList]
+                      ) [AddExpr]
+                    ) [ExprLRPAREN]
+                    YesMulopFactorList(
+                      MulopBasicLeft(
+                        MulopLeftMul(
+                        ) [MulopLeftMul]
+                      ) [MulopBasicLeft]
+                      DesignatorFactor(
+                        DesignatorIdent(
+                         bodovi
+                        ) [DesignatorIdent]
+                      ) [DesignatorFactor]
+                      NoMulopFactorList(
+                      ) [NoMulopFactorList]
+                    ) [YesMulopFactorList]
+                  ) [TermFactor]
                   YesAddopTermList(
-                    AddopBasicRight(
-                      AddopRightPlusEqual(
-                      ) [AddopRightPlusEqual]
-                    ) [AddopBasicRight]
+                    AddopBasicLeft(
+                      AddopLeftMinus(
+                      ) [AddopLeftMinus]
+                    ) [AddopBasicLeft]
                     TermFactor(
-                      ConstTypeVal(
-                        ConstNumber(
-                         2
-                        ) [ConstNumber]
-                      ) [ConstTypeVal]
+                      ExprLRPAREN(
+                        AddExpr(
+                          NoMinus(
+                            TermFactor(
+                              ConstTypeVal(
+                                ConstNumber(
+                                 3
+                                ) [ConstNumber]
+                              ) [ConstTypeVal]
+                              YesMulopFactorList(
+                                MulopBasicLeft(
+                                  MulopLeftMod(
+                                  ) [MulopLeftMod]
+                                ) [MulopBasicLeft]
+                                ConstTypeVal(
+                                  ConstNumber(
+                                   2
+                                  ) [ConstNumber]
+                                ) [ConstTypeVal]
+                                NoMulopFactorList(
+                                ) [NoMulopFactorList]
+                              ) [YesMulopFactorList]
+                            ) [TermFactor]
+                          ) [NoMinus]
+                          YesAddopTermList(
+                            AddopBasicLeft(
+                              AddopLeftPlus(
+                              ) [AddopLeftPlus]
+                            ) [AddopBasicLeft]
+                            TermFactor(
+                              ConstTypeVal(
+                                ConstNumber(
+                                 3
+                                ) [ConstNumber]
+                              ) [ConstTypeVal]
+                              YesMulopFactorList(
+                                MulopBasicLeft(
+                                  MulopLeftMul(
+                                  ) [MulopLeftMul]
+                                ) [MulopBasicLeft]
+                                ConstTypeVal(
+                                  ConstNumber(
+                                   2
+                                  ) [ConstNumber]
+                                ) [ConstTypeVal]
+                                NoMulopFactorList(
+                                ) [NoMulopFactorList]
+                              ) [YesMulopFactorList]
+                            ) [TermFactor]
+                            YesAddopTermList(
+                              AddopBasicLeft(
+                                AddopLeftMinus(
+                                ) [AddopLeftMinus]
+                              ) [AddopBasicLeft]
+                              TermFactor(
+                                ConstTypeVal(
+                                  ConstNumber(
+                                   3
+                                  ) [ConstNumber]
+                                ) [ConstTypeVal]
+                                NoMulopFactorList(
+                                ) [NoMulopFactorList]
+                              ) [TermFactor]
+                              NoAddopTermList(
+                              ) [NoAddopTermList]
+                            ) [YesAddopTermList]
+                          ) [YesAddopTermList]
+                        ) [AddExpr]
+                      ) [ExprLRPAREN]
                       NoMulopFactorList(
                       ) [NoMulopFactorList]
                     ) [TermFactor]
                     NoAddopTermList(
                     ) [NoAddopTermList]
                   ) [YesAddopTermList]
-                ) [AddExpr]
-              ) [EqualDesStatement]
-            ) [Assignment]
-          ) [Statements]
-          PrintStmt(
-            AddExpr(
-              NoMinus(
-                TermFactor(
-                  DesignatorFactor(
-                    DesignatorIdent(
-                     m
-                    ) [DesignatorIdent]
-                  ) [DesignatorFactor]
-                  NoMulopFactorList(
-                  ) [NoMulopFactorList]
-                ) [TermFactor]
-              ) [NoMinus]
-              NoAddopTermList(
-              ) [NoAddopTermList]
-            ) [AddExpr]
-            WithNumberNo(
-            ) [WithNumberNo]
-          ) [PrintStmt]
+                ) [YesAddopTermList]
+              ) [AddExpr]
+            ) [EqualDesStatement]
+          ) [Assignment]
         ) [Statements]
-        ReturnStmtNoExpr(
-        ) [ReturnStmtNoExpr]
+        PrintStmt(
+          AddExpr(
+            NoMinus(
+              TermFactor(
+                DesignatorFactor(
+                  DesignatorIdent(
+                   bodovi
+                  ) [DesignatorIdent]
+                ) [DesignatorFactor]
+                NoMulopFactorList(
+                ) [NoMulopFactorList]
+              ) [TermFactor]
+            ) [NoMinus]
+            NoAddopTermList(
+            ) [NoAddopTermList]
+          ) [AddExpr]
+          WithNumberNo(
+          ) [WithNumberNo]
+        ) [PrintStmt]
       ) [Statements]
     ) [MethodDecl]
   ) [MethodDeclarations]
 ) [Program]
-INFO  23:48:37,014 - Deklarisana promenljiva d na liniji 5
-INFO  23:48:37,014 - Deklarisana konstanta pp na liniji 14
-INFO  23:48:37,014 - Deklarisana konstanta z na liniji 7
-INFO  23:48:37,014 - Deklarisana promenljiva m na liniji 8
-INFO  23:48:37,014 - Deklarisana promenljiva niz na liniji 12
-INFO  23:48:37,014 - Niz je promenljiva:niz na liniji 12
-INFO  23:48:37,014 - Deklarisana promenljiva j na liniji 13
-INFO  23:48:37,014 - Niz je promenljiva:j na liniji 13
-INFO  23:48:37,015 - Obradjuje se void funkcija main na liniji 15
-INFO  23:48:37,015 - Deklarisana promenljiva n1 na liniji 18
-INFO  23:48:37,015 - Niz je promenljiva:n1 na liniji 18
-INFO  23:48:37,015 - Deklarisana promenljiva n2 na liniji 19
-INFO  23:48:37,015 - Niz je promenljiva:n2 na liniji 19
-INFO  23:48:37,015 - Print calls = 0
-INFO  23:48:37,016 - Generating bytecode file: C:\Users\pa160422d\Desktop\pp1\pp1lab.templateAST\workspace\MJCompiler\test\program
-INFO  23:48:37,032 - Parsiranje uspesno zavrseno!
+INFO  02:34:16,193 - Deklarisana konstanta nula na liniji 5
+INFO  02:34:16,193 - Deklarisana konstanta jedan na liniji 6
+INFO  02:34:16,193 - Deklarisana konstanta pet na liniji 7
+INFO  02:34:16,193 - Deklarisana promenljiva niz na liniji 9
+INFO  02:34:16,193 - Niz je promenljiva:niz na liniji 9
+INFO  02:34:16,193 - Deklarisana promenljiva nizch na liniji 10
+INFO  02:34:16,193 - Niz je promenljiva:nizch na liniji 10
+INFO  02:34:16,193 - Obradjuje se void funkcija main na liniji 13
+INFO  02:34:16,193 - Deklarisana promenljiva bodovi na liniji 14
+INFO  02:34:16,193 - Print calls = 0
+INFO  02:34:16,193 - Generating bytecode file: C:\Users\pa160422d\Desktop\pp1\pp1lab.templateAST\workspace\MJCompiler\test\program
+INFO  02:34:16,193 - Parsiranje uspesno zavrseno!
